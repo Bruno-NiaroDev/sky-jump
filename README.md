@@ -66,12 +66,12 @@ O jogo ensina e explora mecânicas essenciais como:
 
 ## 🧑‍💻 Desenvolvedores
 
-| Nome Completo        | RA           |
-|----------------------|--------------|
-|                      |              |
-|                      |              |
-|                      |              |
-|                      |              |
+| Nome Completo                 | RA           |
+|-------------------------------|--------------|
+| Bruno Araujo Bezerra da Silva | 25001989     |
+|                               |              |
+|                               |              |
+|                               |              |
 
 ---
 
