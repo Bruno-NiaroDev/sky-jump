@@ -61,7 +61,7 @@ O jogo ensina e explora mecânicas essenciais como:
 
 ## 📖 Narrativa (Contexto Didático)
 
-> O personagem deve atravessar diferentes fases, coletando frutas e moedas, evitando inimigos e superando blocos interativos. O foco é aplicar as mecânicas aprendidas durante o desenvolvimento.
+> O personagem deve atravessar diferentes niveis, coletando frutas e moedas, evitando inimigos e superando blocos interativos. O foco é aplicar as mecânicas aprendidas durante o desenvolvimento.
 
 ---
 
