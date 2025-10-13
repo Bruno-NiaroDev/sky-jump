@@ -69,6 +69,7 @@ O jogo ensina e explora mecânicas essenciais como:
 
 | Nome Completo                 | RA       |
 | ----------------------------- | -------- |
+| Ana Tereza Rodrigues Magalhães| 25001997 |
 | Bruno Araujo Bezerra da Silva | 25001989 |
 |                               |          |
 | Luiz André Oliveira Almeida   | 23000083 |
