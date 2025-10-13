@@ -9,6 +9,7 @@
 **Sky Jumper** é um jogo de plataforma 2D desenvolvido por estudantes como parte de um projeto educacional. O objetivo é aplicar na prática os conceitos de desenvolvimento de jogos utilizando a **Godot Engine**, inspirando-se em clássicos como **Sonic** e **Mario**.
 
 O jogo ensina e explora mecânicas essenciais como:
+
 - 🕹️ Movimentação lateral e pulos (incluindo pulo duplo)
 - 💥 Colisões e interação com blocos
 - 🧠 Inimigos com padrões de movimento
@@ -28,16 +29,16 @@ O jogo ensina e explora mecânicas essenciais como:
 
 ## 🎮 Mecânicas Principais
 
-| Mecânica               | Descrição                                                                 |
-|------------------------|---------------------------------------------------------------------------|
-| Movimentação           | Andar, pular, pulo duplo                                                  |
-| Itens coletáveis       | Frutas, moedas – aumentam a pontuação                                     |
-| Blocos quebráveis      | Desaparecem ao contato com o personagem                                   |
-| Molas                  | Impulsionam o personagem para plataformas superiores                      |
-| Áreas de ar            | Permitem flutuar ou acelerar                                              |
-| Inimigos patrulheiros  | Caminham em padrões fixos, podem causar dano                              |
-| Inimigos físicos       | Interagem com o personagem com física real (empurrar, colidir)            |
-| Níveis/Fases           | 5 níveis com mecânicas crescentes de dificuldade                          |
+| Mecânica              | Descrição                                                      |
+| --------------------- | -------------------------------------------------------------- |
+| Movimentação          | Andar, pular, pulo duplo                                       |
+| Itens coletáveis      | Frutas, moedas – aumentam a pontuação                          |
+| Blocos quebráveis     | Desaparecem ao contato com o personagem                        |
+| Molas                 | Impulsionam o personagem para plataformas superiores           |
+| Áreas de ar           | Permitem flutuar ou acelerar                                   |
+| Inimigos patrulheiros | Caminham em padrões fixos, podem causar dano                   |
+| Inimigos físicos      | Interagem com o personagem com física real (empurrar, colidir) |
+| Níveis/Fases          | 5 níveis com mecânicas crescentes de dificuldade               |
 
 ---
 
@@ -66,12 +67,12 @@ O jogo ensina e explora mecânicas essenciais como:
 
 ## 🧑‍💻 Desenvolvedores
 
-| Nome Completo                 | RA           |
-|-------------------------------|--------------|
-| Bruno Araujo Bezerra da Silva | 25001989     |
-|                               |              |
-|                               |              |
-| Pedro Henrique Barion         | 23000055     |
+| Nome Completo                 | RA       |
+| ----------------------------- | -------- |
+| Bruno Araujo Bezerra da Silva | 25001989 |
+|                               |          |
+| Luiz André Oliveira Almeida   | 23000083 |
+| Pedro Henrique Barion         | 23000055 |
 
 ---
 
