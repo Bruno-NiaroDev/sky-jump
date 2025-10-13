@@ -71,7 +71,7 @@ O jogo ensina e explora mecânicas essenciais como:
 | Bruno Araujo Bezerra da Silva | 25001989     |
 |                               |              |
 |                               |              |
-|                               |              |
+| Pedro Henrique Barion         | 23000055     |
 
 ---
 
