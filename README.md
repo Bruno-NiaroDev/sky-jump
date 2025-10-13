@@ -71,7 +71,7 @@ O jogo ensina e explora mecânicas essenciais como:
 | ----------------------------- | -------- |
 | Ana Tereza Rodrigues Magalhães| 25001997 |
 | Bruno Araujo Bezerra da Silva | 25001989 |
-|                               |          |
+| Lívia Ribeiro Venezian        | 23001001 |
 | Luiz André Oliveira Almeida   | 23000083 |
 | Pedro Henrique Barion         | 23000055 |
 
