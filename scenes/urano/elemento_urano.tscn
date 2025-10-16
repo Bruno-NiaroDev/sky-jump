@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://be3lha83ovsok"]
+
+[ext_resource type="Script" uid="uid://dp1b521cd88x3" path="res://elemento_urano.gd" id="1_pnt02"]
+[ext_resource type="Texture2D" uid="uid://hhe8k6n7704p" path="res://assets/urano/elementos-urano.png" id="2_64tbn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_balhm"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(0, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajcft"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(22, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrb3u"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(44, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obt7h"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(66, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni4lx"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(88, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gr4jk"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(110, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_defew"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(132, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_po34e"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(154, 0, 22, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aq6h"]
+atlas = ExtResource("2_64tbn")
+region = Rect2(176, 0, 22, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_23udh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_balhm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajcft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrb3u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obt7h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni4lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gr4jk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_defew")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_po34e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3aq6h")
+}],
+"loop": true,
+"name": &"metano",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6iyg4"]
+radius = 8.0
+height = 32.0
+
+[node name="elemento-urano" type="Area2D"]
+script = ExtResource("1_pnt02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_23udh")
+animation = &"metano"
+autoplay = "metano"
+frame_progress = 0.48814806
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6iyg4")
