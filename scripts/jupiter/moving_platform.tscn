@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://wnps2q34go6t"]
+
+[ext_resource type="Script" uid="uid://d4gt51jpfw6dy" path="res://Jupiter/scenes/moving_platform.gd" id="1_o8xba"]
+[ext_resource type="Texture2D" uid="uid://dng02mahh31ky" path="res://Jupiter/Art Assets/Pedra (Chao).png" id="2_o8xba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wsyo"]
+size = Vector2(96.25, 20)
+
+[node name="moving_platform" type="Node2D"]
+script = ExtResource("1_o8xba")
+
+[node name="plataform" type="AnimatableBody2D" parent="."]
+
+[node name="Poçoes(1)" type="Sprite2D" parent="plataform"]
+position = Vector2(145.502, 56.000004)
+scale = Vector2(1.2018845, 0.7139561)
+texture = ExtResource("2_o8xba")
+region_enabled = true
+region_rect = Rect2(20.5, 18.5, 104, 57)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataform"]
+position = Vector2(143.875, 56)
+shape = SubResource("RectangleShape2D_4wsyo")
