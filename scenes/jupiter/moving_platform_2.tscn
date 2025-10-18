@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cslssg3fxnqf8"]
+
+[ext_resource type="Script" uid="uid://c7xs5hx7tp1xf" path="res://scripts/jupiter/moving_platform_hgd.gd" id="1_lir8g"]
+[ext_resource type="Texture2D" uid="uid://dqi8lwejivs0h" path="res://assets/jupiter/Elemento Chao (1).png" id="1_wu70g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lir8g"]
+radius = 16.0
+height = 120.0
+
+[node name="moving_platform2" type="Node2D"]
+script = ExtResource("1_lir8g")
+
+[node name="plataform" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="plataform"]
+position = Vector2(159, 28)
+scale = Vector2(1.4722222, 1)
+texture = ExtResource("1_wu70g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataform"]
+position = Vector2(160, 27)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_lir8g")

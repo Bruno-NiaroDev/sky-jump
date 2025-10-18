@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceoido8qgg6ow"]
+
+[ext_resource type="Script" uid="uid://c501m8ia33y5k" path="res://Jupiter/Scripts/moving_plataform.gd" id="1_upnd2"]
+[ext_resource type="Texture2D" uid="uid://dng02mahh31ky" path="res://Jupiter/Art Assets/Pedra (Chao).png" id="1_wv73j"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_upnd2"]
+radius = 16.0
+height = 87.99999
+
+[node name="moving_plataform" type="Node2D"]
+script = ExtResource("1_upnd2")
+
+[node name="plataform" type="AnimatableBody2D" parent="."]
+
+[node name="sprite_platform" type="Sprite2D" parent="plataform"]
+position = Vector2(77, 75)
+texture = ExtResource("1_wv73j")
+region_enabled = true
+region_rect = Rect2(27.5, 29, 88, 36)
+
+[node name="collision" type="CollisionShape2D" parent="plataform"]
+position = Vector2(77, 78)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_upnd2")

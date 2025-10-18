@@ -60,7 +60,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(79.5, 60)
+size = Vector2(68, 47)
 
 [sub_resource type="GDScript" id="GDScript_qhqgy"]
 script/source = "extends Camera2D
@@ -115,7 +115,7 @@ func _configurar_limites() -> void:
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(1, 0)
-collision_mask = 0
+collision_mask = 20
 script = ExtResource("1_g2els")
 metadata/_edit_horizontal_guides_ = [720.0]
 
@@ -127,15 +127,14 @@ sprite_frames = SubResource("SpriteFrames_fjrip")
 animation = &"parado"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-97, 40)
+position = Vector2(-99, 47.5)
 shape = SubResource("RectangleShape2D_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3, 0)
 zoom = Vector2(1.5, 1.5)
 limit_left = 0
-limit_top = 0
+limit_top = -10000
 limit_right = 2003
 limit_bottom = 700
 script = SubResource("GDScript_qhqgy")

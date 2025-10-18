@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://fsd8xv4sv3fh"]
 
-[ext_resource type="Texture2D" uid="uid://cvp7haywpm7gd" path="res://Jupiter/Art Assets/Poçoes (1).png" id="1_42doc"]
-[ext_resource type="Script" uid="uid://d0c56yws2td2c" path="res://Jupiter/Scripts/pocoes.gd" id="1_sex28"]
+[ext_resource type="Texture2D" uid="uid://cvp7haywpm7gd" path="res://assets/jupiter/Poçoes (1).png" id="1_42doc"]
+[ext_resource type="Script" uid="uid://d0c56yws2td2c" path="res://scripts/jupiter/pocoes.gd" id="1_sex28"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42doc"]
 atlas = ExtResource("1_42doc")
@@ -50,18 +50,18 @@ animations = [{
 radius = 14.142136
 
 [node name="pocoes" type="Area2D"]
+collision_layer = 8
 script = ExtResource("1_sex28")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
-position = Vector2(25.999996, 20)
+position = Vector2(49.5, -254.375)
 scale = Vector2(0.16799995, 0.15699999)
 sprite_frames = SubResource("SpriteFrames_7lu2h")
 autoplay = "default"
-frame = 4
-frame_progress = 1.0
+frame_progress = 0.5591358
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(24, 19)
+position = Vector2(47.5, -255.375)
 shape = SubResource("CircleShape2D_vt6if")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
