@@ -1,0 +1,141 @@
+[gd_scene load_steps=22 format=3 uid="uid://o6ndrf5b5tba"]
+
+[ext_resource type="Texture2D" uid="uid://bk0rnno867760" path="res://assets/nimboo.png" id="1_f7shd"]
+[ext_resource type="Script" uid="uid://dep0pg0dhxex6" path="res://scenes/netuno/player.gd" id="1_m8aer"]
+[ext_resource type="Texture2D" uid="uid://dee7hejvu3rij" path="res://assets/nimbo_ocioso1.png" id="1_mcdyq"]
+[ext_resource type="Texture2D" uid="uid://dv0gqgw6n5qq2" path="res://assets/nimbopulando.png" id="3_m8aer"]
+[ext_resource type="Script" uid="uid://crmdgtdikrnho" path="res://scenes/netuno/camera_2d.gd" id="5_fjiwo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0tvl"]
+atlas = ExtResource("1_f7shd")
+region = Rect2(0, 73, 50, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3qf3"]
+atlas = ExtResource("1_f7shd")
+region = Rect2(50, 73, 50, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojj5q"]
+atlas = ExtResource("1_f7shd")
+region = Rect2(100, 73, 50, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l38jt"]
+atlas = ExtResource("1_f7shd")
+region = Rect2(150, 73, 50, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i7qb"]
+atlas = ExtResource("1_f7shd")
+region = Rect2(200, 73, 50, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8aer"]
+atlas = ExtResource("1_mcdyq")
+region = Rect2(0, 114, 62, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjiwo"]
+atlas = ExtResource("1_mcdyq")
+region = Rect2(62, 114, 62, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdda7"]
+atlas = ExtResource("1_mcdyq")
+region = Rect2(124, 114, 62, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_socsj"]
+atlas = ExtResource("1_mcdyq")
+region = Rect2(186, 114, 62, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agr3s"]
+atlas = ExtResource("3_m8aer")
+region = Rect2(0, 76, 50, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e55h4"]
+atlas = ExtResource("3_m8aer")
+region = Rect2(50, 76, 50, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m657y"]
+atlas = ExtResource("3_m8aer")
+region = Rect2(100, 76, 50, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6trd"]
+atlas = ExtResource("3_m8aer")
+region = Rect2(150, 76, 50, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxpwb"]
+atlas = ExtResource("3_m8aer")
+region = Rect2(200, 76, 50, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d0tvl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0tvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3qf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojj5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l38jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i7qb")
+}],
+"loop": true,
+"name": &"andando",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8aer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjiwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdda7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_socsj")
+}],
+"loop": true,
+"name": &"ocioso",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agr3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e55h4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m657y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6trd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxpwb")
+}],
+"loop": true,
+"name": &"pulando",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m8aer"]
+size = Vector2(40, 56)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_m8aer")
+gravity_divider = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_d0tvl")
+animation = &"ocioso"
+autoplay = "ocioso"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m8aer")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("5_fjiwo")
