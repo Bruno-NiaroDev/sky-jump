@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dee7hejvu3rij"
-path="res://.godot/imported/nimbo_ocioso1.png-48c74bd0ad021018b75a7dd776dcdfab.ctex"
+uid="uid://lkl63vwep226"
+path="res://.godot/imported/nimbo_ocioso.png-3a8a483c0acb93a5e784908f12212ab6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/nimbo_ocioso1.png"
-dest_files=["res://.godot/imported/nimbo_ocioso1.png-48c74bd0ad021018b75a7dd776dcdfab.ctex"]
+source_file="res://assets/nimbo_ocioso.png"
+dest_files=["res://.godot/imported/nimbo_ocioso.png-3a8a483c0acb93a5e784908f12212ab6.ctex"]
 
 [params]
 
