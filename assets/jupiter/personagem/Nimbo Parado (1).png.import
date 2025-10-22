@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://couh1wxp3y4c"
-path="res://.godot/imported/Inimigo.png-46cb057a975cc321e5d01607ab7f345a.ctex"
+uid="uid://504q0lqpg1wk"
+path="res://.godot/imported/Nimbo Parado (1).png-b00ec8fd2d3eca95eb7143675e2484a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jupiter/Inimigo.png"
-dest_files=["res://.godot/imported/Inimigo.png-46cb057a975cc321e5d01607ab7f345a.ctex"]
+source_file="res://assets/jupiter/personagem/Nimbo Parado (1).png"
+dest_files=["res://.godot/imported/Nimbo Parado (1).png-b00ec8fd2d3eca95eb7143675e2484a6.ctex"]
 
 [params]
 
