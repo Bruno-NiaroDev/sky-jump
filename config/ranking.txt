@@ -1,0 +1,4 @@
+RANKED "1" {
+  name: "Bruno Rei",
+  score: 1005,
+}
