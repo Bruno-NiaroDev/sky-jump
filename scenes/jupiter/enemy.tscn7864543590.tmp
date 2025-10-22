@@ -1,0 +1,215 @@
+[gd_scene load_steps=12 format=3 uid="uid://t7od0ka32jbc"]
+
+[ext_resource type="Script" uid="uid://cdosmqiimkx6r" path="res://scripts/jupiter/enemy.gd" id="1_34jws"]
+[ext_resource type="Texture2D" uid="uid://bwt3yx46ilasr" path="res://assets/jupiter/Inimigo.png" id="1_ho334"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67poo"]
+size = Vector2(48.5, 33.5)
+
+[sub_resource type="Animation" id="Animation_c6xed"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ho334")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Resource" id="Resource_mnd5i"]
+metadata/__load_path__ = "res://assets/Characters/4 - Robo Pumpkin/Hurt (16 x 16).png"
+
+[sub_resource type="Animation" id="Animation_u1dkd"]
+resource_name = "hurt"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_mnd5i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Resource" id="Resource_s8ehp"]
+metadata/__load_path__ = "res://assets/Characters/4 - Robo Pumpkin/Standing (16 x 16).png"
+
+[sub_resource type="Animation" id="Animation_dpeei"]
+resource_name = "standing"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [SubResource("Resource_s8ehp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mnd5i"]
+resource_name = "walk1"
+length = 0.3
+
+[sub_resource type="Animation" id="Animation_s8ehp"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_ho334")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8yred"]
+_data = {
+&"RESET": SubResource("Animation_c6xed"),
+&"hurt": SubResource("Animation_u1dkd"),
+&"standing": SubResource("Animation_dpeei"),
+&"walk": SubResource("Animation_s8ehp"),
+&"walk1": SubResource("Animation_mnd5i")
+}
+
+[node name="enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_mask = 3
+script = ExtResource("1_34jws")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(32.499996, -33.422733)
+scale = Vector2(0.22779922, 0.12714037)
+texture = ExtResource("1_ho334")
+flip_h = true
+hframes = 3
+
+[node name="colission" type="CollisionShape2D" parent="."]
+position = Vector2(33.75, -33.25)
+shape = SubResource("RectangleShape2D_67poo")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8yred")
+}
+autoplay = "walk"
+speed_scale = 0.5
+
+[node name="wal_detectot" type="RayCast2D" parent="."]
+position = Vector2(15, -44)
+target_position = Vector2(-8, 1)
+collision_mask = 3
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
