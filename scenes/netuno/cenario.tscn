@@ -134,4 +134,22 @@ gravity_divider = 1.0
 position = Vector2(232, 304)
 
 [node name="elemento2" parent="elements" instance=ExtResource("3_5w5j3")]
-position = Vector2(472, 328)
+position = Vector2(360, 352)
+
+[node name="elemento3" parent="elements" instance=ExtResource("3_5w5j3")]
+position = Vector2(328, 224)
+
+[node name="elemento4" parent="elements" instance=ExtResource("3_5w5j3")]
+position = Vector2(280, 416)
+
+[node name="elemento5" parent="elements" instance=ExtResource("3_5w5j3")]
+position = Vector2(776, 160)
+
+[node name="elemento6" parent="elements" instance=ExtResource("3_5w5j3")]
+position = Vector2(1128, 160)
+
+[node name="elemento7" parent="elements" instance=ExtResource("3_5w5j3")]
+position = Vector2(1552, 256)
+
+[node name="elemento8" parent="elements" instance=ExtResource("3_5w5j3")]
+position = Vector2(1856, 128)
