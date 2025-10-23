@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlpkt4j7qi766"]
+
+[ext_resource type="Texture2D" uid="uid://c4lb0786t8yeh" path="res://assets/netuno/movimento_plataforma.png" id="1_jxrin"]
+[ext_resource type="Script" uid="uid://deyd6ymcjhrd7" path="res://scenes/netuno/movimento_plat.gd" id="1_uwvxc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uwvxc"]
+size = Vector2(96, 34)
+
+[node name="movimento_plat" type="Node2D"]
+script = ExtResource("1_uwvxc")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(47.50001, -71.5)
+scale = Vector2(0.1370056, 0.13135591)
+texture = ExtResource("1_jxrin")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+position = Vector2(48, -71)
+shape = SubResource("RectangleShape2D_uwvxc")
