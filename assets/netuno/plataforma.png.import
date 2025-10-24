@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxhij4d82a3ov"
-path="res://.godot/imported/elementos.png-8dba1629547c5e038b5a8b34357c24dc.ctex"
+uid="uid://dfxaj51elfqxd"
+path="res://.godot/imported/plataforma.png-9646fdc7efb5e3c330c041b71c0b46d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/netuno/elementos.png"
-dest_files=["res://.godot/imported/elementos.png-8dba1629547c5e038b5a8b34357c24dc.ctex"]
+source_file="res://assets/netuno/plataforma.png"
+dest_files=["res://.godot/imported/plataforma.png-9646fdc7efb5e3c330c041b71c0b46d9.ctex"]
 
 [params]
 
