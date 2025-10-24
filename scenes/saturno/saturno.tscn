@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://iik5yihfxath"]
+[gd_scene load_steps=8 format=4 uid="uid://iik5yihfxath"]
 
 [ext_resource type="Texture2D" uid="uid://w35yql0hso4u" path="res://assets/saturno/parallax/saturno_01.png" id="1_0cemh"]
-[ext_resource type="Texture2D" uid="uid://dfdseru2h8cew" path="res://assets/saturno/parallax/saturno_02.png" id="2_ftoso"]
-[ext_resource type="Texture2D" uid="uid://de8baocxtrfqx" path="res://assets/saturno/parallax/saturno_03.png" id="3_b8poi"]
-[ext_resource type="Texture2D" uid="uid://dh2fgbqg5rvof" path="res://assets/saturno/parallax/saturno_04.png" id="4_1p3y6"]
+[ext_resource type="Texture2D" uid="uid://300bd850ko36" path="res://assets/saturno/parallax/saturno_02.png" id="2_ftoso"]
+[ext_resource type="Texture2D" uid="uid://22c3vcd2ydg2" path="res://assets/saturno/parallax/saturno_04.png" id="4_1p3y6"]
 [ext_resource type="Texture2D" uid="uid://cfswtf4dwykl" path="res://assets/netuno/tiles_netuno2.png" id="5_h6m1h"]
 [ext_resource type="PackedScene" uid="uid://o6ndrf5b5tba" path="res://scenes/netuno/player.tscn" id="6_ftoso"]
 
@@ -51,6 +50,7 @@ sources/0 = SubResource("TileSetAtlasSource_6kego")
 position = Vector2(501, 375)
 
 [node name="01" type="Parallax2D" parent="bg"]
+scroll_scale = Vector2(0.4, 0.4)
 repeat_size = Vector2(1000, 0)
 repeat_times = 3
 
@@ -59,6 +59,7 @@ scale = Vector2(2, 1.5)
 texture = ExtResource("1_0cemh")
 
 [node name="02" type="Parallax2D" parent="bg"]
+scroll_scale = Vector2(0.5, 0.5)
 repeat_size = Vector2(1000, 0)
 repeat_times = 3
 
@@ -66,21 +67,13 @@ repeat_times = 3
 scale = Vector2(2, 1.5)
 texture = ExtResource("2_ftoso")
 
-[node name="03" type="Parallax2D" parent="bg"]
-repeat_size = Vector2(1000, 0)
-repeat_times = 3
-
-[node name="sprite" type="Sprite2D" parent="bg/03"]
-position = Vector2(0, 50.000015)
-scale = Vector2(2, 1.5)
-texture = ExtResource("3_b8poi")
-
 [node name="04" type="Parallax2D" parent="bg"]
+scroll_scale = Vector2(0.7, 0.7)
 repeat_size = Vector2(1000, 0)
 repeat_times = 3
 
 [node name="sprite" type="Sprite2D" parent="bg/04"]
-position = Vector2(-1, -42)
+position = Vector2(-118, -37)
 scale = Vector2(2, 1.5)
 texture = ExtResource("4_1p3y6")
 
@@ -88,7 +81,7 @@ texture = ExtResource("4_1p3y6")
 
 [node name="ground" type="TileMapLayer" parent="tilemaps"]
 position = Vector2(66, 631)
-tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAmAAAAAAABAAAAAAAnAAAAAAABAAAAAAAoAP//AAABAAAAAAApAP//AAABAAAAAAAqAP//AAABAAAAAAArAP//AAABAAAAAAAsAP//AAABAAAAAAAtAP//AAABAAAAAAAuAP//AAABAAAAAAAvAP//AAABAAAAAAAwAP//AAABAAAAAAAxAP//AAABAAAAAAAyAP//AAABAAAAAAAzAP//AAABAAAAAAA0AP//AAABAAAAAAA1AP//AAABAAAAAAA2AP//AAABAAAAAAA3AP//AAABAAAAAAA4AP//AAABAAAAAAA5AP//AAABAAAAAAA6AP//AAABAAAAAAA7AP//AAABAAAAAAA8AP//AAABAAAAAAA9AP//AAABAAAAAAA+AP//AAABAAAAAAA/AP//AAABAAAAAABAAP//AAABAAAAAABBAP//AAABAAAAAABCAP//AAABAAAAAABDAP//AAABAAAAAABEAP//AAABAAAAAABFAP//AAABAAAAAABGAP//AAABAAAAAABHAP//AAABAAAAAABIAP//AAABAAAAAABJAP7/AAABAAAAAABKAP7/AAABAAAAAABLAP7/AAABAAAAAABMAP7/AAABAAAAAABNAP7/AAABAAAAAABOAP7/AAABAAAAAABPAP7/AAABAAAAAABQAP7/AAABAAAAAABRAP7/AAABAAAAAABSAP7/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_nyfjd")
 
 [node name="player" parent="." instance=ExtResource("6_ftoso")]
