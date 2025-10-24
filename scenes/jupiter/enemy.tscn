@@ -1,53 +1,18 @@
-[gd_scene load_steps=11 format=3 uid="uid://t7od0ka32jbc"]
+[gd_scene load_steps=10 format=3 uid="uid://0xrqcda3miqd"]
 
-[ext_resource type="Script" uid="uid://cdosmqiimkx6r" path="res://scripts/jupiter/enemy.gd" id="1_34jws"]
-[ext_resource type="Texture2D" uid="uid://c05yk2wbg7h1n" path="res://assets/jupiter/personagem/Inimigo.png" id="1_ho334"]
+[ext_resource type="Script" path="res://scripts/jupiter/enemy.gd" id="1_34jws"]
+[ext_resource type="Texture2D" uid="uid://8od2k08enfwi" path="res://assets/jupiter/personagem/inimigo_walk.png" id="3_bmdlw"]
 [ext_resource type="PackedScene" uid="uid://b3huwmm105jow" path="res://scenes/jupiter/hitbox.tscn" id="3_mnd5i"]
-[ext_resource type="Texture2D" uid="uid://b7uby5il3eedv" path="res://assets/jupiter/personagem/inimigo hurt.png" id="3_s8ehp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mnd5i"]
-size = Vector2(28.999996, 41)
+size = Vector2(39.999996, 31)
 
-[sub_resource type="Animation" id="Animation_c6xed"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_ho334")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("texture:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("texture:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[sub_resource type="Animation" id="Animation_bmdlw"]
+resource_name = "hurt"
+length = 0.1
+loop_mode = 1
 
-[sub_resource type="Animation" id="Animation_s8ehp"]
+[sub_resource type="Animation" id="Animation_mnd5i"]
 resource_name = "walk"
 length = 0.3
 loop_mode = 1
@@ -61,53 +26,12 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("1_ho334")]
+"values": [ExtResource("3_bmdlw")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("texture:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [2]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("texture:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 1]
-}
-
-[sub_resource type="Animation" id="Animation_bmdlw"]
-resource_name = "hurt"
-length = 0.1
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("texture:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("3_s8ehp")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("texture:hframes")
+tracks/1/path = NodePath("texture:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -123,17 +47,56 @@ tracks/2/path = NodePath("texture:frame")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.033333335),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1]
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_s8ehp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_bmdlw")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8yred"]
 _data = {
-&"RESET": SubResource("Animation_c6xed"),
+&"RESET": SubResource("Animation_s8ehp"),
 &"hurt": SubResource("Animation_bmdlw"),
-&"walk": SubResource("Animation_s8ehp")
+&"walk": SubResource("Animation_mnd5i")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8ehp"]
@@ -144,14 +107,13 @@ collision_mask = 3
 script = ExtResource("1_34jws")
 
 [node name="texture" type="Sprite2D" parent="."]
-position = Vector2(33, -33.5)
-scale = Vector2(0.3846154, 0.2033195)
-texture = ExtResource("1_ho334")
-flip_h = true
+position = Vector2(37.229168, -42.828125)
+scale = Vector2(0.19383168, 0.17731313)
+texture = ExtResource("3_bmdlw")
 hframes = 3
 
 [node name="colission" type="CollisionShape2D" parent="."]
-position = Vector2(36.5, -30.5)
+position = Vector2(40.5, -39)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_mnd5i")
 
@@ -163,12 +125,12 @@ autoplay = "walk"
 speed_scale = 0.5
 
 [node name="wal_detectot" type="RayCast2D" parent="."]
-position = Vector2(22, -45)
+position = Vector2(23, -52)
 target_position = Vector2(-8, 1)
 collision_mask = 3
 
 [node name="wal_detectot2" type="RayCast2D" parent="."]
-position = Vector2(52.000004, -45.000004)
+position = Vector2(57.000004, -52)
 rotation = -2.8797934
 target_position = Vector2(-8, 1)
 collision_mask = 3
@@ -176,7 +138,7 @@ collision_mask = 3
 [node name="hitbox" parent="." instance=ExtResource("3_mnd5i")]
 
 [node name="collision2" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(34.5, -50.5)
+position = Vector2(40, -63)
 shape = SubResource("RectangleShape2D_s8ehp")
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

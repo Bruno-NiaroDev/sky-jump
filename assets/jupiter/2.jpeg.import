@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8aia01onywqf"
-path="res://.godot/imported/inimigo.png-3d5db15b31d9a0b4bb12ba74467bd5b8.ctex"
+uid="uid://pth588630r27"
+path="res://.godot/imported/2.jpeg-a57819fbc151124f2f8dea0225a3c752.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jupiter/personagem/inimigo.png"
-dest_files=["res://.godot/imported/inimigo.png-3d5db15b31d9a0b4bb12ba74467bd5b8.ctex"]
+source_file="res://assets/jupiter/2.jpeg"
+dest_files=["res://.godot/imported/2.jpeg-a57819fbc151124f2f8dea0225a3c752.ctex"]
 
 [params]
 
