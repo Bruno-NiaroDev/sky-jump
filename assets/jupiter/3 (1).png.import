@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwx5unlegy40h"
-path="res://.godot/imported/Nimbo Andando (1).png-31561d33211a2aeaee98d83d45fa39f9.ctex"
+uid="uid://b6aus0gey3kus"
+path="res://.godot/imported/3 (1).png-a808af9cedcd85e57ce422f7c187e155.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/jupiter/personagem/Nimbo Andando (1).png"
-dest_files=["res://.godot/imported/Nimbo Andando (1).png-31561d33211a2aeaee98d83d45fa39f9.ctex"]
+source_file="res://assets/jupiter/3 (1).png"
+dest_files=["res://.godot/imported/3 (1).png-a808af9cedcd85e57ce422f7c187e155.ctex"]
 
 [params]
 

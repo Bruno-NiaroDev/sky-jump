@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cslssg3fxnqf8"]
+[gd_scene load_steps=4 format=3 uid="uid://bb0fch1s5vxqv"]
 
 [ext_resource type="Script" uid="uid://c7xs5hx7tp1xf" path="res://scripts/jupiter/moving_platform_hgd.gd" id="1_lir8g"]
 [ext_resource type="Texture2D" uid="uid://dqi8lwejivs0h" path="res://assets/jupiter/Elemento Chao (1).png" id="1_wu70g"]
@@ -21,3 +21,4 @@ texture = ExtResource("1_wu70g")
 position = Vector2(160, 27)
 rotation = -1.5707964
 shape = SubResource("CapsuleShape2D_lir8g")
+one_way_collision = true
