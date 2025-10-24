@@ -1,0 +1,14 @@
+LEVEL "Mercury" {
+  gravity: 3.7,
+  minimum_to_be_collected: 5
+}
+
+LEVEL "Venus" {
+  gravity: 8.87,
+  minimum_to_be_collected: 7
+}
+
+LEVEL "Earth" {
+  gravity: 9.8,
+  minimum_to_be_collected: 10
+}

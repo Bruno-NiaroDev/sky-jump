@@ -147,8 +147,9 @@ position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_m8aer")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-limit_left = 0
-limit_top = -10000
-limit_right = 3000
-limit_bottom = 700
+limit_left = 1
+limit_top = -11
+limit_right = 2353
+limit_bottom = 705
+limit_smoothed = true
 script = ExtResource("5_fjiwo")
