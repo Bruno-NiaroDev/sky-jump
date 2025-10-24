@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7ep4sr602hwb"]
+[gd_scene load_steps=14 format=3 uid="uid://cb03rewjws81o"]
 
 [ext_resource type="Script" uid="uid://ygkmrda62ntn" path="res://scripts/jupiter/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://dwx5unlegy40h" path="res://assets/jupiter/personagem/Nimbo Andando (1).png" id="2_qhqgy"]
