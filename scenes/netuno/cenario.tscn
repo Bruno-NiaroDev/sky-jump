@@ -111,7 +111,8 @@ texture = ExtResource("1_lkhrt")
 8:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_63s7g"]
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_1pvn2")
 pattern_0 = SubResource("TileMapPattern_q5pf4")
 pattern_1 = SubResource("TileMapPattern_5w5j3")
