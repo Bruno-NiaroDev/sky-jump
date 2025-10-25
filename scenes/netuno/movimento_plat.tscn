@@ -7,9 +7,12 @@
 size = Vector2(143, 20)
 
 [node name="movimento_plat" type="Node2D"]
+light_mask = 0
+visibility_layer = 2
 script = ExtResource("1_uwvxc")
 
 [node name="plataforma" type="AnimatableBody2D" parent="."]
+collision_layer = 2
 
 [node name="chao" type="Sprite2D" parent="plataforma"]
 position = Vector2(161, -95)

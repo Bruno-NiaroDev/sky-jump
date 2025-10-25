@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://c25qgk4bjjbml"]
+
+[ext_resource type="Texture2D" uid="uid://bnk2dva1idg6h" path="res://assets/netuno/inimigo.png" id="1_wiq67"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wiq67"]
+atlas = ExtResource("1_wiq67")
+region = Rect2(0, 0, 63, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pr8n3"]
+atlas = ExtResource("1_wiq67")
+region = Rect2(63, 0, 63, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62blt"]
+atlas = ExtResource("1_wiq67")
+region = Rect2(126, 0, 63, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0cys"]
+atlas = ExtResource("1_wiq67")
+region = Rect2(189, 0, 63, 89)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktnts"]
+atlas = ExtResource("1_wiq67")
+region = Rect2(252, 0, 63, 89)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhnan"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wiq67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pr8n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62blt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0cys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ktnts")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxbj5"]
+radius = 16.0
+height = 64.0
+
+[node name="inimigo" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lhnan")
+frame_progress = 0.8847333
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_dxbj5")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="municao" type="Node2D" parent="."]
