@@ -133,6 +133,7 @@ animations = [{
 size = Vector2(44, 60)
 
 [node name="player" type="CharacterBody2D"]
+collision_mask = 2
 script = ExtResource("1_m8aer")
 gravity_divider = 0.5
 

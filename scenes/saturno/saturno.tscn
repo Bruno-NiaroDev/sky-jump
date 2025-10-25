@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=4 uid="uid://iik5yihfxath"]
+
+[ext_resource type="Texture2D" uid="uid://w35yql0hso4u" path="res://assets/saturno/parallax/saturno_01.png" id="1_0cemh"]
+[ext_resource type="Texture2D" uid="uid://300bd850ko36" path="res://assets/saturno/parallax/saturno_02.png" id="2_ftoso"]
+[ext_resource type="Texture2D" uid="uid://22c3vcd2ydg2" path="res://assets/saturno/parallax/saturno_04.png" id="4_1p3y6"]
+[ext_resource type="Texture2D" uid="uid://cfswtf4dwykl" path="res://assets/netuno/tiles_netuno2.png" id="5_h6m1h"]
+[ext_resource type="PackedScene" uid="uid://o6ndrf5b5tba" path="res://scenes/netuno/player.tscn" id="6_ftoso"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6kego"]
+texture = ExtResource("5_h6m1h")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nyfjd"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_6kego")
+
+[node name="saturno" type="Node2D"]
+
+[node name="bg" type="Node2D" parent="."]
+position = Vector2(501, 375)
+
+[node name="01" type="Parallax2D" parent="bg"]
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(1000, 0)
+repeat_times = 3
+
+[node name="sprite" type="Sprite2D" parent="bg/01"]
+scale = Vector2(2, 1.5)
+texture = ExtResource("1_0cemh")
+
+[node name="02" type="Parallax2D" parent="bg"]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(1000, 0)
+repeat_times = 3
+
+[node name="sprite" type="Sprite2D" parent="bg/02"]
+scale = Vector2(2, 1.5)
+texture = ExtResource("2_ftoso")
+
+[node name="04" type="Parallax2D" parent="bg"]
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(1000, 0)
+repeat_times = 3
+
+[node name="sprite" type="Sprite2D" parent="bg/04"]
+position = Vector2(-118, -37)
+scale = Vector2(2, 1.5)
+texture = ExtResource("4_1p3y6")
+
+[node name="tilemaps" type="Node2D" parent="."]
+
+[node name="ground" type="TileMapLayer" parent="tilemaps"]
+position = Vector2(66, 631)
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAAgAAEAAAAAAAAAAAAhAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAiAAAAAAAAAAAAAAAjAAAAAAAAAAAAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAmAAAAAAABAAAAAAAnAAAAAAABAAAAAAAoAP//AAABAAAAAAApAP//AAABAAAAAAAqAP//AAABAAAAAAArAP//AAABAAAAAAAsAP//AAABAAAAAAAtAP//AAABAAAAAAAuAP//AAABAAAAAAAvAP//AAABAAAAAAAwAP//AAABAAAAAAAxAP//AAABAAAAAAAyAP//AAABAAAAAAAzAP//AAABAAAAAAA0AP//AAABAAAAAAA1AP//AAABAAAAAAA2AP//AAABAAAAAAA3AP//AAABAAAAAAA4AP//AAABAAAAAAA5AP//AAABAAAAAAA6AP//AAABAAAAAAA7AP//AAABAAAAAAA8AP//AAABAAAAAAA9AP//AAABAAAAAAA+AP//AAABAAAAAAA/AP//AAABAAAAAABAAP//AAABAAAAAABBAP//AAABAAAAAABCAP//AAABAAAAAABDAP//AAABAAAAAABEAP//AAABAAAAAABFAP//AAABAAAAAABGAP//AAABAAAAAABHAP//AAABAAAAAABIAP//AAABAAAAAABJAP7/AAABAAAAAABKAP7/AAABAAAAAABLAP7/AAABAAAAAABMAP7/AAABAAAAAABNAP7/AAABAAAAAABOAP7/AAABAAAAAABPAP7/AAABAAAAAABQAP7/AAABAAAAAABRAP7/AAABAAAAAABSAP7/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_nyfjd")
+
+[node name="player" parent="." instance=ExtResource("6_ftoso")]
+position = Vector2(60, 616)
