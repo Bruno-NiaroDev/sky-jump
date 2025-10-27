@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c62muwy8sx5sf"]
+
+[sub_resource type="GDScript" id="GDScript_3ytno"]
+script/source = "extends RigidBody2D
+
+
+
+func _on_notifier_screen_exited() -> void:
+	queue_free()
+"
+
+[node name="box-pieces" type="RigidBody2D"]
+script = SubResource("GDScript_3ytno")
+
+[node name="texture" type="Sprite2D" parent="."]
+
+[node name="notifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

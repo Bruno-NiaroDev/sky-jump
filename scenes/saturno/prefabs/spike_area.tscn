@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5y56g77ikt0v"]
 
-[ext_resource type="Script" path="res://scripts/saturno/spike_area.gd" id="1_7v6pi"]
-[ext_resource type="Texture2D" uid="uid://dodrubd4llkw6" path="res://scenes/saturno/assets/tilesets/5 - Misc. universal tiles/spike.png" id="2_wjo7c"]
+[ext_resource type="Script" uid="uid://cdmyl1l07u3hj" path="res://scripts/common/spike_area.gd" id="1_7v6pi"]
+[ext_resource type="Texture2D" uid="uid://ce58m5tybpkj6" path="res://assets/commum/tilesets/spike.png" id="2_wjo7c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8rwr"]
 size = Vector2(8, 8)
