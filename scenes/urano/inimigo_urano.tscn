@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://s7edfnp572bi"]
+
+[ext_resource type="Script" uid="uid://dhu0qcugu18r3" path="res://scripts/urano/inimigo.gd" id="1_o3ve0"]
+[ext_resource type="Texture2D" uid="uid://kflcj1nfmwfv" path="res://assets/urano/inimigo-urano.png" id="1_u2nke"]
+[ext_resource type="PackedScene" uid="uid://cs2edqmv7lnv4" path="res://scenes/killzone.tscn" id="2_o3ve0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edgeu"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egyf1"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jckm"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csm84"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psro0"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(0, 25, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wup7c"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(24, 25, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxty7"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(72, 25, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucc7p"]
+atlas = ExtResource("1_u2nke")
+region = Rect2(48, 25, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ap62"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edgeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egyf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jckm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csm84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psro0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wup7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxty7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucc7p")
+}],
+"loop": true,
+"name": &"inimigo",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_33hq4"]
+size = Vector2(14.338324, 15.565333)
+
+[node name="Inimigo" type="Node2D"]
+script = ExtResource("1_o3ve0")
+
+[node name="InimigoUrano" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -4)
+sprite_frames = SubResource("SpriteFrames_1ap62")
+animation = &"inimigo"
+autoplay = "inimigo"
+frame_progress = 0.05094942
+
+[node name="Killzone" parent="." instance=ExtResource("2_o3ve0")]
+position = Vector2(23.000002, 48.000004)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(-53.06923, -4.081415)
+rotation = -1.0367254
+shape = SubResource("RectangleShape2D_33hq4")
+
+[node name="RayCastRigthUrano" type="RayCast2D" parent="."]
+target_position = Vector2(14, 0)
+
+[node name="RayCastLeftUrano" type="RayCast2D" parent="."]
+target_position = Vector2(-14, 0)

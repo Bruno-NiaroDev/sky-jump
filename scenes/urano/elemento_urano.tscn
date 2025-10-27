@@ -71,7 +71,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"metano",
-"speed": 10.0
+"speed": 15.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6iyg4"]
@@ -85,7 +85,9 @@ script = ExtResource("1_pnt02")
 sprite_frames = SubResource("SpriteFrames_23udh")
 animation = &"metano"
 autoplay = "metano"
-frame_progress = 0.48814806
+frame_progress = 0.57741445
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6iyg4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
