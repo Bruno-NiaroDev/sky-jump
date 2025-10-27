@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bav8tegcrxw7o"
-path="res://.godot/imported/Treasure_Chest (32 x 16).png-ce5b01320f8ae2c254232b1b9d3923a2.ctex"
+uid="uid://dfp5kxwsncyx1"
+path="res://.godot/imported/nimbo001.png-fbbaefffddd6a9e151ab620abb57cb89.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saturno/ui/Common Pick-ups/Treasure_Chest (32 x 16).png"
-dest_files=["res://.godot/imported/Treasure_Chest (32 x 16).png-ce5b01320f8ae2c254232b1b9d3923a2.ctex"]
+source_file="res://assets/nimbo001.png"
+dest_files=["res://.godot/imported/nimbo001.png-fbbaefffddd6a9e151ab620abb57cb89.ctex"]
 
 [params]
 

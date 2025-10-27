@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w33eof0dcla"
-path="res://.godot/imported/Health_Kit (16 x 16).png-95b12ecdc104d8ada325fa9db5078d94.ctex"
+uid="uid://fupw7q5bn0ex"
+path="res://.godot/imported/cristal.png-0b09b16f2d756d7ccb16e3020c6f0837.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saturno/ui/Common Pick-ups/Health_Kit (16 x 16).png"
-dest_files=["res://.godot/imported/Health_Kit (16 x 16).png-95b12ecdc104d8ada325fa9db5078d94.ctex"]
+source_file="res://assets/saturno/cristal/cristal.png"
+dest_files=["res://.godot/imported/cristal.png-0b09b16f2d756d7ccb16e3020c6f0837.ctex"]
 
 [params]
 

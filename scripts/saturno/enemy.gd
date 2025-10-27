@@ -8,7 +8,6 @@ var direction := -1
 @onready var wall_detector := $wall_detector as RayCast2D
 @onready var texture := $texture as Sprite2D
 @onready var anim := $anim as AnimationPlayer
-@export var enemy_score := 100
 
 
 
@@ -33,6 +32,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'hurt':
-		#Globals.score += enemy_score
 		queue_free()
 	
