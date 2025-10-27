@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://dt5mpj3qqv7nu"]
+
+[ext_resource type="Script" uid="uid://dylr5ob5nofjy" path="res://scripts/saturno/hud_manage.gd" id="1_ixhy7"]
+[ext_resource type="Texture2D" uid="uid://b52oummwd4kxi" path="res://assets/saturno/cristal/cristal (1).png" id="2_6gyff"]
+[ext_resource type="Texture2D" uid="uid://g5l4ttnva6dm" path="res://assets/saturno/cristal/cristal (2).png" id="3_01nfc"]
+[ext_resource type="Texture2D" uid="uid://cxciyru2dna2f" path="res://assets/saturno/cristal/cristal (3).png" id="4_glidm"]
+[ext_resource type="Texture2D" uid="uid://drhirj0ijbgow" path="res://assets/saturno/cristal/cristal (4).png" id="5_qjb8f"]
+[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="6_go3w4"]
+[ext_resource type="Texture2D" uid="uid://dfp5kxwsncyx1" path="res://assets/nimbo001.png" id="7_3fyh2"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_hk8bb"]
+frames = 4
+frame_0/texture = ExtResource("2_6gyff")
+frame_1/texture = ExtResource("3_01nfc")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_glidm")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_qjb8f")
+frame_3/duration = 1.0
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixhy7")
+
+[node name="clock_timer" type="Timer" parent="control"]
+autostart = true
+
+[node name="container" type="MarginContainer" parent="control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="crystal_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="crystal_icon" type="TextureRect" parent="control/container/crystal_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("AnimatedTexture_hk8bb")
+expand_mode = 2
+
+[node name="crystal_counter" type="Label" parent="control/container/crystal_container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_go3w4")
+theme_override_font_sizes/font_size = 24
+text = "0000"
+vertical_alignment = 1
+
+[node name="timer_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="timer_label" type="Label" parent="control/container/timer_container"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_go3w4")
+theme_override_font_sizes/font_size = 24
+text = "TIME:"
+vertical_alignment = 1
+
+[node name="timer_counter" type="Label" parent="control/container/timer_container"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_go3w4")
+theme_override_font_sizes/font_size = 24
+text = "00:00"
+vertical_alignment = 1
+
+[node name="life_container" type="HBoxContainer" parent="control/container"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="life_icon" type="TextureRect" parent="control/container/life_container"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("7_3fyh2")
+
+[node name="life_separator" type="Label" parent="control/container/life_container"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_go3w4")
+theme_override_font_sizes/font_size = 24
+text = "X"
+vertical_alignment = 1
+
+[node name="life_counter" type="Label" parent="control/container/life_container"]
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("6_go3w4")
+theme_override_font_sizes/font_size = 24
+text = "03"
+vertical_alignment = 1
+
+[connection signal="timeout" from="control/clock_timer" to="control" method="_on_clock_timer_timeout"]

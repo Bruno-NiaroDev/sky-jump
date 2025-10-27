@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://75iwloofv1a3"
-path="res://.godot/imported/01_Coin-Sprites.png-fbc0a1fec4352561e06a7f8542c69491.ctex"
+uid="uid://3h6quppki0iw"
+path="res://.godot/imported/nimbo01.png-187804f811e72e35f7907d121cbcbda6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saturno/ui/Common Pick-ups/01_Coin-Sprites.png"
-dest_files=["res://.godot/imported/01_Coin-Sprites.png-fbc0a1fec4352561e06a7f8542c69491.ctex"]
+source_file="res://assets/nimbo01.png"
+dest_files=["res://.godot/imported/nimbo01.png-187804f811e72e35f7907d121cbcbda6.ctex"]
 
 [params]
 
