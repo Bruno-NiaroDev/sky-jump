@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://be3lha83ovsok"]
 
-[ext_resource type="Script" uid="uid://dp1b521cd88x3" path="res://elemento_urano.gd" id="1_pnt02"]
+[ext_resource type="Script" uid="uid://dp1b521cd88x3" path="res://scripts/elemento_urano.gd" id="1_pnt02"]
 [ext_resource type="Texture2D" uid="uid://hhe8k6n7704p" path="res://assets/urano/elementos-urano.png" id="2_64tbn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_balhm"]

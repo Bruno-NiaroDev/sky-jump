@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://wnps2q34go6t"]
 
 [ext_resource type="Script" uid="uid://d4gt51jpfw6dy" path="res://scripts/jupiter/moving_platform.gd" id="1_o8xba"]
-[ext_resource type="Texture2D" uid="uid://dng02mahh31ky" path="res://assets/jupiter/Pedra (Chao).png" id="2_o8xba"]
+[ext_resource type="Texture2D" uid="uid://dng02mahh31ky" path="res://assets/jupiter/cenario/Pedra (Chao).png" id="2_o8xba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wsyo"]
 size = Vector2(96.25, 20)
@@ -10,6 +10,7 @@ size = Vector2(96.25, 20)
 script = ExtResource("1_o8xba")
 
 [node name="plataform" type="AnimatableBody2D" parent="."]
+collision_layer = 2
 
 [node name="chao" type="Sprite2D" parent="plataform"]
 position = Vector2(145.502, 56.000004)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://o6ndrf5b5tba"]
 
 [ext_resource type="Texture2D" uid="uid://bk0rnno867760" path="res://assets/nimboo.png" id="1_f7shd"]
-[ext_resource type="Script" uid="uid://s1myc3hrfl3r" path="res://scripts/jupiter/player.gd" id="1_m8aer"]
+[ext_resource type="Script" uid="uid://dep0pg0dhxex6" path="res://scenes/netuno/player.gd" id="1_m8aer"]
 [ext_resource type="Texture2D" uid="uid://lkl63vwep226" path="res://assets/nimbo_ocioso.png" id="3_fjiwo"]
 [ext_resource type="Texture2D" uid="uid://dv0gqgw6n5qq2" path="res://assets/nimbopulando.png" id="3_m8aer"]
 
