@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1weqjksyjw7x"
-path="res://.godot/imported/Heart_Spin (16 x 16).png-e48b8f681a50d5fe55a230c3bf147623.ctex"
+uid="uid://drhirj0ijbgow"
+path="res://.godot/imported/cristal (4).png-1763fb546ffa2c03d7dc498b4afead19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saturno/ui/Common Pick-ups/Heart_Spin (16 x 16).png"
-dest_files=["res://.godot/imported/Heart_Spin (16 x 16).png-e48b8f681a50d5fe55a230c3bf147623.ctex"]
+source_file="res://assets/saturno/cristal/cristal (4).png"
+dest_files=["res://.godot/imported/cristal (4).png-1763fb546ffa2c03d7dc498b4afead19.ctex"]
 
 [params]
 

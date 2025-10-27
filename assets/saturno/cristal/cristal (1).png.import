@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drquabhtp0sh2"
-path="res://.godot/imported/Small_Coin (16 x 16).png-7a2d9be7b27696c043b1232415b6f6bc.ctex"
+uid="uid://b52oummwd4kxi"
+path="res://.godot/imported/cristal (1).png-eaa41fb223adb8ad118144dd36a20664.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saturno/ui/Common Pick-ups/Small_Coin (16 x 16).png"
-dest_files=["res://.godot/imported/Small_Coin (16 x 16).png-7a2d9be7b27696c043b1232415b6f6bc.ctex"]
+source_file="res://assets/saturno/cristal/cristal (1).png"
+dest_files=["res://.godot/imported/cristal (1).png-eaa41fb223adb8ad118144dd36a20664.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://75iwloofv1a3"
-path="res://.godot/imported/01_Coin-Sprites.png-fbc0a1fec4352561e06a7f8542c69491.ctex"
+uid="uid://kflcj1nfmwfv"
+path="res://.godot/imported/inimigo-urano.png-b170a16e7d0199436efc0f3c19072eea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saturno/ui/Common Pick-ups/01_Coin-Sprites.png"
-dest_files=["res://.godot/imported/01_Coin-Sprites.png-fbc0a1fec4352561e06a7f8542c69491.ctex"]
+source_file="res://assets/urano/inimigo-urano.png"
+dest_files=["res://.godot/imported/inimigo-urano.png-b170a16e7d0199436efc0f3c19072eea.ctex"]
 
 [params]
 

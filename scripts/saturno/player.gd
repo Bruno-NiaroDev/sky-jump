@@ -7,7 +7,6 @@ var is_jumping := false
 var is_hurted := false
 var knockback_vector := Vector2.ZERO
 var direction
-var player_life := 5
 var can_double_jump := false  # ✅ Adicionado: controle de pulo duplo
 
 @onready var animation:= $anim as AnimatedSprite2D
@@ -74,8 +73,8 @@ func follow_camera(camera):
 
 # --- MECÂNICA DE DANO E VIDA ---
 func take_damage(knockback_force := Vector2.ZERO, duration := 0.25):
-	if player_life > 0:
-		player_life -= 1
+	if Globals.player_life > 0:
+		Globals.player_life -= 1
 	else:
 		queue_free()
 		emit_signal("player_has_died")
@@ -120,7 +119,13 @@ func _on_head_collider_body_entered(body: Node2D) -> void:
 
 # --- ZONA DE MORTE ---
 func handle_death_zone():
-	visible = false
-	set_physics_process(false)
-	await get_tree().create_timer(1.0).timeout
-	#Globals.respawn_player()
+	if Globals.player_life > 0:
+		Globals.player_life -= 1
+		visible = false
+		set_physics_process(false)
+		await get_tree().create_timer(1.0).timeout
+		Globals.respawn_player()
+		visible = true
+		set_physics_process(true)
+	else:
+		emit_signal("player_has_died")

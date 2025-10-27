@@ -9,11 +9,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#Globals.player_start_position = player_start_position
-	#Globals.player = player
+	Globals.player_start_position = player_start_position
+	Globals.player = player
 	player.follow_camera(camera)
-	#Globals.player.player_has_died.connect(game_over)
-	#control.time_is_up.connect(game_over)
+	Globals.player.player_has_died.connect(reload_game)
 	
 
 
@@ -26,13 +25,13 @@ func reload_game():
 	var player = player_scene.instantiate()
 	add_child(player)
 	control.reset_clock_timer()
-	#Globals.player = player
+	Globals.player = player
 	player.follow_camera(camera)
-	#Globals.player.player_has_died.connect(game_over)
-	#Globals.coins = 0
-	#Globals.score = 0
-	#Globals.player_life = 3
-	#Globals.respawn_player()
+	Globals.player.player_has_died.connect(game_over)
+	Globals.crystals = 0
+	Globals.player_life = 3
+	Globals.respawn_player()
 	
 func game_over():
-	get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+	print('você morreu')
+	#get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
