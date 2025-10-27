@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5y56g77ikt0v"]
+
+[ext_resource type="Script" path="res://scripts/saturno/spike_area.gd" id="1_7v6pi"]
+[ext_resource type="Texture2D" uid="uid://dodrubd4llkw6" path="res://scenes/saturno/assets/tilesets/5 - Misc. universal tiles/spike.png" id="2_wjo7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8rwr"]
+size = Vector2(8, 8)
+
+[node name="spike_area" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_7v6pi")
+
+[node name="texture" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(1, -4)
+texture = ExtResource("2_wjo7c")
+region_enabled = true
+region_rect = Rect2(0, 8, 8, 8)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(1, -4)
+shape = SubResource("RectangleShape2D_n8rwr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

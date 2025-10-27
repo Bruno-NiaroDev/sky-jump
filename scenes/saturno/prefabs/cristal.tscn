@@ -1,0 +1,101 @@
+[gd_scene load_steps=15 format=3 uid="uid://bk0r24rujhk"]
+
+[ext_resource type="Script" uid="uid://boxbu2s3a67u3" path="res://scripts/saturno/cristal.gd" id="1_h1t07"]
+[ext_resource type="Texture2D" uid="uid://boc4tsy1l21li" path="res://assets/saturno/ui/Effects/Yellow_Sparkle (16 x 16).png" id="2_0a3kx"]
+[ext_resource type="Texture2D" uid="uid://fupw7q5bn0ex" path="res://assets/saturno/cristal.png" id="3_0a3kx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vf3u8"]
+size = Vector2(15, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_utif8"]
+atlas = ExtResource("2_0a3kx")
+region = Rect2(0, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50vom"]
+atlas = ExtResource("2_0a3kx")
+region = Rect2(20, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qkfx8"]
+atlas = ExtResource("2_0a3kx")
+region = Rect2(40, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efq5c"]
+atlas = ExtResource("2_0a3kx")
+region = Rect2(60, 0, 20, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf3u8"]
+atlas = ExtResource("3_0a3kx")
+region = Rect2(64, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mskqi"]
+atlas = ExtResource("3_0a3kx")
+region = Rect2(128, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mawm"]
+atlas = ExtResource("3_0a3kx")
+region = Rect2(192, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsfwo"]
+atlas = ExtResource("3_0a3kx")
+region = Rect2(256, 0, 64, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mar61"]
+atlas = ExtResource("3_0a3kx")
+region = Rect2(0, 0, 81, 63)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h4etq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_utif8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50vom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qkfx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efq5c")
+}],
+"loop": false,
+"name": &"collect",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf3u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mskqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mawm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsfwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mar61")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="cristal" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_h1t07")
+
+[node name="colission" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_vf3u8")
+
+[node name="anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.7359363, -2)
+scale = Vector2(0.5854981, 0.54056615)
+sprite_frames = SubResource("SpriteFrames_h4etq")
+animation = &"idle"
+autoplay = "idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
