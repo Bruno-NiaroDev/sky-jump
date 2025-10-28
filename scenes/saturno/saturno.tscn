@@ -272,9 +272,6 @@ position = Vector2(1085, 677)
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="enemy" parent="enemies" instance=ExtResource("8_1p3y6")]
-position = Vector2(696, 640)
-
 [node name="enemy2" parent="enemies" instance=ExtResource("8_1p3y6")]
 position = Vector2(728, 376)
 
@@ -298,6 +295,9 @@ position = Vector2(3433, 680)
 
 [node name="enemy6" parent="enemies" instance=ExtResource("8_1p3y6")]
 position = Vector2(3102, 678)
+
+[node name="enemy" parent="enemies" instance=ExtResource("8_1p3y6")]
+position = Vector2(704, 646)
 
 [node name="platforms" type="Node2D" parent="."]
 scale = Vector2(1.5, 1)

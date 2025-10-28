@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b56sqh6uimloi" path="res://scenes/saturno/actors/enemy.gd" id="1_p4t6y"]
 [ext_resource type="Texture2D" uid="uid://cquhwb8hwbrw0" path="res://assets/saturno/characters/enemy/alien.png" id="2_2jd48"]
 [ext_resource type="Texture2D" uid="uid://dywba04l567p7" path="res://assets/saturno/characters/enemy/hurt.png" id="3_p4t6y"]
-[ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/saturno/prefabs/hitbox.tscn" id="5_u1dkd"]
+[ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/common/prefabs/hitbox.tscn" id="5_u1dkd"]
 
 [sub_resource type="Animation" id="Animation_s3mes"]
 length = 0.001

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dfxaj51elfqxd" path="res://assets/netuno/plataforma.png" id="5_63s7g"]
 [ext_resource type="PackedScene" uid="uid://dlpkt4j7qi766" path="res://scenes/netuno/movimento_plat.tscn" id="5_dpn7h"]
 [ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/netuno/fim.tscn" id="8_k68d3"]
-[ext_resource type="PackedScene" uid="uid://t7od0ka32jbc" path="res://scenes/netuno/enemie/enemy.tscn" id="9_jbr45"]
+[ext_resource type="PackedScene" uid="uid://t7od0ka32jbc" path="res://scenes/netuno/enemie/inimigo.tscn" id="9_jbr45"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_q5pf4"]
 tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65537, 131072, 0, 65538, 1, 65536, 65536, 65537, 65536, 65537, 131073, 65536, 65538, 2, 131072, 65536, 65538, 131072, 65537, 131074, 131072, 65538)
@@ -248,6 +248,5 @@ limit_bottom = 9999996
 
 [node name="inimigos" type="Node2D" parent="."]
 
-[node name="enemy" parent="inimigos" instance=ExtResource("9_jbr45")]
-position = Vector2(1090.0001, 596)
-scale = Vector2(3.5, 3.5)
+[node name="inimigo" parent="inimigos" instance=ExtResource("9_jbr45")]
+position = Vector2(311, 597)
