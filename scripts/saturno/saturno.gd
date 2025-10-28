@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var player := $player as CharacterBody2D
-@onready var player_scene = preload("res://scenes/saturno/actors/player.tscn")
+@onready var player_scene = preload("res://scenes/common/characters/player.tscn")
 @onready var camera := $camera as Camera2D
 @onready var control := $HUD/control as  Control
 @onready var player_start_position: Marker2D = $player_start_position
