@@ -7,7 +7,8 @@ const JUMP_VELOCITY = -400.0
 # DECLARAÇÃO DOS DETECTORES
 @onready var wall_detector := $wal_detectot as RayCast2D
 @onready var wall_detector2 := $wal_detectot2 as RayCast2D # <--- NOVO
-@onready var texture := $texture as Sprite2D	
+@onready var texture := $texture as Sprite2D
+@onready var anim := $anim as AnimationPlayer
 
 var direction:= -1 # -1 para esquerda, 1 para direita
 
@@ -41,3 +42,8 @@ func _physics_process(delta: float) -> void:
 
 	# 5. Movimentação
 	move_and_slide()
+
+
+func _on_anim_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "hurt":
+		queue_free()
