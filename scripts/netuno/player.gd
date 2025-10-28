@@ -14,7 +14,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Pulo
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY * 1.15
 			can_double_jump = true  # Permite o pulo duplo após sair do chão
@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			can_double_jump = false  # Pulo duplo usado
 
 	# Direção do movimento
-	var direction := Input.get_axis("ui_left", "ui_right")
+	var direction := Input.get_axis("move_left", "move_right")
 
 	if direction != 0:
 		velocity.x = direction * SPEED
