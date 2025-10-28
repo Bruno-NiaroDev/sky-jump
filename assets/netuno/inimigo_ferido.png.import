@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1gwyc40q05qv"
-path="res://.godot/imported/elemento.png-71f5b65ec2af92642c283e0367d6f6c3.ctex"
+uid="uid://cc0o2ksqnnlri"
+path="res://.godot/imported/inimigo_ferido.png-156cf6ee39322d115d65a18c3e87bc1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/netuno/elemento.png"
-dest_files=["res://.godot/imported/elemento.png-71f5b65ec2af92642c283e0367d6f6c3.ctex"]
+source_file="res://assets/netuno/inimigo_ferido.png"
+dest_files=["res://.godot/imported/inimigo_ferido.png-156cf6ee39322d115d65a18c3e87bc1b.ctex"]
 
 [params]
 

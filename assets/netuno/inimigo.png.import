@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1gwyc40q05qv"
-path="res://.godot/imported/elemento.png-71f5b65ec2af92642c283e0367d6f6c3.ctex"
+uid="uid://c3sj1vi8nm3l"
+path="res://.godot/imported/inimigo.png-fe3b457898807bcfd0ae4c2277ec147b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/netuno/elemento.png"
-dest_files=["res://.godot/imported/elemento.png-71f5b65ec2af92642c283e0367d6f6c3.ctex"]
+source_file="res://assets/netuno/inimigo.png"
+dest_files=["res://.godot/imported/inimigo.png-fe3b457898807bcfd0ae4c2277ec147b.ctex"]
 
 [params]
 
