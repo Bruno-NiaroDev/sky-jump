@@ -32,8 +32,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
-	print(anim_name)
 	if anim_name == 'hurt':
-		#Globals.score += enemy_score
 		queue_free()
 	

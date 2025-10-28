@@ -1,14 +1,14 @@
 [gd_scene load_steps=19 format=4 uid="uid://c2qa15kcp50d0"]
 
-[ext_resource type="Script" uid="uid://cai40661j77yj" path="res://scripts/netuno/cenario.gd" id="1_jbr45"]
-[ext_resource type="Texture2D" uid="uid://cfswtf4dwykl" path="res://assets/netuno/tiles_netuno2.png" id="1_lkhrt"]
-[ext_resource type="PackedScene" uid="uid://6cade50ioilp" path="res://scenes/common/characters/player.tscn" id="2_q5pf4"]
-[ext_resource type="PackedScene" uid="uid://cc1536nkbygh5" path="res://scenes/netuno/elemento.tscn" id="3_5w5j3"]
-[ext_resource type="PackedScene" uid="uid://bfdsqm5tkwrsp" path="res://scenes/netuno/netuno_fundo.tscn" id="4_1pvn2"]
-[ext_resource type="Texture2D" uid="uid://dfxaj51elfqxd" path="res://assets/netuno/plataforma.png" id="5_63s7g"]
-[ext_resource type="PackedScene" uid="uid://dlpkt4j7qi766" path="res://scenes/netuno/movimento_plat.tscn" id="5_dpn7h"]
-[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/netuno/fim.tscn" id="8_k68d3"]
-[ext_resource type="PackedScene" uid="uid://t7od0ka32jbc" path="res://scenes/netuno/enemie/inimigo.tscn" id="9_jbr45"]
+[ext_resource type="Script" uid="uid://cai40661j77yj" path="res://scripts/netuno/cenario.gd" id="1_axq4w"]
+[ext_resource type="PackedScene" uid="uid://bfdsqm5tkwrsp" path="res://scenes/netuno/netuno_fundo.tscn" id="2_y4w5r"]
+[ext_resource type="Texture2D" uid="uid://cfswtf4dwykl" path="res://assets/netuno/tiles_netuno2.png" id="3_v7lbv"]
+[ext_resource type="Texture2D" uid="uid://dfxaj51elfqxd" path="res://assets/netuno/plataforma.png" id="4_ufxva"]
+[ext_resource type="PackedScene" uid="uid://dlpkt4j7qi766" path="res://scenes/netuno/movimento_plat.tscn" id="5_jgen5"]
+[ext_resource type="PackedScene" uid="uid://6cade50ioilp" path="res://scenes/common/characters/player.tscn" id="6_85xkq"]
+[ext_resource type="PackedScene" uid="uid://cc1536nkbygh5" path="res://scenes/netuno/elemento.tscn" id="7_osb16"]
+[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/netuno/fim.tscn" id="8_mviw2"]
+[ext_resource type="PackedScene" uid="uid://c3wpqoxla5gis" path="res://scenes/netuno/inimigo/inimigo_netuno.tscn" id="9_y4w5r"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_q5pf4"]
 tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65537, 131072, 0, 65538, 1, 65536, 65536, 65537, 65536, 65537, 131073, 65536, 65538, 2, 131072, 65536, 65538, 131072, 65537, 131074, 131072, 65538)
@@ -26,7 +26,7 @@ tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65537, 131072, 0, 65538, 1, 
 tile_data = PackedInt32Array(0, 0, 196608, 65536, 0, 196609, 1, 65536, 196608, 65537, 65536, 196609, 2, 131072, 196608, 65538, 131072, 196609)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1pvn2"]
-texture = ExtResource("1_lkhrt")
+texture = ExtResource("3_v7lbv")
 0:0/next_alternative_id = 4
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -125,7 +125,7 @@ pattern_3 = SubResource("TileMapPattern_1pvn2")
 pattern_4 = SubResource("TileMapPattern_63s7g")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63s7g"]
-texture = ExtResource("5_63s7g")
+texture = ExtResource("4_ufxva")
 4:6/0 = 0
 5:6/0 = 0
 6:6/0 = 0
@@ -176,9 +176,9 @@ physics_layer_0/collision_mask = 0
 sources/6 = SubResource("TileSetAtlasSource_63s7g")
 
 [node name="netuno" type="Node2D"]
-script = ExtResource("1_jbr45")
+script = ExtResource("1_axq4w")
 
-[node name="netuno_fundo" parent="." instance=ExtResource("4_1pvn2")]
+[node name="netuno_fundo" parent="." instance=ExtResource("2_y4w5r")]
 
 [node name="Tiles" type="Node2D" parent="."]
 
@@ -191,53 +191,53 @@ position = Vector2(5, 0)
 tile_map_data = PackedByteArray("AAB6AB0AAQAEAAYAAAASABwABgAFAAcAAAANABEABgAFAAcAAABVABcABgADAAQAAABVABgABgADAAUAAABWABcABgAEAAQAAABWABgABgAEAAUAAABWABkABgAEAAYAAABXABgABgAFAAUAAABXABkABgAFAAYAAABXABoABgAFAAcAAABYABgABgAGAAUAAABYABkABgAGAAYAAABZABgABgAHAAUAAABZABkABgAHAAYAAABaABgABgAIAAUAAABaABkABgAIAAYAAABbABgABgAJAAUAAABbABkABgAJAAYAAABcABgABgAKAAUAAABcABkABgAKAAYAAABdABgABgALAAUAAABdABkABgALAAYAAABeABcABgAMAAQAAABeABgABgAMAAUAAABeABkABgAMAAYAAABbAA4ABgADAAQAAABbAA8ABgADAAUAAABcAA4ABgAEAAQAAABcAA8ABgAEAAUAAABcABAABgAEAAYAAABdAA8ABgAFAAUAAABdABAABgAFAAYAAABdABEABgAFAAcAAABeAA8ABgAGAAUAAABeABAABgAGAAYAAABfAA8ABgAHAAUAAABfABAABgAHAAYAAABgAA8ABgAIAAUAAABgABAABgAIAAYAAABhAA8ABgAJAAUAAABhABAABgAJAAYAAABiAA8ABgAKAAUAAABiABAABgAKAAYAAABjAA8ABgALAAUAAABjABAABgALAAYAAABkAA4ABgAMAAQAAABkAA8ABgAMAAUAAABkABAABgAMAAYAAABJAAkABgADAAQAAABJAAoABgADAAUAAABKAAkABgAEAAQAAABKAAoABgAEAAUAAABKAAsABgAEAAYAAABLAAoABgAFAAUAAABLAAsABgAFAAYAAABLAAwABgAFAAcAAABMAAoABgAGAAUAAABMAAsABgAGAAYAAABNAAoABgAHAAUAAABNAAsABgAHAAYAAABOAAoABgAIAAUAAABOAAsABgAIAAYAAABPAAoABgAJAAUAAABPAAsABgAJAAYAAABQAAoABgAKAAUAAABQAAsABgAKAAYAAABRAAoABgALAAUAAABRAAsABgALAAYAAABSAAkABgAMAAQAAABSAAoABgAMAAUAAABSAAsABgAMAAYAAAA6ABIABgAFAAcAAAAEABgABgADAAQAAAAEABkABgADAAUAAAAFABgABgAEAAQAAAAFABkABgAEAAUAAAAFABoABgAEAAYAAAAGABkABgAFAAUAAAAGABoABgAFAAYAAAAHABkABgAGAAUAAAAHABoABgAGAAYAAAAIABkABgAHAAUAAAAIABoABgAHAAYAAAAJABkABgAIAAUAAAAJABoABgAIAAYAAAAKABkABgAJAAUAAAAKABoABgAJAAYAAAALABkABgAKAAUAAAALABoABgAKAAYAAAAMABkABgALAAUAAAAMABoABgALAAYAAAANABgABgAMAAQAAAANABkABgAMAAUAAAANABoABgAMAAYAAAAAAA4ABgADAAQAAAAAAA8ABgADAAUAAAABAA4ABgAEAAQAAAABAA8ABgAEAAUAAAABABAABgAEAAYAAAACAA8ABgAFAAUAAAACABAABgAFAAYAAAADAA8ABgAGAAUAAAADABAABgAGAAYAAAAEAA8ABgAHAAUAAAAEABAABgAHAAYAAAAFAA8ABgAIAAUAAAAFABAABgAIAAYAAAAGAA8ABgAJAAUAAAAGABAABgAJAAYAAAAHAA8ABgAKAAUAAAAHABAABgAKAAYAAAAIAA8ABgALAAUAAAAIABAABgALAAYAAAAJAA4ABgAMAAQAAAAJAA8ABgAMAAUAAAAJABAABgAMAAYAAAAOABMABgADAAQAAAAOABQABgADAAUAAAAPABMABgAEAAQAAAAPABQABgAEAAUAAAAPABUABgAEAAYAAAAQABQABgAFAAUAAAAQABUABgAFAAYAAAAQABYABgAFAAcAAAARABQABgAGAAUAAAARABUABgAGAAYAAAASABQABgAHAAUAAAASABUABgAHAAYAAAATABQABgAIAAUAAAATABUABgAIAAYAAAAUABQABgAJAAUAAAAUABUABgAJAAYAAAAVABQABgAKAAUAAAAVABUABgAKAAYAAAAWABQABgALAAUAAAAWABUABgALAAYAAAAXABMABgAMAAQAAAAXABQABgAMAAUAAAAXABUABgAMAAYAAAAUABkABgADAAQAAAAUABoABgADAAUAAAAVABkABgAEAAQAAAAVABoABgAEAAUAAAAVABsABgAEAAYAAAAWABoABgAFAAUAAAAWABsABgAFAAYAAAAWABwABgAFAAcAAAAXABoABgAGAAUAAAAXABsABgAGAAYAAAAYABoABgAHAAUAAAAYABsABgAHAAYAAAAZABoABgAIAAUAAAAZABsABgAIAAYAAAAaABoABgAJAAUAAAAaABsABgAJAAYAAAAbABoABgAKAAUAAAAbABsABgAKAAYAAAAcABoABgALAAUAAAAcABsABgALAAYAAAAdABkABgAMAAQAAAAdABoABgAMAAUAAAAdABsABgAMAAYAAAA=")
 tile_set = SubResource("TileSet_d6pw3")
 
-[node name="movimento_plat" parent="." instance=ExtResource("5_dpn7h")]
+[node name="movimento_plat" parent="." instance=ExtResource("5_jgen5")]
 light_mask = 1
 visibility_layer = 1
 position = Vector2(1724, 507)
 move_speed = 100
 
-[node name="movimento_plat2" parent="." instance=ExtResource("5_dpn7h")]
+[node name="movimento_plat2" parent="." instance=ExtResource("5_jgen5")]
 light_mask = 1
 visibility_layer = 1
 position = Vector2(691, 366)
 move_speed = 100
 move_horizontal = true
 
-[node name="player" parent="." instance=ExtResource("2_q5pf4")]
+[node name="player" parent="." instance=ExtResource("6_85xkq")]
 position = Vector2(164, 582)
 
 [node name="elements" type="Node2D" parent="."]
 
-[node name="elemento" parent="elements" instance=ExtResource("3_5w5j3")]
+[node name="elemento" parent="elements" instance=ExtResource("7_osb16")]
 position = Vector2(104, 360)
 collision_layer = 2
 
-[node name="elemento2" parent="elements" instance=ExtResource("3_5w5j3")]
+[node name="elemento2" parent="elements" instance=ExtResource("7_osb16")]
 position = Vector2(2192, 304)
 collision_layer = 2
 
-[node name="elemento3" parent="elements" instance=ExtResource("3_5w5j3")]
+[node name="elemento3" parent="elements" instance=ExtResource("7_osb16")]
 position = Vector2(1840, 88)
 collision_layer = 2
 
-[node name="elemento4" parent="elements" instance=ExtResource("3_5w5j3")]
+[node name="elemento4" parent="elements" instance=ExtResource("7_osb16")]
 position = Vector2(1208, 112)
 collision_layer = 2
 
-[node name="elemento5" parent="elements" instance=ExtResource("3_5w5j3")]
+[node name="elemento5" parent="elements" instance=ExtResource("7_osb16")]
 position = Vector2(752, 168)
 collision_layer = 2
 
-[node name="elemento6" parent="elements" instance=ExtResource("3_5w5j3")]
+[node name="elemento6" parent="elements" instance=ExtResource("7_osb16")]
 position = Vector2(272, 280)
 collision_layer = 2
 
-[node name="elemento7" parent="elements" instance=ExtResource("3_5w5j3")]
+[node name="elemento7" parent="elements" instance=ExtResource("7_osb16")]
 position = Vector2(48, 192)
 collision_layer = 2
 
-[node name="fim" parent="." instance=ExtResource("8_k68d3")]
+[node name="fim" parent="." instance=ExtResource("8_mviw2")]
 position = Vector2(2304, 296)
 
 [node name="camera" type="Camera2D" parent="."]
@@ -248,5 +248,5 @@ limit_bottom = 9999996
 
 [node name="inimigos" type="Node2D" parent="."]
 
-[node name="inimigo" parent="inimigos" instance=ExtResource("9_jbr45")]
-position = Vector2(311, 597)
+[node name="inimigo_netuno" parent="inimigos" instance=ExtResource("9_y4w5r")]
+position = Vector2(344, 596)
