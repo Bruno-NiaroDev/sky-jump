@@ -1,10 +1,10 @@
 [gd_scene load_steps=25 format=3 uid="uid://6cade50ioilp"]
 
-[ext_resource type="Script" uid="uid://s1myc3hrfl3r" path="res://scripts/saturno/player.gd" id="1_chttk"]
-[ext_resource type="Texture2D" uid="uid://bk0rnno867760" path="res://assets/nimboo.png" id="2_cimwf"]
-[ext_resource type="Texture2D" uid="uid://lkl63vwep226" path="res://assets/nimbo_ocioso.png" id="3_bb55t"]
-[ext_resource type="Texture2D" uid="uid://dv0gqgw6n5qq2" path="res://assets/nimbopulando.png" id="4_21v38"]
-[ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/saturno/prefabs/hitbox.tscn" id="5_kjkj0"]
+[ext_resource type="Script" uid="uid://s1myc3hrfl3r" path="res://scripts/common/player.gd" id="1_chttk"]
+[ext_resource type="Texture2D" uid="uid://bk0rnno867760" path="res://assets/commum/player/nimboo.png" id="2_cimwf"]
+[ext_resource type="Texture2D" uid="uid://lkl63vwep226" path="res://assets/commum/player/nimbo_ocioso.png" id="3_bb55t"]
+[ext_resource type="Texture2D" uid="uid://dv0gqgw6n5qq2" path="res://assets/commum/player/nimbopulando.png" id="4_21v38"]
+[ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/common/prefabs/hitbox.tscn" id="5_kjkj0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0tvl"]
 atlas = ExtResource("2_cimwf")
@@ -138,7 +138,7 @@ size = Vector2(30, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33vod"]
 size = Vector2(26, 5)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 86
 script = ExtResource("1_chttk")
 
