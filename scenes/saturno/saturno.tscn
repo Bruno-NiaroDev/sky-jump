@@ -160,14 +160,6 @@ texture = ExtResource("4_1p3y6")
 [node name="spikes" type="Node2D" parent="."]
 position = Vector2(0, -2)
 
-[node name="spike_area" parent="spikes" instance=ExtResource("5_dymn8")]
-position = Vector2(1031, 697)
-repeat_object = 6
-
-[node name="spike_area2" parent="spikes" instance=ExtResource("5_dymn8")]
-position = Vector2(1132, 696)
-repeat_object = 6
-
 [node name="spike_area3" parent="spikes" instance=ExtResource("5_dymn8")]
 position = Vector2(1195, 40)
 repeat_object = 18
@@ -179,6 +171,14 @@ repeat_object = 16
 [node name="spike_area5" parent="spikes" instance=ExtResource("5_dymn8")]
 position = Vector2(2946, 680)
 repeat_object = 16
+
+[node name="spike_area" parent="spikes" instance=ExtResource("5_dymn8")]
+position = Vector2(1034, 696)
+repeat_object = 6
+
+[node name="spike_area2" parent="spikes" instance=ExtResource("5_dymn8")]
+position = Vector2(1130, 696)
+repeat_object = 6
 
 [node name="tilemaps" type="Node2D" parent="."]
 

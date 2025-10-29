@@ -28,7 +28,7 @@ func reload_game():
 	Globals.player = player
 	player.follow_camera(camera)
 	Globals.player.player_has_died.connect(game_over)
-	Globals.crystals = 0
+	Globals.elements = 0
 	Globals.player_life = 3
 	Globals.respawn_player()
 	
