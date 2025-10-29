@@ -1,7 +1,7 @@
 extends Area2D
 
 @onready var animation:= $anim as AnimatedSprite2D
-var crystals := 1
+var cristals := 1
 
 func _ready() -> void:
 	pass # Replace with function body.
@@ -16,7 +16,7 @@ func _on_body_entered(body: Node2D) -> void:
 	animation.play("collect")
 	# Evita a colisão dupla de moeda
 	await $colission.call_deferred("queue_free")
-	Globals.crystals += crystals
+	Globals.elements += cristals
 	
 
 
