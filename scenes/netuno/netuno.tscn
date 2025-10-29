@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c2qa15kcp50d0"]
+[gd_scene load_steps=23 format=4 uid="uid://c2qa15kcp50d0"]
 
 [ext_resource type="Script" uid="uid://cai40661j77yj" path="res://scripts/netuno/cenario.gd" id="1_axq4w"]
 [ext_resource type="PackedScene" uid="uid://bfdsqm5tkwrsp" path="res://scenes/netuno/netuno_fundo.tscn" id="2_y4w5r"]
@@ -11,18 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://cc1536nkbygh5" path="res://scenes/netuno/elemento.tscn" id="7_osb16"]
 [ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/netuno/fim.tscn" id="8_mviw2"]
 [ext_resource type="PackedScene" uid="uid://wc342fsjdrg2" path="res://scenes/netuno/enemie/enemy.tscn" id="9_y4w5r"]
+[ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="12_jgen5"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_q5pf4"]
 tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65537, 131072, 0, 65538, 1, 65536, 65536, 65537, 65536, 65537, 131073, 65536, 65538, 2, 131072, 65536, 65538, 131072, 65537, 131074, 131072, 65538)
 
-[sub_resource type="TileMapPattern" id="TileMapPattern_5w5j3"]
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_lkhrt"]
-
 [sub_resource type="TileMapPattern" id="TileMapPattern_1pvn2"]
 tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65537, 131072, 0, 65538, 1, 65536, 65536, 65537, 65536, 65537, 131073, 65536, 65538, 2, 131072, 65536, 65538, 131072, 65537, 131074, 131072, 65538)
-
-[sub_resource type="TileMapPattern" id="TileMapPattern_63s7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1pvn2"]
 texture = ExtResource("3_v7lbv")
@@ -118,10 +113,7 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_1pvn2")
 pattern_0 = SubResource("TileMapPattern_q5pf4")
-pattern_1 = SubResource("TileMapPattern_5w5j3")
-pattern_2 = SubResource("TileMapPattern_lkhrt")
-pattern_3 = SubResource("TileMapPattern_1pvn2")
-pattern_4 = SubResource("TileMapPattern_63s7g")
+pattern_1 = SubResource("TileMapPattern_1pvn2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_63s7g"]
 texture = ExtResource("4_ufxva")
@@ -335,10 +327,11 @@ distance = 550.0
 move_horizontal = true
 
 [node name="fim" parent="." instance=ExtResource("8_mviw2")]
-position = Vector2(4032, 454)
+position = Vector2(4026, 467)
+scale = Vector2(1.5, 1.5)
 
 [node name="player" parent="." instance=ExtResource("6_85xkq")]
-position = Vector2(56, 457)
+position = Vector2(3880, 480)
 
 [node name="camera" type="Camera2D" parent="."]
 offset = Vector2(0, -200)
@@ -402,3 +395,5 @@ scale = Vector2(3.5, 3.5)
 [node name="enemy3" parent="inimigos" instance=ExtResource("9_y4w5r")]
 position = Vector2(3620.0002, 194)
 scale = Vector2(3.5, 3.5)
+
+[node name="HUD" parent="." instance=ExtResource("12_jgen5")]

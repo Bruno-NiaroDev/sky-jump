@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cc1536nkbygh5"]
 
 [ext_resource type="Texture2D" uid="uid://b1gwyc40q05qv" path="res://assets/netuno/elemento.png" id="1_d7wxs"]
-[ext_resource type="Script" uid="uid://dhcy2nln1y613" path="res://scripts/netuno/elemento.gd" id="1_voiob"]
+[ext_resource type="Script" uid="uid://cucbyov66os44" path="res://scripts/netuno/elemento.gd" id="1_voiob"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_voiob"]
 atlas = ExtResource("1_d7wxs")
