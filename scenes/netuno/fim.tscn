@@ -5,33 +5,33 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fak4q"]
 atlas = ExtResource("2_k3wl5")
-region = Rect2(70, 0, 70, 126)
+region = Rect2(70, 0, 70, 167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5bea8"]
 atlas = ExtResource("2_k3wl5")
-region = Rect2(140, 0, 70, 126)
+region = Rect2(140, 0, 70, 167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifejo"]
 atlas = ExtResource("2_k3wl5")
-region = Rect2(210, 0, 70, 126)
+region = Rect2(210, 0, 70, 167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkklx"]
 atlas = ExtResource("2_k3wl5")
-region = Rect2(280, 0, 70, 126)
+region = Rect2(280, 0, 70, 167)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvuaw"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_fak4q")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_5bea8")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_ifejo")
 }, {
-"duration": 1.0,
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_nkklx")
 }],
 "loop": true,
@@ -39,8 +39,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_apni4"]
-radius = 25.019993
+[sub_resource type="CircleShape2D" id="CircleShape2D_qvuaw"]
+radius = 23.323807
 
 [node name="fim" type="Area2D"]
 collision_layer = 64
@@ -49,10 +49,11 @@ script = ExtResource("1_vjaed")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qvuaw")
 autoplay = "default"
+frame_progress = 0.7988493
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 21)
-shape = SubResource("CircleShape2D_apni4")
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_qvuaw")
 debug_color = Color(0, 0.63892627, 0.37629008, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
