@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://s7edfnp572bi"]
+[gd_scene load_steps=12 format=3 uid="uid://s7edfnp572bi"]
 
 [ext_resource type="Script" uid="uid://dhu0qcugu18r3" path="res://scripts/urano/inimigo.gd" id="1_o3ve0"]
 [ext_resource type="Texture2D" uid="uid://kflcj1nfmwfv" path="res://assets/urano/inimigo-urano.png" id="1_u2nke"]
-[ext_resource type="PackedScene" uid="uid://cs2edqmv7lnv4" path="res://scenes/killzone.tscn" id="2_o3ve0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_edgeu"]
 atlas = ExtResource("1_u2nke")
@@ -68,10 +67,9 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_33hq4"]
-size = Vector2(14.338324, 15.565333)
-
 [node name="Inimigo" type="Node2D"]
+light_mask = 4
+visibility_layer = 3
 script = ExtResource("1_o3ve0")
 
 [node name="InimigoUrano" type="AnimatedSprite2D" parent="."]
@@ -81,16 +79,10 @@ animation = &"inimigo"
 autoplay = "inimigo"
 frame_progress = 0.05094942
 
-[node name="Killzone" parent="." instance=ExtResource("2_o3ve0")]
-position = Vector2(23.000002, 48.000004)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(-53.06923, -4.081415)
-rotation = -1.0367254
-shape = SubResource("RectangleShape2D_33hq4")
-
 [node name="RayCastRigthUrano" type="RayCast2D" parent="."]
 target_position = Vector2(14, 0)
+collision_mask = 6
 
 [node name="RayCastLeftUrano" type="RayCast2D" parent="."]
 target_position = Vector2(-14, 0)
+collision_mask = 6
