@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2qhf13ekiv37"]
+
+[ext_resource type="Script" uid="uid://cjn6wt3wyc78p" path="res://scripts/netuno/hitbox.gd" id="1_4n7x6"]
+
+[node name="hitbox" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_4n7x6")
