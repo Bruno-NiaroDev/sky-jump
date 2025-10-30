@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cynn25xd1f2co"]
+
+[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="1_lyt15"]
+
+[resource]
+default_font = ExtResource("1_lyt15")
+Label/colors/font_color = Color(0.5429854, 0.42344072, 0.96711904, 1)
+Label/colors/font_outline_color = Color(0.3886132, 0.1907815, 0.81390285, 1)
+Label/constants/outline_size = 5
+Label/font_sizes/font_size = 38
+Label/fonts/font = ExtResource("1_lyt15")
