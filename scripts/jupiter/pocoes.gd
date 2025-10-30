@@ -1,18 +1,25 @@
 extends Area2D
 
-
+@onready var animation:= $anim as AnimatedSprite2D
+var pocoes := 1
 
 func _ready() -> void:
-	pass
-	
-	
-	
-func  _process(delta: float) -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
 	pass
 
 
 func _on_body_entered(body: Node2D) -> void:
-	$anim.play("collect")
+	animation.play("collect")
+	# Evita a colisão dupla de moeda
+	await $collision.call_deferred("queue_free")
+	Globals.elements += pocoes
 	
+
+
 func _on_anim_animation_finished() -> void:
-	queue_free()
+	if animation.animation == "collect":
+		queue_free()
