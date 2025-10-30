@@ -1,6 +1,6 @@
 extends Node
 
-var crystals := 0
+var elements := 0
 var player_life := 3
 
 var player = null
