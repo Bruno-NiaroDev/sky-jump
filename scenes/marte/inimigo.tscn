@@ -1,0 +1,66 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmakhyxae02mv"]
+
+[ext_resource type="Texture2D" uid="uid://0udqjjjv30an" path="res://assets/marte/inimigo.png" id="1_2as3a"]
+[ext_resource type="Script" uid="uid://daydmfxi6f1rk" path="res://scenes/marte/inimigo.gd" id="1_j0b2b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0b2b"]
+atlas = ExtResource("1_2as3a")
+region = Rect2(0, 0, 147, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b0dt"]
+atlas = ExtResource("1_2as3a")
+region = Rect2(147, 0, 147, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6wif"]
+atlas = ExtResource("1_2as3a")
+region = Rect2(294, 0, 147, 313)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm2f0"]
+atlas = ExtResource("1_2as3a")
+region = Rect2(441, 0, 147, 313)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvu54"]
+animations = [{
+"frames": [{
+"duration": 1.81,
+"texture": SubResource("AtlasTexture_j0b2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b0dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6wif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm2f0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8kynk"]
+radius = 26.0
+height = 80.0
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(33, 33)
+script = ExtResource("1_j0b2b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(52.000004, 5.000004)
+scale = Vector2(0.35884354, 0.29792333)
+sprite_frames = SubResource("SpriteFrames_dvu54")
+autoplay = "default"
+frame_progress = 0.37943143
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(47, 20)
+shape = SubResource("CapsuleShape2D_8kynk")
+
+[node name="LeftBound" type="Marker2D" parent="."]
+position = Vector2(-11, 46)
+
+[node name="RightBound" type="Marker2D" parent="."]
+position = Vector2(106, 55)

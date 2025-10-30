@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://iks5786brlct"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bgck3"]
+radius = 30.0
+height = 82.0
+
+[node name="player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_bgck3")
+disabled = true
