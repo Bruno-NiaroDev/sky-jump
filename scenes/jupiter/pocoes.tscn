@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://fsd8xv4sv3fh"]
 
 [ext_resource type="Texture2D" uid="uid://cvp7haywpm7gd" path="res://assets/jupiter/elemento_coletavel/Poçoes (1).png" id="1_42doc"]
-[ext_resource type="Script" uid="uid://d0c56yws2td2c" path="res://scripts/jupiter/pocoes.gd" id="1_sex28"]
+[ext_resource type="Script" uid="uid://dntv6u8f2mjqv" path="res://scripts/jupiter/pocoes.gd" id="1_sex28"]
 [ext_resource type="Texture2D" uid="uid://d1c5inbgsr8vq" path="res://assets/jupiter/elemento_coletavel/efeito_pocao.png" id="2_tel8a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ru8sw"]
@@ -93,7 +93,7 @@ scale = Vector2(0.16799995, 0.15699999)
 sprite_frames = SubResource("SpriteFrames_7lu2h")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(47.5, -255.375)
 shape = SubResource("CircleShape2D_vt6if")
 
