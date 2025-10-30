@@ -184,7 +184,7 @@ scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1280, 0)
 
 [node name="fundo" type="Sprite2D" parent="Fundo2/ParallaxFundo"]
-position = Vector2(12, 1.9999999)
+position = Vector2(12, -2.9999995)
 scale = Vector2(0.96875, 0.82649475)
 texture = ExtResource("2_fsssu")
 centered = false
@@ -195,21 +195,21 @@ repeat_size = Vector2(686, 0)
 repeat_times = 3
 
 [node name="horizonte" type="Sprite2D" parent="Fundo2/ParallaxHorizonte"]
-position = Vector2(519.82965, 439.0113)
+position = Vector2(519.8296, 415.01132)
 scale = Vector2(0.86007607, 0.556)
 texture = ExtResource("7_3j6vt")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Fundo2"]
-position = Vector2(303.00003, 663.00006)
+position = Vector2(303.00003, 624)
 scale = Vector2(0.28146416, 0.16746548)
 texture = ExtResource("8_3j6vt")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Fundo2"]
-position = Vector2(911.99994, 665)
+position = Vector2(911.99994, 634)
 scale = Vector2(0.43798926, 0.17943396)
 texture = ExtResource("8_3j6vt")
 
 [node name="Sprite2D" type="Sprite2D" parent="Fundo2"]
-position = Vector2(1731.0001, 659)
+position = Vector2(1731, 626)
 scale = Vector2(0.5029298, 0.16699219)
 texture = ExtResource("8_3j6vt")
