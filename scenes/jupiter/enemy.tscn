@@ -144,8 +144,15 @@ collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_p4t6y")
 
-[node name="wall_detector" type="RayCast2D" parent="."]
+[node name="wall_left" type="RayCast2D" parent="."]
 position = Vector2(0, -5)
+target_position = Vector2(-10, 0)
+collision_mask = 6
+hit_from_inside = true
+
+[node name="wall_right" type="RayCast2D" parent="."]
+position = Vector2(10.5, -5)
+rotation = 3.1415927
 target_position = Vector2(-10, 0)
 collision_mask = 6
 hit_from_inside = true
@@ -163,7 +170,7 @@ texture = ExtResource("2_mnd5i")
 hframes = 5
 
 [node name="colission" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, -9.999996)
+position = Vector2(4.999998, -9)
 rotation = 1.5638691
 scale = Vector2(0.9999995, 0.9999995)
 shape = SubResource("RectangleShape2D_gr4p8")
