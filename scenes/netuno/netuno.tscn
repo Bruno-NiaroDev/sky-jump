@@ -327,7 +327,7 @@ distance = 550.0
 move_horizontal = true
 
 [node name="fim" parent="." instance=ExtResource("8_mviw2")]
-position = Vector2(4026, 467)
+position = Vector2(4028, 473)
 scale = Vector2(1.5, 1.5)
 
 [node name="player" parent="." instance=ExtResource("6_85xkq")]
