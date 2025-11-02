@@ -139,7 +139,7 @@ size = Vector2(30, 34)
 size = Vector2(26, 5)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
-collision_mask = 86
+collision_mask = 94
 script = ExtResource("1_chttk")
 
 [node name="anim" type="AnimatedSprite2D" parent="."]
