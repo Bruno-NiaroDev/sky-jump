@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfwss1qqr6jfl"]
+[gd_scene load_steps=13 format=3 uid="uid://dfwss1qqr6jfl"]
 
 [ext_resource type="Script" uid="uid://bur3thxg2pdq2" path="res://scripts/common/menu.gd" id="1_w6t7d"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_t076g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://rbyh38ikqedj" path="res://shaders/reset_separator_color.tres" id="4_gq33n"]
 [ext_resource type="Texture2D" uid="uid://12i03in4xkfb" path="res://assets/menus/logo.png" id="4_w6t7d"]
 [ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="7_a2pm3"]
+[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="7_gq33n"]
 
 [sub_resource type="Animation" id="Animation_vt17n"]
 length = 0.001
@@ -139,6 +140,7 @@ theme = ExtResource("2_t076g")
 texture = ExtResource("4_w6t7d")
 
 [node name="buttons" type="HBoxContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 421.0
 offset_top = 450.0
@@ -200,7 +202,63 @@ size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
 text = "   RANKING   "
 
+[node name="form" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.5
+offset_top = 84.0
+offset_right = 69.5
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSeparator" type="VSeparator" parent="form"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme = ExtResource("4_gq33n")
+
+[node name="label" type="Label" parent="form"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("7_gq33n")
+theme_override_font_sizes/font_size = 21
+text = "Digite o seu nome:"
+
+[node name="input" type="LineEdit" parent="form"]
+layout_mode = 2
+
+[node name="VSeparator2" type="VSeparator" parent="form"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme = ExtResource("4_gq33n")
+
+[node name="error_label" type="Label" parent="form"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.99359244, 0.010503309, 2.117753e-06, 1)
+theme_override_fonts/font = ExtResource("7_gq33n")
+theme_override_font_sizes/font_size = 19
+text = "O nome é obrigatório!"
+
+[node name="VSeparator3" type="VSeparator" parent="form"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme = ExtResource("4_gq33n")
+
+[node name="confirm_btn" type="Button" parent="form"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("7_a2pm3")
+text = "JOGAR AGORA!"
+
 [connection signal="pressed" from="buttons/VBoxContainer2/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer2/quit_btn" to="." method="_on_quit_btn_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer3/load_btn" to="." method="_on_load_btn_pressed"]
 [connection signal="pressed" from="buttons/VBoxContainer3/ranking_btn" to="." method="_on_ranking_btn_pressed"]
+[connection signal="pressed" from="form/confirm_btn" to="." method="_on_confirm_btn_pressed"]
