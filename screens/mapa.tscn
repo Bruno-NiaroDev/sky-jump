@@ -1,39 +1,87 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjbt5dy4bm7vp"]
+[gd_scene load_steps=13 format=3 uid="uid://bjbt5dy4bm7vp"]
 
-[ext_resource type="Script" uid="uid://drngmj385vb6g" path="res://scripts/jupiter/jupiter_intro.gd" id="1_tigah"]
-[ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_p2uny"]
-[ext_resource type="Texture2D" uid="uid://codet2ubbom1u" path="res://assets/menus/mapa_bg.png" id="3_ydmw1"]
-[ext_resource type="Texture2D" uid="uid://oso7ton63asi" path="res://assets/netuno/netuno.png" id="4_3v431"]
-[ext_resource type="Texture2D" uid="uid://bflrh4sr1m0uf" path="res://assets/netuno/netuno_2.png" id="5_3v431"]
+[ext_resource type="Script" uid="uid://cxom1lgm5i646" path="res://scripts/common/mapa.gd" id="1_a4p3b"]
+[ext_resource type="PackedScene" uid="uid://c4pkuhd8g0tta" path="res://screens/planet_btn.tscn" id="2_gcjra"]
+[ext_resource type="Texture2D" uid="uid://c82pnhepxts7y" path="res://assets/menus/mapa_bg.png" id="3_ydmw1"]
+[ext_resource type="Texture2D" uid="uid://cspm0q82c1c3e" path="res://assets/marte/marte.png" id="4_3v431"]
+[ext_resource type="Texture2D" uid="uid://c72vb1jwfimy7" path="res://assets/urano/urano.png" id="4_p2uny"]
+[ext_resource type="Texture2D" uid="uid://oso7ton63asi" path="res://assets/netuno/netuno.png" id="4_ydmw1"]
+[ext_resource type="Texture2D" uid="uid://dsraut7d6aa0i" path="res://assets/saturno/saturno.png" id="5_4qju7"]
+[ext_resource type="Texture2D" uid="uid://owohsfau4e4w" path="res://assets/jupiter/jupiter.png" id="6_kicus"]
+[ext_resource type="Theme" uid="uid://cynn25xd1f2co" path="res://shaders/title_intro_theme.tres" id="8_4qju7"]
+[ext_resource type="Texture2D" uid="uid://dqvudkqsmpaji" path="res://assets/menus/terra.png" id="9_0oqdb"]
+[ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="9_kicus"]
+[ext_resource type="Theme" uid="uid://col8eqmnmim6d" path="res://shaders/planet_btn.tres" id="10_6ixcv"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 4
-script = ExtResource("1_tigah")
+[node name="map_screen" type="Node2D"]
+script = ExtResource("1_a4p3b")
 
-[node name="bg" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_p2uny")
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_ydmw1")
-expand_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 268.0
-offset_right = 145.0
-offset_bottom = 404.0
-texture_normal = ExtResource("4_3v431")
-texture_hover = ExtResource("5_3v431")
+[node name="planets" type="Node2D" parent="."]
+
+[node name="netuno_btn" parent="planets" instance=ExtResource("2_gcjra")]
+position = Vector2(104, 332)
+planet_sprite = ExtResource("4_ydmw1")
+planet_key = "netuno"
+
+[node name="urano_btn" parent="planets" instance=ExtResource("2_gcjra")]
+position = Vector2(317, 332)
+planet_name = "URANO"
+planet_sprite = ExtResource("4_p2uny")
+planet_key = "urano"
+
+[node name="saturno_btn" parent="planets" instance=ExtResource("2_gcjra")]
+position = Vector2(539, 333)
+planet_name = "SATURNO"
+planet_sprite = ExtResource("5_4qju7")
+planet_key = "saturno"
+
+[node name="jupiter_btn" parent="planets" instance=ExtResource("2_gcjra")]
+position = Vector2(757, 332)
+planet_name = "JUPÍTER"
+planet_sprite = ExtResource("6_kicus")
+planet_key = "jupiter"
+
+[node name="marte_btn" parent="planets" instance=ExtResource("2_gcjra")]
+position = Vector2(956, 332)
+planet_name = "MARTE"
+planet_sprite = ExtResource("4_3v431")
+planet_key = "marte"
+
+[node name="terra_btn" parent="planets" instance=ExtResource("2_gcjra")]
+position = Vector2(1134, 332)
+planet_name = "TERRA"
+planet_sprite = ExtResource("9_0oqdb")
+planet_key = "terra"
+
+[node name="titulo" type="Label" parent="."]
+offset_left = 448.0
+offset_top = 35.0
+offset_right = 662.0
+offset_bottom = 74.0
+theme = ExtResource("8_4qju7")
+text = "PROGRESSO"
+
+[node name="load_btn" type="Button" parent="."]
+offset_left = 499.0
+offset_top = 535.0
+offset_right = 591.0
+offset_bottom = 557.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("9_kicus")
+text = "INICIAR"
+
+[node name="subtitulo" type="Label" parent="."]
+offset_left = 395.0
+offset_top = 528.0
+offset_right = 704.0
+offset_bottom = 567.0
+theme = ExtResource("10_6ixcv")
+text = "Selecione um  planeta para jogar!"
+
+[connection signal="pressed" from="load_btn" to="." method="_on_load_btn_pressed"]

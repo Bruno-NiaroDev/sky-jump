@@ -1,5 +1,10 @@
 extends Node
 
+# Configuação dos levels
+var selected_planet := ""
+var block_levels := ["urano", "saturno", "jupiter", "marte", "terra"]
+
+
 var elements := 0
 var player_life := 3
 

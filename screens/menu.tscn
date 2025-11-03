@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dfwss1qqr6jfl"]
 
-[ext_resource type="Script" uid="uid://drngmj385vb6g" path="res://scripts/jupiter/jupiter_intro.gd" id="1_5gb8q"]
+[ext_resource type="Script" uid="uid://bur3thxg2pdq2" path="res://scripts/common/menu.gd" id="1_w6t7d"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_t076g"]
 [ext_resource type="Texture2D" uid="uid://t32ejfxe5mw4" path="res://assets/menus/menu_bg.png" id="3_8qoiq"]
 [ext_resource type="Theme" uid="uid://rbyh38ikqedj" path="res://shaders/reset_separator_color.tres" id="4_gq33n"]
@@ -106,7 +106,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
-script = ExtResource("1_5gb8q")
+script = ExtResource("1_w6t7d")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 1

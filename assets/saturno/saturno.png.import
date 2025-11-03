@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c82pnhepxts7y"
-path="res://.godot/imported/mapa_bg.png-dd5f8374decbfe8fe23c5b66c495c2eb.ctex"
+uid="uid://dsraut7d6aa0i"
+path="res://.godot/imported/saturno.png-a1fda9b86d39989e0baab6fa60de507e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menus/mapa_bg.png"
-dest_files=["res://.godot/imported/mapa_bg.png-dd5f8374decbfe8fe23c5b66c495c2eb.ctex"]
+source_file="res://assets/saturno/saturno.png"
+dest_files=["res://.godot/imported/saturno.png-a1fda9b86d39989e0baab6fa60de507e.ctex"]
 
 [params]
 

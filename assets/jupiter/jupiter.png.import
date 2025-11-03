@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c82pnhepxts7y"
-path="res://.godot/imported/mapa_bg.png-dd5f8374decbfe8fe23c5b66c495c2eb.ctex"
+uid="uid://owohsfau4e4w"
+path="res://.godot/imported/jupiter.png-8a39a21ad7884ab75791f734e9a4ee72.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menus/mapa_bg.png"
-dest_files=["res://.godot/imported/mapa_bg.png-dd5f8374decbfe8fe23c5b66c495c2eb.ctex"]
+source_file="res://assets/jupiter/jupiter.png"
+dest_files=["res://.godot/imported/jupiter.png-8a39a21ad7884ab75791f734e9a4ee72.ctex"]
 
 [params]
 

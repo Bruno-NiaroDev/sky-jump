@@ -1,23 +1,5 @@
 extends Control
 
 
-
-
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/jupiter/jupiter.tscn")
-
-
-func _on_start_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://screens/mapa.tscn")
-
-
-func _on_quit_btn_pressed() -> void:
-	get_tree().quit()
-
-
-func _on_load_btn_pressed() -> void:
-	pass # Replace with function body.
-
-
-func _on_ranking_btn_pressed() -> void:
-	pass # Replace with function body.
