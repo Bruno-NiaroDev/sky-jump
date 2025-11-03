@@ -1,7 +1,8 @@
 extends Area2D
 
+var elements := 1
+
 func _on_body_entered(body: Node2D) -> void:
 	## Chamar DSL para contabilizar item coletado
-	# dentro do planeta urano.
-	print("+1 coin") 
+	Globals.elements += elements
 	queue_free()

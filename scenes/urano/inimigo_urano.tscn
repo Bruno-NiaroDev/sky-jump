@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://s7edfnp572bi"]
+
+[ext_resource type="Script" uid="uid://dhu0qcugu18r3" path="res://scripts/urano/inimigo.gd" id="1_o3ve0"]
+[ext_resource type="Texture2D" uid="uid://kflcj1nfmwfv" path="res://assets/urano/inimigo-urano.png" id="1_u2nke"]
+[ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/common/prefabs/hitbox.tscn" id="3_tks5q"]
+
+[sub_resource type="Animation" id="Animation_tks5q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_50suu"]
+resource_name = "hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_g63d2"]
+resource_name = "walk"
+length = 0.3
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03333333, 0.069941044, 0.10512877, 0.13333334, 0.16666667, 0.2, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_50suu"]
+_data = {
+&"RESET": SubResource("Animation_tks5q"),
+&"hurt": SubResource("Animation_50suu"),
+&"walk": SubResource("Animation_g63d2")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ow6l"]
+size = Vector2(16, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fu4an"]
+size = Vector2(14, 3)
+
+[node name="inimigourano" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_o3ve0")
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+position = Vector2(0, 6)
+target_position = Vector2(-12, 0)
+collision_mask = 6
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_50suu")
+}
+autoplay = "walk"
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_u2nke")
+flip_h = true
+hframes = 4
+vframes = 3
+
+[node name="colission" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_2ow6l")
+
+[node name="hitbox" parent="." instance=ExtResource("3_tks5q")]
+position = Vector2(0, 6)
+
+[node name="collision" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_fu4an")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
