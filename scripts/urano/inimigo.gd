@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 1000.0
+const SPEED = 2000.0
 const JUMP_VELOCITY = -400.0
 
 var direction := -1 
@@ -15,7 +15,6 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	if wall_detector.is_colliding():
-		print("aqui")
 		direction *= -1
 		wall_detector.scale.x *= -1
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://ctepaiw1q3sya"]
+[gd_scene load_steps=15 format=4 uid="uid://ctepaiw1q3sya"]
 
 [ext_resource type="Script" uid="uid://b47cc6bbdeo8d" path="res://scripts/urano/urano.gd" id="1_h4mvc"]
 [ext_resource type="Texture2D" uid="uid://prvs3uirl238" path="res://assets/urano/tilemap-urano.png" id="1_ja3g6"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dxj6tu1bsuxyd" path="res://assets/urano/killzone-urano.png" id="8_3j6vt"]
 [ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="9_ax5sx"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="10_8psdl"]
+[ext_resource type="PackedScene" uid="uid://3jj5gheba43p" path="res://scenes/urano/plataforma.tscn" id="11_dw5cw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xr7kc"]
 texture = ExtResource("1_ja3g6")
@@ -55,7 +56,7 @@ physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_xr7kc")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8psdl"]
-distance = -544.0
+distance = -560.0
 
 [node name="Urano" type="Node2D"]
 script = ExtResource("1_h4mvc")
@@ -196,27 +197,27 @@ texture = ExtResource("8_3j6vt")
 [node name="inimigos" type="Node" parent="."]
 
 [node name="Inimigo5" parent="inimigos" instance=ExtResource("3_h4mvc")]
-position = Vector2(1936, 209)
+position = Vector2(1936, 204)
 scale = Vector2(2, 2)
 
 [node name="Inimigo6" parent="inimigos" instance=ExtResource("3_h4mvc")]
-position = Vector2(1372, 434)
+position = Vector2(1371, 431)
 scale = Vector2(2, 2)
 
 [node name="Inimigo4" parent="inimigos" instance=ExtResource("3_h4mvc")]
-position = Vector2(1269, 209)
+position = Vector2(1268, 205)
 scale = Vector2(2, 2)
 
 [node name="Inimigo2" parent="inimigos" instance=ExtResource("3_h4mvc")]
-position = Vector2(815, 401)
+position = Vector2(815, 398)
 scale = Vector2(2, 2)
 
 [node name="Inimigo3" parent="inimigos" instance=ExtResource("3_h4mvc")]
-position = Vector2(528, 305)
+position = Vector2(527, 302)
 scale = Vector2(2, 2)
 
 [node name="Inimigo" parent="inimigos" instance=ExtResource("3_h4mvc")]
-position = Vector2(535, 503)
+position = Vector2(537, 494)
 scale = Vector2(2, 2)
 
 [node name="fallzone" parent="." instance=ExtResource("9_ax5sx")]
@@ -225,3 +226,9 @@ scale = Vector2(2, 2)
 shape = SubResource("WorldBoundaryShape2D_8psdl")
 
 [node name="HUD" parent="." instance=ExtResource("10_8psdl")]
+
+[node name="player_start_position" type="Marker2D" parent="."]
+position = Vector2(87, 445)
+
+[node name="plataforma_urano" parent="." instance=ExtResource("11_dw5cw")]
+position = Vector2(422, 521)

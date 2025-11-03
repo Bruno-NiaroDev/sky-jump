@@ -5,10 +5,12 @@ extends Node2D
 @onready var player_scene = preload("res://scenes/common/characters/player.tscn")
 @onready var camera: Camera2D = $camera
 @onready var control := $HUD/control as  Control
+@onready var player_start_position: Marker2D = $player_start_position
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.player = player
+	Globals.player_start_position = player_start_position
 	player.follow_camera(camera)
 	Globals.player.player_has_died.connect(reload_game)
 	
