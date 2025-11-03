@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjbt5dy4bm7vp"]
+
+[ext_resource type="Script" uid="uid://drngmj385vb6g" path="res://scripts/jupiter/jupiter_intro.gd" id="1_tigah"]
+[ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_p2uny"]
+[ext_resource type="Texture2D" uid="uid://codet2ubbom1u" path="res://assets/menus/mapa_bg.png" id="3_ydmw1"]
+[ext_resource type="Texture2D" uid="uid://oso7ton63asi" path="res://assets/netuno/netuno.png" id="4_3v431"]
+[ext_resource type="Texture2D" uid="uid://bflrh4sr1m0uf" path="res://assets/netuno/netuno_2.png" id="5_3v431"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_tigah")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_p2uny")
+texture = ExtResource("3_ydmw1")
+expand_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 268.0
+offset_right = 145.0
+offset_bottom = 404.0
+texture_normal = ExtResource("4_3v431")
+texture_hover = ExtResource("5_3v431")
