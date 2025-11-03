@@ -1,0 +1,344 @@
+[gd_scene load_steps=13 format=3 uid="uid://dstork43q7np"]
+
+[ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="1_asxd2"]
+[ext_resource type="Texture2D" uid="uid://clj5t7xlqb7fx" path="res://assets/netuno/netuno_intro_bg.png" id="1_bg8rq"]
+[ext_resource type="Script" uid="uid://ctiwdqlyydn8s" path="res://scripts/netuno/netuno_intro.gd" id="1_vt17n"]
+[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="2_fyk66"]
+[ext_resource type="Theme" uid="uid://cynn25xd1f2co" path="res://shaders/title_intro_theme.tres" id="3_crvhh"]
+[ext_resource type="Texture2D" uid="uid://7brpqvo5701p" path="res://assets/netuno/netuno_planet.png" id="3_vt17n"]
+[ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="6_ei4xi"]
+
+[sub_resource type="Theme" id="Theme_asxd2"]
+default_font = ExtResource("2_fyk66")
+Label/colors/font_color = Color(0.047058824, 0.7529412, 0.8745098, 1)
+Label/colors/font_outline_color = Color(0.43198207, 0.89177716, 0.9975533, 1)
+Label/constants/line_spacing = 3
+Label/constants/outline_size = 2
+Label/font_sizes/font_size = 18
+
+[sub_resource type="Theme" id="Theme_hvyj8"]
+default_font = ExtResource("2_fyk66")
+Label/colors/font_outline_color = Color(0.45636737, 0.895583, 0.99781793, 1)
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 19
+
+[sub_resource type="Animation" id="Animation_vt17n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NetunoPlanet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1116, 286.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(379, 52)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("description/subtitle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(179, 183)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("description/subtitle2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(211, 252)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("description/subtitle3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(146, 319)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("description/subtitle4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(70, 376)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(160, 481)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Button:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(546, 569)]
+}
+
+[sub_resource type="Animation" id="Animation_asxd2"]
+resource_name = "reveal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NetunoPlanet:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1116, 286.00003), Vector2(692, 286.00003)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("title:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-450, 52), Vector2(379, 52)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("description/subtitle:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-550, 183), Vector2(179, 183)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("description/subtitle2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-550, 252), Vector2(211, 252)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("description/subtitle3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-520, 319), Vector2(146, 319)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("description/subtitle4:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-610, 376), Vector2(70, 376)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Label:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-780, 481), Vector2(160, 481)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Button:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(-0.033333335, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-500, 569), Vector2(546, 569)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ei4xi"]
+_data = {
+&"RESET": SubResource("Animation_vt17n"),
+&"reveal": SubResource("Animation_asxd2")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vt17n")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_asxd2")
+texture = ExtResource("1_bg8rq")
+expand_mode = 2
+
+[node name="NetunoPlanet" type="Sprite2D" parent="."]
+position = Vector2(1116, 286.00003)
+scale = Vector2(0.42812502, 0.41481486)
+texture = ExtResource("3_vt17n")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 0
+offset_left = 379.0
+offset_top = 52.0
+offset_right = 807.0
+offset_bottom = 133.0
+size_flags_horizontal = 4
+theme = ExtResource("3_crvhh")
+text = "BEM-VINDO A NETUNO  –
+O GIGANTE AZUL! "
+horizontal_alignment = 1
+
+[node name="description" type="Node2D" parent="."]
+
+[node name="subtitle" type="Label" parent="description"]
+offset_left = 179.0
+offset_top = 183.0
+offset_right = 721.0
+offset_bottom = 224.0
+theme = SubResource("Theme_asxd2")
+text = "Netuno é o oitavo e mais distante planeta do Sol, localizado 
+a cerca de 4,5 bilhões de quilômetros da nossa estrela!"
+
+[node name="subtitle2" type="Label" parent="description"]
+offset_left = 211.0
+offset_top = 252.0
+offset_right = 660.0
+offset_bottom = 293.0
+theme = SubResource("Theme_asxd2")
+text = "    É um gigante gasoso, composto principalmente 
+por hidrogênio, hélio e metano."
+
+[node name="subtitle3" type="Label" parent="description"]
+offset_left = 146.0
+offset_top = 319.0
+offset_right = 634.0
+offset_bottom = 343.0
+theme = SubResource("Theme_asxd2")
+text = "   Possui 14 luas, sendo Tritão a maior e mais curiosa."
+
+[node name="subtitle4" type="Label" parent="description"]
+offset_left = 70.0
+offset_top = 376.0
+offset_right = 682.0
+offset_bottom = 417.0
+theme = SubResource("Theme_asxd2")
+text = "   Nas profundezas geladas de Netuno, o metano se mistura 
+às nuvens e forma cristais cintilantes que pintam o planeta de azul."
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -416.0
+offset_top = -167.0
+offset_right = 416.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_hvyj8")
+text = " Coletar esse recurso raro pode ser a chave para abastecer sua nave — 
+e seguir viagem de volta para a casa!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = 245.0
+offset_right = 30.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_ei4xi")
+text = "START"
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ei4xi")
+}
+autoplay = "reveal"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
