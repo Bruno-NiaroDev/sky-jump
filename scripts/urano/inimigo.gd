@@ -1,20 +1,35 @@
-extends Node2D
+extends CharacterBody2D
 
-const SPEED = 60
 
-var direction = 1
+const SPEED = 1000.0
+const JUMP_VELOCITY = -400.0
 
-@onready var ray_cast_rigth = $RayCastRigthUrano
-@onready var ray_cast_left = $RayCastLeftUrano
-@onready var animated_srite = $InimigoUrano
+var direction := -1 
+@onready var anim := $anim as AnimationPlayer
+@onready var texture: Sprite2D = $texture
+@onready var wall_detector: RayCast2D = $wall_detector
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	if ray_cast_rigth.is_colliding():
-		direction = -1
-		animated_srite.flip_h = true
-	if ray_cast_left.is_colliding():
-		direction = 1
-		animated_srite.flip_h = false
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	if wall_detector.is_colliding():
+		print("aqui")
+		direction *= -1
+		wall_detector.scale.x *= -1
 		
-	position.x += direction * SPEED * delta
+	if direction == 1:
+		texture.flip_h = true
+	else:
+		texture.flip_h = false
+
+	velocity.x = direction * SPEED * delta
+
+	move_and_slide()
+
+func _on_anim_animation_finished(anim_name: StringName) -> void:
+	if anim_name == 'hurt':
+		print("morre") 
+		queue_free()
+	
