@@ -1,16 +1,15 @@
-[gd_scene load_steps=21 format=4 uid="uid://b6mfjutvqin3n"]
+[gd_scene load_steps=20 format=4 uid="uid://b6mfjutvqin3n"]
 
-[ext_resource type="Script" uid="uid://brcukh23453hp" path="res://scripts/marte/marte.gd" id="1_6p2s8"]
+[ext_resource type="Script" path="res://scripts/marte/marte.gd" id="1_6p2s8"]
 [ext_resource type="Texture2D" uid="uid://ccyun1bnlcnia" path="res://assets/marte/ceu-marte.png" id="1_cni30"]
 [ext_resource type="Texture2D" uid="uid://b721864ofyagj" path="res://assets/marte/chao-marte.png" id="2_2rwdo"]
 [ext_resource type="Texture2D" uid="uid://cyh72xte1w5jw" path="res://assets/marte/tiles_marte.png" id="3_qcefx"]
-[ext_resource type="PackedScene" uid="uid://dmloxst5ps35l" path="res://scenes/marte/elemento_marte.tscn" id="4_yevf7"]
-[ext_resource type="Script" uid="uid://birldfe88u1tb" path="res://scenes/marte/elemento_marte.gd" id="5_85mah"]
-[ext_resource type="PackedScene" path="res://scenes/netuno/fim.tscn" id="7_85mah"]
+[ext_resource type="PackedScene" uid="uid://dhbgkad8gdnsx" path="res://scenes/marte/elemento_marte.tscn" id="4_yevf7"]
+[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="7_85mah"]
 [ext_resource type="PackedScene" uid="uid://6cade50ioilp" path="res://scenes/common/characters/player.tscn" id="8_xq4vi"]
 [ext_resource type="Texture2D" uid="uid://c1ik4r33muhec" path="res://assets/commum/tilesets/Lava_frames (16 x 32).png" id="10_8ce2b"]
 [ext_resource type="PackedScene" uid="uid://bxuog0dghnpol" path="res://scenes/common/prefabs/moving_plataform.tscn" id="10_odafr"]
-[ext_resource type="PackedScene" uid="uid://crbjhy8uur0h6" path="res://scenes/marte/inimigo_marte_crr.tscn" id="11_odafr"]
+[ext_resource type="PackedScene" path="res://scenes/marte/inimigo_marte_crr.tscn" id="11_odafr"]
 [ext_resource type="PackedScene" uid="uid://4rfk0j5c44g6" path="res://scenes/common/prefabs/falling_plataform.tscn" id="13_i7cyq"]
 [ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="13_ks6sj"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="14_vubiy"]
@@ -132,106 +131,78 @@ slide_on_ceiling = true
 
 [node name="elemento_marte" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(21, 153)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte2" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(446, 396)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte3" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1303, 8)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte6" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1325, 520)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte7" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1265, 521)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte8" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(750, 442)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte5" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1206, 231)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte4" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2281, 217)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte15" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2686, 47)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte16" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2619, 48)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte17" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2352, 43)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte18" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2391, 42)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte12" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1681, 183)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte19" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1823, -157)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte20" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1968, -163)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte21" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2107, -165)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte22" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2253, -166)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte23" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2389, -213)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte24" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(2521, -123)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte13" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1803, 188)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte14" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1947, 207)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte10" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1642, 58)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte11" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(1685, 58)
-script = ExtResource("5_85mah")
 
 [node name="elemento_marte9" parent="elementos" instance=ExtResource("4_yevf7")]
 position = Vector2(982, -184)
-script = ExtResource("5_85mah")
-
-[node name="fim" parent="." instance=ExtResource("7_85mah")]
-position = Vector2(1835, 624)
 
 [node name="player" parent="." instance=ExtResource("8_xq4vi")]
 position = Vector2(40, 465)
-collision_mask = 86
 
 [node name="plataformas" type="Node2D" parent="."]
 
@@ -343,3 +314,5 @@ limit_bottom = 730
 
 [node name="player_start_position" type="Marker2D" parent="."]
 position = Vector2(57, 373)
+
+[node name="fim" parent="." instance=ExtResource("7_85mah")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmloxst5ps35l"]
+[gd_scene load_steps=12 format=3 uid="uid://dhbgkad8gdnsx"]
 
 [ext_resource type="Script" uid="uid://cvtpvltuvx4xj" path="res://scripts/marte/elemento_marte.gd" id="1_q0euy"]
 [ext_resource type="Texture2D" uid="uid://dr1m13hh320un" path="res://assets/marte/elemento-marte.png" id="1_x367k"]
@@ -78,3 +78,5 @@ frame_progress = 0.76998264
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(18, 20)
 shape = SubResource("CapsuleShape2D_m37ht")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
