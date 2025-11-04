@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci1ko8npp83gx"]
+
+[ext_resource type="PackedScene" uid="uid://dmloxst5ps35l" path="res://scenes/marte/elemento_marte.tscn" id="1_bmyfk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_esa30"]
+radius = 26.907248
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="elemento_marte" parent="." instance=ExtResource("1_bmyfk")]
+position = Vector2(29, 36)
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(46, 62)
+shape = SubResource("CircleShape2D_esa30")
