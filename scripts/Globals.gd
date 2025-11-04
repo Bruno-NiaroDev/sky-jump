@@ -2,7 +2,7 @@ extends Node
 
 # Configuação dos levels
 var selected_planet := ""
-var block_levels := [ "terra"]
+var block_levels = ["urano", "saturno", "jupiter", "marte", "terra"]
 
 
 var elements := 0
@@ -11,6 +11,13 @@ var player_life := 3
 var player = null
 var current_checkpoint = null
 var player_start_position = null
+
+func reset_level():
+	elements = 0
+	player_life = 3
+	player = null
+	current_checkpoint = null
+	player_start_position = null
 
 
 func respawn_player():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://iik5yihfxath"]
+[gd_scene load_steps=23 format=4 uid="uid://iik5yihfxath"]
 
 [ext_resource type="Texture2D" uid="uid://w35yql0hso4u" path="res://assets/saturno/parallax/saturno_01.png" id="1_0cemh"]
 [ext_resource type="Script" uid="uid://c274x6iilgvvr" path="res://scripts/saturno/saturno.gd" id="1_b8poi"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://4rfk0j5c44g6" path="res://scenes/common/prefabs/falling_plataform.tscn" id="9_h6m1h"]
 [ext_resource type="PackedScene" uid="uid://bxuog0dghnpol" path="res://scenes/common/prefabs/moving_plataform.tscn" id="12_pvgjc"]
 [ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="12_s8t6m"]
+[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="13_hokgk"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="13_pvgjc"]
 [ext_resource type="PackedScene" uid="uid://csgf18bo55187" path="res://scenes/common/prefabs/pause_menu.tscn" id="14_dcaj7"]
 
@@ -439,6 +440,11 @@ position = Vector2(328, 696)
 position = Vector2(1664, 0)
 shape = SubResource("RectangleShape2D_s8t6m")
 
+[node name="fim" parent="." instance=ExtResource("13_hokgk")]
+position = Vector2(3005, 195)
+scale = Vector2(2, 2)
+min_elements_collected = 13
+
 [node name="camera" type="Camera2D" parent="."]
 position = Vector2(60, 616)
 offset = Vector2(0, -65)
@@ -446,7 +452,7 @@ zoom = Vector2(2, 2)
 limit_left = 0
 
 [node name="player" parent="." instance=ExtResource("7_b8poi")]
-position = Vector2(72, 640)
+position = Vector2(2753, 245)
 
 [node name="HUD" parent="." instance=ExtResource("13_pvgjc")]
 
