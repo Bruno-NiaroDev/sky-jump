@@ -4,19 +4,18 @@ extends Node2D
 @onready var player := $player as CharacterBody2D
 @onready var player_scene = preload("res://scenes/common/characters/player.tscn")
 @onready var camera := $camera as Camera2D
+@onready var player_start_position: Marker2D = $player_start_position
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 	Globals.player = player
 	player.follow_camera(camera)
+	Globals.player_start_position = player_start_position
 	Globals.player.player_has_died.connect(reload_game)
 	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 	
 func reload_game():
 	await get_tree().create_timer(1.0).timeout

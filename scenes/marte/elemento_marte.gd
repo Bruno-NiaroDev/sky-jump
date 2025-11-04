@@ -15,6 +15,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 		if anim and anim.sprite_frames.has_animation("collect"):
 			anim.play("collect")
+			await $CollisionShape2D.call_deferred("queue_free")
+			Globals.elements += elemento_valor
 		else:
 			queue_free()
 

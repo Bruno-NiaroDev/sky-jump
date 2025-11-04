@@ -14,7 +14,6 @@ extends CharacterBody2D
 # ==========================
 var direction: int = 1
 var is_dead: bool = false
-var can_flip := true
 
 # ==========================
 # NÓS INTERNOS
@@ -67,22 +66,14 @@ func _physics_process(delta: float) -> void:
 # VIRAR DIREÇÃO
 # ==========================
 func _flip_direction() -> void:
-	if not can_flip:
-		return  # evita virar repetidamente
+	direction *= -1  # muda o lado
+	sprite.flip_h = direction < 0  # espelha o sprite
 
-	can_flip = false
-	direction *= +1
-	sprite.flip_h = direction < 0
-
-	# inverte os RayCasts
+	# inverte a posição dos RayCasts
 	wall_check.position.x *= -1
 	ground_check.position.x *= -1
 
 	print("🔁 Inimigo virou! Direção atual:", direction)
-
-	await get_tree().create_timer(0.3).timeout  # 0.3 segundos de espera
-	can_flip = true
-
 
 # ==========================
 # PISÃO DO JOGADOR
@@ -106,6 +97,7 @@ func _on_hurt_area_body_entered(body: Node2D) -> void:
 		return
 
 	var knockback_dir: Vector2 = (body.global_position - global_position).normalized() * damage_force
+
 	if body.has_method("take_damage"):
 		body.take_damage(knockback_dir)
 	elif "velocity" in body:
@@ -117,6 +109,7 @@ func _on_hurt_area_body_entered(body: Node2D) -> void:
 func _die() -> void:
 	if is_dead:
 		return
+
 	is_dead = true
 	velocity = Vector2.ZERO
 
@@ -128,12 +121,3 @@ func _die() -> void:
 
 func _on_die_animation_finished() -> void:
 	queue_free()
-
-
-
-
-
-
-
-
-			   

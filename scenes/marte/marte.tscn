@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b6mfjutvqin3n"]
+[gd_scene load_steps=21 format=4 uid="uid://b6mfjutvqin3n"]
 
 [ext_resource type="Script" uid="uid://brcukh23453hp" path="res://scripts/marte/marte.gd" id="1_6p2s8"]
 [ext_resource type="Texture2D" uid="uid://ccyun1bnlcnia" path="res://assets/marte/ceu-marte.png" id="1_cni30"]
@@ -6,13 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://cyh72xte1w5jw" path="res://assets/marte/tiles_marte.png" id="3_qcefx"]
 [ext_resource type="PackedScene" uid="uid://dmloxst5ps35l" path="res://scenes/marte/elemento_marte.tscn" id="4_yevf7"]
 [ext_resource type="Script" uid="uid://birldfe88u1tb" path="res://scenes/marte/elemento_marte.gd" id="5_85mah"]
-[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/netuno/fim.tscn" id="7_85mah"]
+[ext_resource type="PackedScene" path="res://scenes/netuno/fim.tscn" id="7_85mah"]
 [ext_resource type="PackedScene" uid="uid://6cade50ioilp" path="res://scenes/common/characters/player.tscn" id="8_xq4vi"]
 [ext_resource type="Texture2D" uid="uid://c1ik4r33muhec" path="res://assets/commum/tilesets/Lava_frames (16 x 32).png" id="10_8ce2b"]
 [ext_resource type="PackedScene" uid="uid://bxuog0dghnpol" path="res://scenes/common/prefabs/moving_plataform.tscn" id="10_odafr"]
 [ext_resource type="PackedScene" uid="uid://crbjhy8uur0h6" path="res://scenes/marte/inimigo_marte_crr.tscn" id="11_odafr"]
-[ext_resource type="Script" uid="uid://dxvideft17p76" path="res://scripts/marte/lava_area.gd" id="12_dke1k"]
 [ext_resource type="PackedScene" uid="uid://4rfk0j5c44g6" path="res://scenes/common/prefabs/falling_plataform.tscn" id="13_i7cyq"]
+[ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="13_ks6sj"]
+[ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="14_vubiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odafr"]
 texture = ExtResource("10_8ce2b")
@@ -83,11 +84,15 @@ texture = ExtResource("3_qcefx")
 8:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_85mah"]
-physics_layer_0/collision_layer = 3
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_yevf7")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7cyq"]
-size = Vector2(113, 11.5)
+size = Vector2(90, 6.25)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vubiy"]
+distance = -727.0
 
 [node name="marte" type="Node2D"]
 script = ExtResource("1_6p2s8")
@@ -226,6 +231,7 @@ position = Vector2(1835, 624)
 
 [node name="player" parent="." instance=ExtResource("8_xq4vi")]
 position = Vector2(40, 465)
+collision_mask = 86
 
 [node name="plataformas" type="Node2D" parent="."]
 
@@ -256,56 +262,58 @@ scale = Vector2(3, 2)
 distance = 90
 move_horizontal = false
 
-[node name="lava_area" type="Area2D" parent="."]
-script = ExtResource("12_dke1k")
+[node name="fallzone" parent="." instance=ExtResource("13_ks6sj")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lava_area"]
-position = Vector2(416, 90.5)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fallzone"]
+position = Vector2(416, 87.875)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(511, 442)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1048, 203)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1335, 155)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1179, 331)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1184, 571)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D7" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1515, 700)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D8" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1592.5, 379)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D9" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1740, 379)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D10" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(1860, 379)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(2382, 396)
 shape = SubResource("RectangleShape2D_i7cyq")
 
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="lava_area"]
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="fallzone"]
 position = Vector2(2473, 269)
 shape = SubResource("RectangleShape2D_i7cyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone"]
+shape = SubResource("WorldBoundaryShape2D_vubiy")
 
 [node name="plataforma_falha" type="Node2D" parent="."]
 
@@ -330,3 +338,8 @@ position = Vector2(1838, -57)
 [node name="camera" type="Camera2D" parent="."]
 limit_left = 0
 limit_bottom = 730
+
+[node name="HUD" parent="." instance=ExtResource("14_vubiy")]
+
+[node name="player_start_position" type="Marker2D" parent="."]
+position = Vector2(57, 373)
