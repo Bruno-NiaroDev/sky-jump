@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://byw7iaqbfg3ru"]
+
+[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="1_57sy7"]
+
+[resource]
+default_font = ExtResource("1_57sy7")
+Label/colors/font_color = Color(0.9474599, 0.8893591, 0.8110801, 1)
+Label/colors/font_outline_color = Color(0.7921569, 0.654902, 0.4627451, 1)
+Label/constants/outline_size = 3
+Label/font_sizes/font_size = 18

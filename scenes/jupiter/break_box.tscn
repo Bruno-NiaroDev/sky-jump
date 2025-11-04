@@ -1,34 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlcajx8jmktlt"]
+[gd_scene load_steps=7 format=3 uid="uid://5w2ganqs1do1"]
 
+[ext_resource type="Script" uid="uid://cymvu0hd0bgar" path="res://scripts/jupiter/break_box.gd" id="1_pcohs"]
 [ext_resource type="Texture2D" uid="uid://xju34d34dtoh" path="res://assets/commum/tilesets/Blocks (16 x 16).png" id="1_x51jj"]
-
-[sub_resource type="GDScript" id="GDScript_8ec4k"]
-script/source = "extends CharacterBody2D
-
-const box_pieces = preload(\"res://scenes/jupiter/box_pieces.tscn\")
-const pocoes_instance = preload(\"res://scenes/pocoes_rigid.tscn\")
-
-@onready var animation_player := $anim as AnimationPlayer
-@onready var spwan_pocoes := $spawn_coin as Marker2D
-@export var pieces : PackedStringArray
-@export var hitpoints := 3
-var impulse := 200
-
-func break_sprite():
-	for piece in pieces.size():
-		var piece_instance = box_pieces.instantiate()
-		get_parent().add_child(piece_instance)
-		piece_instance.get_node(\"texture\").texture = load(pieces[piece])
-		piece_instance.global_position = global_position
-		piece_instance.apply_impulse(Vector2(randi_range(-impulse, impulse),randi_range(-impulse,-impulse * 2),))
-	queue_free()
-	
-func create_pocoes():
-	var pocoes = pocoes_instance.instantiate()
-	get_parent().call_deferred(\"add_child\", pocoes)
-	pocoes.global_position =  spwan_pocoes.global_position
-	pocoes.apply_impulse(Vector2(randi_range(-50,50), -150))
-"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcohs"]
 size = Vector2(16, 16)
@@ -97,8 +70,8 @@ _data = {
 [node name="break-box" type="CharacterBody2D"]
 collision_layer = 64
 collision_mask = 0
-script = SubResource("GDScript_8ec4k")
-pieces = PackedStringArray("res://assets/jupiter/5 - Misc. universal tiles/brick-piece-01.png", "res://assets/jupiter/5 - Misc. universal tiles/brick-piece-02.png", "res://assets/jupiter/5 - Misc. universal tiles/brick-piece-03.png", "res://assets/jupiter/5 - Misc. universal tiles/brick-piece-04.png")
+script = ExtResource("1_pcohs")
+pieces = PackedStringArray("", "", "", "")
 
 [node name="texture" type="Sprite2D" parent="."]
 texture = ExtResource("1_x51jj")

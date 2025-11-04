@@ -1,5 +1,10 @@
 extends Node
 
+# Configuação dos levels
+var selected_planet := ""
+var block_levels := [ "terra"]
+
+
 var elements := 0
 var player_life := 3
 
