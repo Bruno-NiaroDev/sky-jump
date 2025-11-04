@@ -1,22 +1,22 @@
 [gd_scene load_steps=9 format=3 uid="uid://em2tk6h0hkuy"]
 
-[ext_resource type="Script" uid="uid://5rkuyyfevwen" path="res://scripts/netuno/fim.gd" id="1_vjaed"]
-[ext_resource type="Texture2D" uid="uid://datf8wc0okvpi" path="res://assets/netuno/fim.png" id="2_k3wl5"]
+[ext_resource type="Script" uid="uid://5rkuyyfevwen" path="res://scripts/common/fim.gd" id="1_ymhvj"]
+[ext_resource type="Texture2D" uid="uid://datf8wc0okvpi" path="res://assets/netuno/fim.png" id="2_ttp0h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fak4q"]
-atlas = ExtResource("2_k3wl5")
+atlas = ExtResource("2_ttp0h")
 region = Rect2(70, 0, 70, 167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5bea8"]
-atlas = ExtResource("2_k3wl5")
+atlas = ExtResource("2_ttp0h")
 region = Rect2(140, 0, 70, 167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ifejo"]
-atlas = ExtResource("2_k3wl5")
+atlas = ExtResource("2_ttp0h")
 region = Rect2(210, 0, 70, 167)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nkklx"]
-atlas = ExtResource("2_k3wl5")
+atlas = ExtResource("2_ttp0h")
 region = Rect2(280, 0, 70, 167)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_qvuaw"]
@@ -44,7 +44,7 @@ radius = 23.323807
 
 [node name="fim" type="Area2D"]
 collision_layer = 64
-script = ExtResource("1_vjaed")
+script = ExtResource("1_ymhvj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_qvuaw")
