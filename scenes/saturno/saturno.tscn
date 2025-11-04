@@ -452,7 +452,7 @@ zoom = Vector2(2, 2)
 limit_left = 0
 
 [node name="player" parent="." instance=ExtResource("7_b8poi")]
-position = Vector2(2753, 245)
+position = Vector2(62, 519)
 
 [node name="HUD" parent="." instance=ExtResource("13_pvgjc")]
 
