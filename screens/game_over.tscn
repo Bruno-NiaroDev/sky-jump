@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cirijqchloi1o"]
+[gd_scene load_steps=10 format=3 uid="uid://cirijqchloi1o"]
 
 [ext_resource type="Script" uid="uid://bmvlewxm6xya0" path="res://scripts/common/game_over.gd" id="1_40pha"]
 [ext_resource type="Texture2D" uid="uid://c82pnhepxts7y" path="res://assets/menus/mapa_bg.png" id="2_4qfck"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_flvnf"]
 [ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="5_ffci5"]
-[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="7_euba5"]
 
 [sub_resource type="Animation" id="Animation_vt17n"]
 length = 0.001
@@ -142,7 +141,6 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 0.015686275, 0.015686275, 1)
 theme_override_colors/font_outline_color = Color(0.7764706, 0.21960784, 0.8784314, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("7_euba5")
 theme_override_font_sizes/font_size = 96
 text = "GAME OVER"
 

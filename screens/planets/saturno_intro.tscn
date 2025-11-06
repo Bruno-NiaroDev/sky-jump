@@ -1,11 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsluhbgoltqc6"]
+[gd_scene load_steps=12 format=3 uid="uid://dsluhbgoltqc6"]
 
 [ext_resource type="Script" uid="uid://dt0ygia03pbnt" path="res://scripts/saturno/saturno_intro.gd" id="1_bbkk7"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="1_qm7u0"]
 [ext_resource type="Texture2D" uid="uid://cvmiam8101stm" path="res://assets/saturno/saturno_intro_bg.png" id="2_qm7u0"]
 [ext_resource type="Texture2D" uid="uid://l3fjw2i3lchl" path="res://assets/saturno/saturno_planet.png" id="3_gdsgg"]
 [ext_resource type="Theme" uid="uid://cynn25xd1f2co" path="res://shaders/title_intro_theme.tres" id="4_3sq4w"]
-[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="5_8lun3"]
 [ext_resource type="Theme" uid="uid://byw7iaqbfg3ru" path="res://shaders/subtitle_intro_4.tres" id="5_bbkk7"]
 [ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="6_kxp8y"]
 
@@ -13,7 +12,6 @@
 Label/colors/font_outline_color = Color(0.48235294, 0.1764706, 0.62352943, 1)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 18
-Label/fonts/font = ExtResource("5_8lun3")
 
 [sub_resource type="Animation" id="Animation_vt17n"]
 length = 0.001
@@ -213,8 +211,8 @@ texture = ExtResource("3_gdsgg")
 layout_mode = 0
 offset_left = -450.0
 offset_top = 52.0
-offset_right = 6.0
-offset_bottom = 133.0
+offset_right = 23.0
+offset_bottom = 161.0
 size_flags_horizontal = 4
 theme = ExtResource("4_3sq4w")
 text = "BEM-VINDO A SATURNO - 
@@ -227,7 +225,7 @@ horizontal_alignment = 1
 offset_left = 285.0
 offset_top = 186.0
 offset_right = 981.0
-offset_bottom = 235.0
+offset_bottom = 241.0
 theme = ExtResource("5_bbkk7")
 text = "   Entre ventos ferozes e anéis cintilantes, você acaba de chegar a Saturno, 
 o gigante gasoso que deslumbra com sua grandiosidade e mistério."
@@ -236,7 +234,7 @@ o gigante gasoso que deslumbra com sua grandiosidade e mistério."
 offset_left = 434.0
 offset_top = 270.0
 offset_right = 910.0
-offset_bottom = 319.0
+offset_bottom = 325.0
 theme = ExtResource("5_bbkk7")
 text = " Sistema de anéis mais famoso e extenso do Sistema 
 Solar, formados por gelo e poeira."
@@ -245,7 +243,7 @@ Solar, formados por gelo e poeira."
 offset_left = 657.0
 offset_top = 358.0
 offset_right = 1076.0001
-offset_bottom = 407.0
+offset_bottom = 413.0
 theme = ExtResource("5_bbkk7")
 text = "Diâmetro ~120.536 km (9,5 vezes o da Terra).
 6º planeta a partir do Sol"
@@ -276,7 +274,7 @@ anchor_bottom = 0.5
 offset_left = -355.5
 offset_top = 140.0
 offset_right = 353.5
-offset_bottom = 189.0
+offset_bottom = 195.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_gdsgg")
