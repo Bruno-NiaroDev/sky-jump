@@ -14,24 +14,28 @@ extends CharacterBody2D
 # ==========================
 var direction: int = 1
 var is_dead: bool = false
+var can_flip: bool = true  # impede virar rápido demais
 
 # ==========================
 # NÓS INTERNOS
 # ==========================
-@onready var sprite: AnimatedSprite2D = get_node("AnimatedSprite2D")
-@onready var stomp_area: Area2D = get_node("stomp_area")
-@onready var hurt_area: Area2D = get_node("hurt_area")
-@onready var wall_check: RayCast2D = get_node("wall_check")
-@onready var ground_check: RayCast2D = get_node("ground_check")
+@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var stomp_area: Area2D = $stomp_area
+@onready var hurt_area: Area2D = $hurt_area
+@onready var wall_check: RayCast2D = $wall_check
 
 # ==========================
 # READY
 # ==========================
 func _ready() -> void:
-	stomp_area.connect("body_entered", Callable(self, "_on_stomp_area_body_entered"))
-	hurt_area.connect("body_entered", Callable(self, "_on_hurt_area_body_entered"))
+	# conecta sinais das áreas
+	if stomp_area:
+		stomp_area.connect("body_entered", Callable(self, "_on_stomp_area_body_entered"))
+	if hurt_area:
+		hurt_area.connect("body_entered", Callable(self, "_on_hurt_area_body_entered"))
 
-	if sprite and sprite.sprite_frames.has_animation("walk"):
+	# toca animação inicial
+	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation("walk"):
 		sprite.play("walk")
 
 # ==========================
@@ -47,18 +51,19 @@ func _physics_process(delta: float) -> void:
 	# movimento horizontal
 	velocity.x = direction * speed
 
-	# move o inimigo
+	# move com colisão
 	move_and_slide()
 
-	# vira se bater na parede ou se não houver chão à frente
-	if wall_check.is_colliding() or not ground_check.is_colliding():
+	# vira se colidir com uma parede
+	if wall_check.is_colliding():
+		print("teste")
 		_flip_direction()
 
 	# animação
 	if sprite and (not sprite.is_playing() or sprite.animation != "walk"):
 		sprite.play("walk")
 
-	# flip visual de acordo com a direção
+	# flip visual
 	if sprite:
 		sprite.flip_h = direction < 0
 
@@ -66,14 +71,22 @@ func _physics_process(delta: float) -> void:
 # VIRAR DIREÇÃO
 # ==========================
 func _flip_direction() -> void:
-	direction *= -1  # muda o lado
-	sprite.flip_h = direction < 0  # espelha o sprite
+	if not can_flip:
+		return
 
-	# inverte a posição dos RayCasts
-	wall_check.position.x *= -1
-	ground_check.position.x *= -1
+	can_flip = false
+	direction *= -1
+	sprite.flip_h = direction < 0
+
+	# inverte o lado do RayCast
+	if wall_check:
+		wall_check.position.x *= -1
 
 	print("🔁 Inimigo virou! Direção atual:", direction)
+
+	# espera 0.3s antes de permitir virar novamente
+	await get_tree().create_timer(0.3).timeout
+	can_flip = true
 
 # ==========================
 # PISÃO DO JOGADOR
@@ -113,7 +126,7 @@ func _die() -> void:
 	is_dead = true
 	velocity = Vector2.ZERO
 
-	if sprite.sprite_frames.has_animation(death_animation_name):
+	if sprite and sprite.sprite_frames and sprite.sprite_frames.has_animation(death_animation_name):
 		sprite.play(death_animation_name)
 		sprite.connect("animation_finished", Callable(self, "_on_die_animation_finished"))
 	else:
@@ -121,3 +134,4 @@ func _die() -> void:
 
 func _on_die_animation_finished() -> void:
 	queue_free()
+	
