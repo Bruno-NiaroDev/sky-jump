@@ -1,0 +1,133 @@
+[gd_scene load_steps=8 format=3 uid="uid://lnefnvlba445"]
+
+[ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_s4e76"]
+[ext_resource type="Texture2D" uid="uid://xtoqs6m3q3mc" path="res://assets/menus/info_bg.png" id="2_v5owc"]
+[ext_resource type="Theme" uid="uid://cvschjhpl1lko" path="res://screens/info_subtitle.tres" id="3_oxvaa"]
+[ext_resource type="Theme" uid="uid://b5umb40nupscp" path="res://screens/info_font.tres" id="4_whqrp"]
+
+[sub_resource type="Animation" id="Animation_vt17n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_asxd2"]
+resource_name = "reveal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ei4xi"]
+_data = {
+&"RESET": SubResource("Animation_vt17n"),
+&"reveal": SubResource("Animation_asxd2")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_s4e76")
+texture = ExtResource("2_v5owc")
+expand_mode = 2
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ei4xi")
+}
+autoplay = "reveal"
+
+[node name="instructions_container" type="Node2D" parent="."]
+
+[node name="Title" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 472.0
+offset_top = 31.0
+offset_right = 680.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme = ExtResource("3_oxvaa")
+text = "COMO JOGAR"
+
+[node name="label_right" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 185.0
+offset_top = 91.0
+offset_right = 424.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou D  -  Andar para a direita"
+
+[node name="label_left" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 183.5
+offset_top = 137.0
+offset_right = 441.5
+offset_bottom = 163.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou A  - Andar para a esquerda"
+
+[node name="label_jump" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 217.0
+offset_top = 190.0
+offset_right = 510.0
+offset_bottom = 216.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou W  (pressione uma vez)  -  Pular"
+
+[node name="label_double_jump" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 217.0
+offset_top = 243.0
+offset_right = 510.0
+offset_bottom = 269.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou W (duas vezes)  - Pulo duplo"
