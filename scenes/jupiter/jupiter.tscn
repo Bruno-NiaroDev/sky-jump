@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ik4r33muhec" path="res://assets/commum/tilesets/Lava_frames (16 x 32).png" id="13_r11y2"]
 [ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="14_l4emt"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="15_l4emt"]
-[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/netuno/fim.tscn" id="16_ce5ix"]
+[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="16_ce5ix"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r11y2"]
 texture = ExtResource("13_r11y2")
@@ -508,3 +508,8 @@ position_smoothing_enabled = true
 
 [node name="fim" parent="." instance=ExtResource("16_ce5ix")]
 position = Vector2(4845, 440)
+min_elements_collected = 30
+next_level_key = "marte"
+
+[node name="player_start_position" type="Marker2D" parent="."]
+position = Vector2(-1064, 550)
