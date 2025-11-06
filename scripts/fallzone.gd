@@ -2,4 +2,6 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	body.handle_death_zone()
+	if body.name == "player":
+		body.handle_death_zone()
+	

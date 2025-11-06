@@ -164,7 +164,7 @@ hframes = 5
 region_rect = Rect2(0, 10, 66.5, 51)
 
 [node name="colission" type="CollisionShape2D" parent="."]
-position = Vector2(-0.97589976, -10.020948)
+position = Vector2(0.50000006, -10)
 rotation = 1.5638691
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_gr4p8")

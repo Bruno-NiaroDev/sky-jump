@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=3 uid="uid://co4gur0dvhio8"]
+
+[ext_resource type="Texture2D" uid="uid://0udqjjjv30an" path="res://assets/marte/inimigo.png" id="1_4iir8"]
+[ext_resource type="Script" uid="uid://dih6kelajsxc7" path="res://scripts/inimigo_novo_marte.gd" id="1_nh5vm"]
+[ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/common/prefabs/hitbox.tscn" id="2_nh5vm"]
+[ext_resource type="Texture2D" uid="uid://batabcprbcgkm" path="res://assets/marte/hurt.png" id="3_ngq13"]
+
+[sub_resource type="Animation" id="Animation_ngq13"]
+resource_name = "walk"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.26666668, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_0g2gc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_4iir8")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:hframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_fdiqb"]
+resource_name = "hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_ngq13")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fdiqb"]
+_data = {
+&"RESET": SubResource("Animation_0g2gc"),
+&"hurt": SubResource("Animation_fdiqb"),
+&"walk": SubResource("Animation_ngq13")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pnebp"]
+size = Vector2(27.75, 45.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u83ru"]
+size = Vector2(25, 7.5)
+
+[node name="inimigo_marte" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_nh5vm")
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+position = Vector2(-3, -13)
+target_position = Vector2(-18, 0)
+collision_mask = 2
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fdiqb")
+}
+autoplay = "walk"
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(-0.99999994, -25)
+scale = Vector2(0.27907258, 0.2915245)
+texture = ExtResource("1_4iir8")
+
+[node name="colission" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_pnebp")
+
+[node name="hitbox" parent="." instance=ExtResource("2_nh5vm")]
+position = Vector2(40, -64)
+
+[node name="colission" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-39.5, 16)
+shape = SubResource("RectangleShape2D_u83ru")
+
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]
