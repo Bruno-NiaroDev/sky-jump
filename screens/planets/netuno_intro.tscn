@@ -253,8 +253,8 @@ texture = ExtResource("3_vt17n")
 layout_mode = 0
 offset_left = 379.0
 offset_top = 52.0
-offset_right = 807.0
-offset_bottom = 133.0
+offset_right = 839.0
+offset_bottom = 161.0
 size_flags_horizontal = 4
 theme = ExtResource("3_crvhh")
 text = "BEM-VINDO A NETUNO  –
@@ -267,7 +267,7 @@ horizontal_alignment = 1
 offset_left = 179.0
 offset_top = 183.0
 offset_right = 721.0
-offset_bottom = 224.0
+offset_bottom = 238.0
 theme = SubResource("Theme_asxd2")
 text = "Netuno é o oitavo e mais distante planeta do Sol, localizado 
 a cerca de 4,5 bilhões de quilômetros da nossa estrela!"
@@ -276,7 +276,7 @@ a cerca de 4,5 bilhões de quilômetros da nossa estrela!"
 offset_left = 211.0
 offset_top = 252.0
 offset_right = 660.0
-offset_bottom = 293.0
+offset_bottom = 307.0
 theme = SubResource("Theme_asxd2")
 text = "    É um gigante gasoso, composto principalmente 
 por hidrogênio, hélio e metano."
@@ -285,7 +285,7 @@ por hidrogênio, hélio e metano."
 offset_left = 146.0
 offset_top = 319.0
 offset_right = 634.0
-offset_bottom = 343.0
+offset_bottom = 345.0
 theme = SubResource("Theme_asxd2")
 text = "   Possui 14 luas, sendo Tritão a maior e mais curiosa."
 
@@ -293,7 +293,7 @@ text = "   Possui 14 luas, sendo Tritão a maior e mais curiosa."
 offset_left = 70.0
 offset_top = 376.0
 offset_right = 682.0
-offset_bottom = 417.0
+offset_bottom = 431.0
 theme = SubResource("Theme_asxd2")
 text = "   Nas profundezas geladas de Netuno, o metano se mistura 
 às nuvens e forma cristais cintilantes que pintam o planeta de azul."
@@ -308,7 +308,7 @@ anchor_bottom = 1.0
 offset_left = -416.0
 offset_top = -167.0
 offset_right = 416.0
-offset_bottom = -124.0
+offset_bottom = -110.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = SubResource("Theme_hvyj8")
@@ -326,7 +326,7 @@ anchor_bottom = 0.5
 offset_left = -30.0
 offset_top = 245.0
 offset_right = 30.0
-offset_bottom = 267.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_ei4xi")

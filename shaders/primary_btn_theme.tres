@@ -1,6 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://ckpnhtgdjvgmd"]
-
-[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="1_x1m5p"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ckpnhtgdjvgmd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1m5p"]
 bg_color = Color(0.54901963, 0.32156864, 1, 0.99215686)
@@ -59,7 +57,6 @@ shadow_color = Color(0, 0, 0, 0.83137256)
 shadow_size = 2
 
 [resource]
-default_font = ExtResource("1_x1m5p")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/styles/focus = SubResource("StyleBoxFlat_x1m5p")
 Button/styles/hover = SubResource("StyleBoxFlat_5i0a5")

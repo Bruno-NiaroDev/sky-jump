@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dfwss1qqr6jfl"]
+[gd_scene load_steps=12 format=3 uid="uid://dfwss1qqr6jfl"]
 
 [ext_resource type="Script" uid="uid://bur3thxg2pdq2" path="res://scripts/common/menu.gd" id="1_w6t7d"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_t076g"]
@@ -6,7 +6,6 @@
 [ext_resource type="Theme" uid="uid://rbyh38ikqedj" path="res://shaders/reset_separator_color.tres" id="4_gq33n"]
 [ext_resource type="Texture2D" uid="uid://12i03in4xkfb" path="res://assets/menus/logo.png" id="4_w6t7d"]
 [ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="7_a2pm3"]
-[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="7_gq33n"]
 
 [sub_resource type="Animation" id="Animation_vt17n"]
 length = 0.001
@@ -226,7 +225,6 @@ layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("7_gq33n")
 theme_override_font_sizes/font_size = 21
 text = "Digite o seu nome:"
 
@@ -241,7 +239,6 @@ theme = ExtResource("4_gq33n")
 [node name="error_label" type="Label" parent="form"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.99359244, 0.010503309, 2.117753e-06, 1)
-theme_override_fonts/font = ExtResource("7_gq33n")
 theme_override_font_sizes/font_size = 19
 text = "O nome é obrigatório!"
 
