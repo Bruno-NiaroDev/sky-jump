@@ -1,0 +1,233 @@
+[gd_scene load_steps=11 format=3 uid="uid://lnefnvlba445"]
+
+[ext_resource type="Script" uid="uid://bhq04xf3mjwsu" path="res://scripts/common/info.gd" id="1_u7mjl"]
+[ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_s4e76"]
+[ext_resource type="Texture2D" uid="uid://xtoqs6m3q3mc" path="res://assets/menus/info_bg.png" id="2_v5owc"]
+[ext_resource type="Theme" uid="uid://cjnewer3552kx" path="res://shaders/info_title.tres" id="3_j70lj"]
+[ext_resource type="Theme" uid="uid://cvschjhpl1lko" path="res://shaders/info_subtitle.tres" id="3_oxvaa"]
+[ext_resource type="Theme" uid="uid://b5umb40nupscp" path="res://shaders/info_font.tres" id="4_whqrp"]
+[ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="5_xxvyd"]
+
+[sub_resource type="Animation" id="Animation_vt17n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("start_btn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_asxd2"]
+resource_name = "reveal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("start_btn:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ei4xi"]
+_data = {
+&"RESET": SubResource("Animation_vt17n"),
+&"reveal": SubResource("Animation_asxd2")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_u7mjl")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_s4e76")
+texture = ExtResource("2_v5owc")
+expand_mode = 2
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ei4xi")
+}
+autoplay = "reveal"
+
+[node name="instructions_container" type="Node2D" parent="."]
+
+[node name="Title" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 472.0
+offset_top = 31.0
+offset_right = 680.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme = ExtResource("3_j70lj")
+text = "COMO JOGAR"
+
+[node name="label_right" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 185.0
+offset_top = 91.0
+offset_right = 424.0
+offset_bottom = 117.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou D  -  Andar para a direita"
+
+[node name="label_left" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 183.5
+offset_top = 137.0
+offset_right = 441.5
+offset_bottom = 163.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou A  - Andar para a esquerda"
+
+[node name="label_jump" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 217.0
+offset_top = 190.0
+offset_right = 510.0
+offset_bottom = 216.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou W  (pressione uma vez)  -  Pular"
+
+[node name="label_double_jump" type="Label" parent="instructions_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 217.0
+offset_top = 243.0
+offset_right = 510.0
+offset_bottom = 269.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "ou W (duas vezes)  - Pulo duplo"
+
+[node name="mechanics_container" type="Node2D" parent="."]
+position = Vector2(0, 279)
+
+[node name="Title" type="Label" parent="mechanics_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 166.5
+offset_top = 35.0
+offset_right = 439.5
+offset_bottom = 69.0
+grow_horizontal = 2
+theme = ExtResource("3_oxvaa")
+text = "MECÂNICAS PRINCIPAIS"
+
+[node name="label01" type="Label" parent="mechanics_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 67.0
+offset_top = 91.0
+offset_right = 1082.0
+offset_bottom = 146.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = " Coleta de Elementos: Cada planeta possui um elemento único que deve ser coletado para ativar a nave e seguir para
+ o próximo planeta."
+
+[node name="label02" type="Label" parent="mechanics_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 71.0
+offset_top = 166.0
+offset_right = 988.0
+offset_bottom = 192.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "Plataformas Dinâmicas: Algumas se movem, outras caem após alguns segundos. Ajuste o tempo e o salto!"
+
+[node name="label03" type="Label" parent="mechanics_container"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 71.0
+offset_top = 212.0
+offset_right = 739.0
+offset_bottom = 238.0
+grow_horizontal = 2
+theme = ExtResource("4_whqrp")
+text = "Inimigos: Ao encostar, causam dano. Derrote-os pulando sobre suas cabeças!"
+
+[node name="start_btn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -90.0
+offset_right = 57.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("5_xxvyd")
+text = "IR PARA O JOGO!"
+
+[connection signal="pressed" from="start_btn" to="." method="_on_start_btn_pressed"]

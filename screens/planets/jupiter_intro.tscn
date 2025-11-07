@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://camhqsryni7t2"]
+[gd_scene load_steps=12 format=3 uid="uid://camhqsryni7t2"]
 
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="1_dapbc"]
 [ext_resource type="Script" uid="uid://drngmj385vb6g" path="res://scripts/jupiter/jupiter_intro.gd" id="1_umgsn"]
@@ -6,21 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://ucdvds0m54cw" path="res://assets/jupiter/jupiter_planet.png" id="3_dapbc"]
 [ext_resource type="Theme" uid="uid://cynn25xd1f2co" path="res://shaders/title_intro_theme.tres" id="4_sutb0"]
 [ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="6_isiak"]
-[ext_resource type="FontFile" uid="uid://bmgp227urx4v0" path="res://assets/fonts/RevMiniPixel.ttf" id="7_52m3j"]
 
 [sub_resource type="Theme" id="Theme_umgsn"]
 Label/colors/font_color = Color(0.9950989, 0.8589786, 0.65314436, 1)
 Label/colors/font_outline_color = Color(0.9529412, 0.69803923, 0.24313726, 1)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 18
-Label/fonts/font = ExtResource("7_52m3j")
 
 [sub_resource type="Theme" id="Theme_d0qxh"]
 Label/colors/font_color = Color(0.9882949, 0.6494392, 0.49865896, 1)
 Label/colors/font_outline_color = Color(0.8039216, 0.3529412, 0.101960786, 1)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 18
-Label/fonts/font = ExtResource("7_52m3j")
 
 [sub_resource type="Animation" id="Animation_vt17n"]
 length = 0.001
@@ -262,7 +259,7 @@ anchor_bottom = 0.5
 offset_left = -197.0
 offset_top = -272.0
 offset_right = 449.0
-offset_bottom = -190.99997
+offset_bottom = -163.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -277,7 +274,7 @@ horizontal_alignment = 1
 offset_left = 185.0
 offset_top = 169.0
 offset_right = 886.0
-offset_bottom = 218.0
+offset_bottom = 224.0
 theme = SubResource("Theme_umgsn")
 text = "  Entre tempestades colossais e cores vibrantes, você acaba de chegar
  a Júpiter, o gigante gasoso que impressiona com sua força e grandiosidade."
@@ -302,7 +299,7 @@ text = "Maior planeta do Sistema Solar."
 offset_left = 247.0
 offset_top = 389.0
 offset_right = 655.0
-offset_bottom = 430.0
+offset_bottom = 444.0
 theme = SubResource("Theme_umgsn")
 text = "A Grande Mancha Vermelha, uma tempestade
  gigantesca que dura séculos."
@@ -317,7 +314,7 @@ anchor_bottom = 1.0
 offset_left = -30.0
 offset_top = -79.0
 offset_right = 30.000488
-offset_bottom = -57.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("6_isiak")
@@ -328,7 +325,7 @@ layout_mode = 0
 offset_left = 247.0
 offset_top = 468.0
 offset_right = 961.0
-offset_bottom = 531.0
+offset_bottom = 552.0
 theme = SubResource("Theme_d0qxh")
 text = "Prepare-se para explorar os segredos deste gigante gasoso e extrair seus
  recursos valiosos. Só assim sua nave poderá seguir rumo ao próximo

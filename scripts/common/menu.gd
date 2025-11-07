@@ -35,4 +35,4 @@ func _on_confirm_btn_pressed() -> void:
 		error_label.visible = true
 	else:
 		error_label.visible = false
-		get_tree().change_scene_to_file('res://screens/mapa.tscn')
+		get_tree().change_scene_to_file('res://screens/info.tscn')
