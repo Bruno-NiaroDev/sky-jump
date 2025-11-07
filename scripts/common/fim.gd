@@ -98,4 +98,5 @@ func reject_player(player: Node2D) -> void:
 
 
 func load_next_scene() -> void:
+	Globals.selected_planet = next_level_key
 	get_tree().change_scene_to_file(next_scene_path)

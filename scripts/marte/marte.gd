@@ -8,26 +8,16 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
-	Globals.player = player
-	player.follow_camera(camera)
+	Globals.reset_level()
 	Globals.player_start_position = player_start_position
-	Globals.player.player_has_died.connect(reload_game)
-	
-
-
-	
-func reload_game():
-	await get_tree().create_timer(1.0).timeout
-	var player = player_scene.instantiate()
-	add_child(player)
 	Globals.player = player
 	player.follow_camera(camera)
 	Globals.player.player_has_died.connect(game_over)
-	Globals.elements = 0
-	Globals.player_life = 3
-	Globals.respawn_player()
+	
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
 	
 func game_over():
-	print('você morreu')
-	#get_tree().change_scene_to_file("res://scenes/game_over_screen.tscn")
+	get_tree().change_scene_to_file("res://screens/game_over.tscn")

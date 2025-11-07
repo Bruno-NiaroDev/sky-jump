@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cyh72xte1w5jw" path="res://assets/marte/tiles_marte.png" id="3_qcefx"]
 [ext_resource type="PackedScene" uid="uid://dhbgkad8gdnsx" path="res://scenes/marte/elemento_marte.tscn" id="4_yevf7"]
 [ext_resource type="PackedScene" uid="uid://co4gur0dvhio8" path="res://scenes/marte/inimigo_novo_marte.tscn" id="6_i7cyq"]
-[ext_resource type="PackedScene" path="res://scenes/common/fim.tscn" id="7_85mah"]
+[ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="7_85mah"]
 [ext_resource type="PackedScene" uid="uid://6cade50ioilp" path="res://scenes/common/characters/player.tscn" id="8_xq4vi"]
 [ext_resource type="Texture2D" uid="uid://c1ik4r33muhec" path="res://assets/commum/tilesets/Lava_frames (16 x 32).png" id="10_8ce2b"]
 [ext_resource type="PackedScene" uid="uid://bxuog0dghnpol" path="res://scenes/common/prefabs/moving_plataform.tscn" id="10_odafr"]
@@ -375,3 +375,5 @@ position = Vector2(57, 373)
 
 [node name="fim" parent="." instance=ExtResource("7_85mah")]
 position = Vector2(1847, 625)
+min_elements_collected = 20
+next_level_key = "terra"
