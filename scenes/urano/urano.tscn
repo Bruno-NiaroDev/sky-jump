@@ -68,7 +68,7 @@ position = Vector2(89, 473)
 
 [node name="camera" type="Camera2D" parent="."]
 offset = Vector2(0, -200)
-limit_left = 0
+limit_left = 15
 limit_right = 2370
 
 [node name="coletaveis" type="Node" parent="."]
@@ -164,7 +164,7 @@ scroll_scale = Vector2(0.1, 0.1)
 repeat_size = Vector2(1239, 0)
 
 [node name="fundo" type="Sprite2D" parent="Fundo2/ParallaxFundo"]
-position = Vector2(12, -58)
+position = Vector2(0, -58)
 scale = Vector2(0.96875, 0.89097303)
 texture = ExtResource("2_fsssu")
 centered = false
