@@ -1,14 +1,24 @@
-LEVEL "Mercury" {
-  gravity: 3.7,
-  minimum_to_be_collected: 5
-}
-
-LEVEL "Venus" {
-  gravity: 8.87,
-  minimum_to_be_collected: 7
-}
-
-LEVEL "Earth" {
+LEVEL "netuno" {
   gravity: 9.8,
-  minimum_to_be_collected: 10
+  minimum_to_be_collected: 8
+}
+
+LEVEL "urano" {
+  gravity: 9.8,
+  minimum_to_be_collected: 22
+}
+
+LEVEL "saturno" {
+  gravity: 9.8,
+  minimum_to_be_collected: 12
+}
+
+LEVEL "jupiter" {
+  gravity: 9.8,
+  minimum_to_be_collected: 28
+}
+
+LEVEL "marte" {
+  gravity: 9.8,
+  minimum_to_be_collected: 17
 }
