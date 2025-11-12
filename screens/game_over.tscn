@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cirijqchloi1o"]
 
-[ext_resource type="Script" uid="uid://bmvlewxm6xya0" path="res://scripts/common/game_over.gd" id="1_40pha"]
+[ext_resource type="Script" path="res://scripts/common/game_over.gd" id="1_40pha"]
 [ext_resource type="Texture2D" uid="uid://c82pnhepxts7y" path="res://assets/menus/mapa_bg.png" id="2_4qfck"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_flvnf"]
 [ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="5_ffci5"]
@@ -110,7 +110,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("5_ffci5")
-text = "RETRY GAME"
+text = "RECOMEÇAR"
 
 [node name="HSeparator" type="HSeparator" parent="buttons"]
 custom_minimum_size = Vector2(100, 1)
@@ -123,7 +123,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("5_ffci5")
-text = "   QUIT GAME  "
+text = "SAIR DO JOGO"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

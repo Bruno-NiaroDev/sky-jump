@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dsluhbgoltqc6"]
 
-[ext_resource type="Script" uid="uid://dt0ygia03pbnt" path="res://scripts/saturno/saturno_intro.gd" id="1_bbkk7"]
+[ext_resource type="Script" path="res://scripts/saturno/saturno_intro.gd" id="1_bbkk7"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="1_qm7u0"]
 [ext_resource type="Texture2D" uid="uid://cvmiam8101stm" path="res://assets/saturno/saturno_intro_bg.png" id="2_qm7u0"]
 [ext_resource type="Texture2D" uid="uid://l3fjw2i3lchl" path="res://assets/saturno/saturno_planet.png" id="3_gdsgg"]
@@ -262,7 +262,7 @@ offset_bottom = 267.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_kxp8y")
-text = "START"
+text = "COMEÇAR"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
