@@ -143,7 +143,7 @@ visible = false
 layout_mode = 0
 offset_left = 421.0
 offset_top = 450.0
-offset_right = 749.0
+offset_right = 815.0
 offset_bottom = 541.0
 size_flags_vertical = 4
 alignment = 1
@@ -158,7 +158,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
-text = "START GAME"
+text = "INICIAR JOGO"
 
 [node name="VSeparator" type="VSeparator" parent="buttons/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 25)
@@ -170,7 +170,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
-text = "   QUIT GAME  "
+text = "SAIR DO JOGO"
 
 [node name="HSeparator" type="HSeparator" parent="buttons"]
 custom_minimum_size = Vector2(100, 1)
@@ -187,7 +187,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
-text = "LOAD GAME"
+text = "   TREINAMENTO   "
 
 [node name="VSeparator" type="VSeparator" parent="buttons/VBoxContainer3"]
 custom_minimum_size = Vector2(0, 25)
@@ -199,7 +199,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
-text = "   RANKING   "
+text = "   CLASSIFICAÇÃO   "
 
 [node name="form" type="VBoxContainer" parent="."]
 layout_mode = 1

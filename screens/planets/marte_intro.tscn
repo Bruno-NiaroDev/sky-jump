@@ -317,7 +317,7 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("6_v8yhk")
-text = "START"
+text = "COMEÇAR"
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {

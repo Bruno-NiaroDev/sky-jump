@@ -42,7 +42,7 @@ planet_key = "saturno"
 
 [node name="jupiter_btn" parent="planets" instance=ExtResource("2_gcjra")]
 position = Vector2(757, 332)
-planet_name = "JUPÍTER"
+planet_name = "JÚPITER"
 planet_sprite = ExtResource("6_kicus")
 planet_key = "jupiter"
 

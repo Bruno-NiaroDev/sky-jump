@@ -109,7 +109,7 @@ offset_bottom = 117.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 theme = ExtResource("4_mndmy")
-text = "RANKING"
+text = "CLASSIFICAÇÃO"
 
 [node name="position_container" type="Node2D" parent="."]
 
@@ -263,7 +263,7 @@ offset_bottom = 178.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_eitkn")
-text = "SCORE"
+text = "PONTUAÇÃO"
 horizontal_alignment = 1
 
 [node name="score01" type="Label" parent="score_container"]

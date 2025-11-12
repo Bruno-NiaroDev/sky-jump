@@ -63,7 +63,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("6_go3w4")
 theme_override_font_sizes/font_size = 24
-text = "TIME:"
+text = "TEMPO:"
 vertical_alignment = 1
 
 [node name="timer_counter" type="Label" parent="control/container/timer_container"]
