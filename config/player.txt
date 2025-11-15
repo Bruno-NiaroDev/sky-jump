@@ -1,5 +1,5 @@
-PLAYER "Bruno Rei" {
-  current_level: 1,
+PLAYER "Brunin Fz10" {
+  current_level: "",
   duration: "00:00:00",
   extra_elements: 0,
   lives: 3,

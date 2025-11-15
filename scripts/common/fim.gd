@@ -26,7 +26,6 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# 🔒 Verifica se o jogador tem elementos suficientes
 	if Globals.elements < min_elements_collected:
-		
 		reject_player(body)
 		return
 
@@ -98,5 +97,6 @@ func reject_player(player: Node2D) -> void:
 
 
 func load_next_scene() -> void:
+	Globals.save_level()
 	Globals.selected_planet = next_level_key
 	get_tree().change_scene_to_file(next_scene_path)

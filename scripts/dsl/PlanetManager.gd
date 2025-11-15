@@ -2,10 +2,8 @@ extends Node
 class_name PlanetManager
 
 @export var file_path := "res://config/planets.txt"
-var parser: DSLParser
+var parser = DSLParser.new()
 
-func _ready():
-	parser = DSLParser.new()
 
 func load_planets() -> Array:
 	var file = FileAccess.open(file_path, FileAccess.READ)

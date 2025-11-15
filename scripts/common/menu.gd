@@ -35,4 +35,5 @@ func _on_confirm_btn_pressed() -> void:
 		error_label.visible = true
 	else:
 		error_label.visible = false
+		Globals.player_manager.create_player(nome)
 		get_tree().change_scene_to_file('res://screens/info.tscn')

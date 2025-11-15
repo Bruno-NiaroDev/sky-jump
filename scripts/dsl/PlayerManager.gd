@@ -2,10 +2,7 @@ extends Node
 class_name PlayerManager
 
 @export var file_path := "res://config/player.txt"
-var parser: DSLParser
-
-func _ready():
-	parser = DSLParser.new()
+var parser = DSLParser.new()
 
 func create_player(name: String) -> Dictionary:
 	var player = {
@@ -32,9 +29,21 @@ func load_player() -> Dictionary:
 
 func update_player(updates: Dictionary) -> void:
 	var player = load_player()
+	var props = player["props"]
+
 	for key in updates.keys():
-		player["props"][key] = updates[key]
+
+		if key in ["duration", "extra_elements"]:
+			if props.has(key):
+				props[key] += updates[key]
+			else:
+				props[key] = updates[key]
+
+		else:
+			props[key] = updates[key]
+
 	_save([player])
+
 
 func reset_player() -> void:
 	var player = load_player()

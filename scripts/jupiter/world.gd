@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var player := $player as CharacterBody2D
 @onready var player_scene = preload("res://scenes/common/characters/player.tscn")
 @onready var camera := $camera as Camera2D
@@ -14,6 +13,7 @@ func _ready() -> void:
 	Globals.player = player
 	player.follow_camera(camera)
 	Globals.player.player_has_died.connect(game_over)
+	Globals.load_current_planet("jupiter")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

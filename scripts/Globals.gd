@@ -1,9 +1,20 @@
 extends Node
 
+const PlayerManager = preload("res://scripts/dsl/PlayerManager.gd")
+const PlanetManager = preload("res://scripts/dsl/PlanetManager.gd")
+const RankingManager = preload("res://scripts/dsl/RankingManager.gd")
+const DSLParser = preload("res://scripts/dsl/DSLParser.gd")
+
+var player_manager = PlayerManager.new()
+var planet_manager = PlanetManager.new()
+var ranking_manager = RankingManager.new()
+
 # Configuação dos levels
 var selected_planet := ""
-var block_levels = ["urano", "saturno", "jupiter", "marte", "terra"]
+var block_levels = []
+var planetas := {}
 
+var planets = planet_manager.load_planets()
 
 var elements := 0
 var player_life := 3
@@ -11,6 +22,17 @@ var player_life := 3
 var player = null
 var current_checkpoint = null
 var player_start_position = null
+var is_ranked = true
+
+func _ready() -> void:
+	for planet in planets:
+		var name = planet["name"].to_lower()
+		var props = planet["props"]
+		# aqui copiamos TODAS as propriedades do planeta
+		planetas[name] = props.duplicate()
+		
+		if planet["name"].to_lower() != "netuno":
+			block_levels.append(planet["name"].to_lower())
 
 func reset_level():
 	elements = 0
@@ -25,3 +47,17 @@ func respawn_player():
 		player.position = current_checkpoint.global_position
 	else:
 		player.global_position = player_start_position.global_position
+
+func load_current_planet(current_planet):
+	elements = planetas[current_planet]["minimum_to_be_collected"]
+	print("carregado elements " + current_planet)
+
+func save_level():
+	print("Salvando Leval" + selected_planet)
+	var new_duration = 00
+	var new_extras = Globals.elements - planetas[selected_planet]["minimum_to_be_collected"]
+	player_manager.update_player({
+		"duration": new_duration,
+		"extra_elements": new_extras,
+		"lives": 3
+	})
