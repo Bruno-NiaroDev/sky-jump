@@ -14,7 +14,6 @@ func _ready() -> void:
 	Globals.player = player
 	player.follow_camera(camera)
 	Globals.player.player_has_died.connect(game_over)
-	Globals.load_current_planet("saturno")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

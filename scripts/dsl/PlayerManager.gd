@@ -34,16 +34,13 @@ func update_player(updates: Dictionary) -> void:
 	for key in updates.keys():
 
 		if key in ["duration", "extra_elements"]:
-			if props.has(key):
-				props[key] += updates[key]
-			else:
-				props[key] = updates[key]
-
+			var new_value = int(updates[key])
+			var current_value = int(props.get(key, 0))
+			props[key] = current_value + new_value
 		else:
 			props[key] = updates[key]
 
 	_save([player])
-
 
 func reset_player() -> void:
 	var player = load_player()

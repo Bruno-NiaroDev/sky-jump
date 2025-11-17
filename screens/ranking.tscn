@@ -263,7 +263,7 @@ offset_bottom = 178.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_eitkn")
-text = "PONTUAÇÃO"
+text = "TEMPO"
 horizontal_alignment = 1
 
 [node name="score01" type="Label" parent="score_container"]
@@ -279,7 +279,7 @@ offset_bottom = 223.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_eitkn")
-text = "10000"
+text = "09:45"
 horizontal_alignment = 1
 
 [node name="score02" type="Label" parent="score_container"]
@@ -295,7 +295,7 @@ offset_bottom = 278.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_eitkn")
-text = "9999"
+text = "10:39"
 horizontal_alignment = 1
 
 [node name="score03" type="Label" parent="score_container"]
@@ -311,7 +311,7 @@ offset_bottom = 337.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_eitkn")
-text = "8888"
+text = "11:57"
 horizontal_alignment = 1
 
 [node name="score04" type="Label" parent="score_container"]
@@ -327,7 +327,7 @@ offset_bottom = 395.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_eitkn")
-text = "7777"
+text = "16:24"
 horizontal_alignment = 1
 
 [node name="score05" type="Label" parent="score_container"]
@@ -343,7 +343,7 @@ offset_bottom = 451.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_eitkn")
-text = "6666"
+text = "16:59"
 horizontal_alignment = 1
 
 [node name="start_btn" type="Button" parent="."]

@@ -1,6 +1,6 @@
-PLAYER "Brunin Fz10" {
-  current_level: "",
-  duration: "00:00:00",
-  extra_elements: 0,
+PLAYER "teste" {
+  current_level: 1,
+  duration: 87,
+  extra_elements: 2,
   lives: 3,
 }

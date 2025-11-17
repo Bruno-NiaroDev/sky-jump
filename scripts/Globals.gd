@@ -13,6 +13,7 @@ var ranking_manager = RankingManager.new()
 var selected_planet := ""
 var block_levels = []
 var planetas := {}
+var total_seconds_level := 0
 
 var planets = planet_manager.load_planets()
 
@@ -48,14 +49,10 @@ func respawn_player():
 	else:
 		player.global_position = player_start_position.global_position
 
-func load_current_planet(current_planet):
-	elements = planetas[current_planet]["minimum_to_be_collected"]
-	print("carregado elements " + current_planet)
-
 func save_level():
-	print("Salvando Leval" + selected_planet)
-	var new_duration = 00
-	var new_extras = Globals.elements - planetas[selected_planet]["minimum_to_be_collected"]
+	print("Salvando Level: " + selected_planet)
+	var new_duration = total_seconds_level
+	var new_extras = elements - planetas[selected_planet]["minimum_to_be_collected"]
 	player_manager.update_player({
 		"duration": new_duration,
 		"extra_elements": new_extras,
