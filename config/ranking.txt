@@ -1,4 +1,4 @@
 RANKED "1" {
-  name: "Bruno Rei",
+  name: "Bruno Araujo",
   score: 1005,
 }

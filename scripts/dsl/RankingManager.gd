@@ -2,10 +2,7 @@ extends Node
 class_name RankingManager
 
 @export var file_path := "res://config/ranking.txt"
-var parser: DSLParser
-
-func _ready():
-	parser = DSLParser.new()
+var parser = DSLParser.new()
 
 func load_ranking() -> Array:
 	var file = FileAccess.open(file_path, FileAccess.READ)

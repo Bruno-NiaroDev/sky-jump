@@ -58,3 +58,8 @@ func save_level():
 		"extra_elements": new_extras,
 		"lives": 3
 	})
+	
+	if selected_planet == "marte":
+		var player = player_manager.load_player()
+		var score = int(player["props"]["duration"]) - (int(player["props"]["extra_elements"]) * 3)
+		Globals.ranking_manager.add_score(player["props"]["name"], score)

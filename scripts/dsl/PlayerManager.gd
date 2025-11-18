@@ -10,7 +10,7 @@ func create_player(name: String) -> Dictionary:
 		"name": name,
 		"props": {
 			"current_level": 1,
-			"duration": "00:00:00",
+			"duration": 0,
 			"extra_elements": 0,
 			"lives": 3
 		}

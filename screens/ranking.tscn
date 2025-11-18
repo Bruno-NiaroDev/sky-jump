@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d3bq5ybvixaif"]
 
-[ext_resource type="Script" uid="uid://bhq04xf3mjwsu" path="res://scripts/common/info.gd" id="1_qg062"]
+[ext_resource type="Script" uid="uid://c65jstkiap37c" path="res://scripts/common/ranking.gd" id="1_pia17"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_1nkhi"]
 [ext_resource type="Texture2D" uid="uid://be052tu30trgp" path="res://assets/menus/ranking_bg.png" id="3_pia17"]
 [ext_resource type="Theme" uid="uid://cjnewer3552kx" path="res://shaders/info_title.tres" id="4_mndmy"]
@@ -76,7 +76,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 4
-script = ExtResource("1_qg062")
+script = ExtResource("1_pia17")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 1
