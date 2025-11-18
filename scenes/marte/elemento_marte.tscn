@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dhbgkad8gdnsx"]
+[gd_scene load_steps=13 format=3 uid="uid://dhbgkad8gdnsx"]
 
 [ext_resource type="Script" uid="uid://cvtpvltuvx4xj" path="res://scripts/marte/elemento_marte.gd" id="1_q0euy"]
 [ext_resource type="Texture2D" uid="uid://dr1m13hh320un" path="res://assets/marte/elemento-marte.png" id="1_x367k"]
+[ext_resource type="AudioStream" uid="uid://dxhhghq825xwx" path="res://sounds/elemento coleta.wav" id="3_ksnhq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q0euy"]
 atlas = ExtResource("1_x367k")
@@ -67,7 +68,7 @@ height = 40.0
 [node name="elemento_marte" type="Area2D"]
 script = ExtResource("1_q0euy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(12.999998, 21)
 scale = Vector2(0.23139314, 0.22349998)
 sprite_frames = SubResource("SpriteFrames_bpgn3")
@@ -75,8 +76,13 @@ animation = &"elemento"
 autoplay = "elemento"
 frame_progress = 0.76998264
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(18, 20)
 shape = SubResource("CapsuleShape2D_m37ht")
+
+[node name="coin_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ksnhq")
+volume_db = 4.917
+pitch_scale = 0.75
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

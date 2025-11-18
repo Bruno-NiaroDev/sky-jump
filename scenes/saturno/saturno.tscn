@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://iik5yihfxath"]
+[gd_scene load_steps=27 format=4 uid="uid://iik5yihfxath"]
 
 [ext_resource type="Texture2D" uid="uid://w35yql0hso4u" path="res://assets/saturno/parallax/saturno_01.png" id="1_0cemh"]
 [ext_resource type="Script" uid="uid://c274x6iilgvvr" path="res://scripts/saturno/saturno.gd" id="1_b8poi"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="13_hokgk"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="13_pvgjc"]
 [ext_resource type="PackedScene" uid="uid://csgf18bo55187" path="res://scenes/common/prefabs/pause_menu.tscn" id="14_dcaj7"]
+[ext_resource type="AudioStream" uid="uid://dbxp7mcn8yhjx" path="res://sounds/fundo musical.mp3" id="17_61hct"]
+[ext_resource type="AudioStream" uid="uid://boy7fb1okql0m" path="res://sounds/morte_inimigo_marte.wav.mp3" id="18_4ft7r"]
+[ext_resource type="AudioStream" uid="uid://dxhhghq825xwx" path="res://sounds/elemento coleta.wav" id="19_f0mod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6kego"]
 texture = ExtResource("5_h6m1h")
@@ -464,3 +467,18 @@ position = Vector2(62, 519)
 
 [node name="player_start_position" type="Marker2D" parent="."]
 position = Vector2(72, 616)
+
+[node name="sons" type="Node" parent="."]
+
+[node name="fundo_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("17_61hct")
+volume_db = -24.807
+autoplay = true
+
+[node name="enemy_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("18_4ft7r")
+volume_db = 0.954
+
+[node name="coin_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("19_f0mod")
+volume_db = -15.267

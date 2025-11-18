@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b6mfjutvqin3n"]
+[gd_scene load_steps=23 format=4 uid="uid://b6mfjutvqin3n"]
 
 [ext_resource type="Script" uid="uid://brcukh23453hp" path="res://scripts/marte/marte.gd" id="1_6p2s8"]
 [ext_resource type="Texture2D" uid="uid://ccyun1bnlcnia" path="res://assets/marte/ceu-marte.png" id="1_cni30"]
@@ -12,7 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bxuog0dghnpol" path="res://scenes/common/prefabs/moving_plataform.tscn" id="10_odafr"]
 [ext_resource type="PackedScene" uid="uid://4rfk0j5c44g6" path="res://scenes/common/prefabs/falling_plataform.tscn" id="13_i7cyq"]
 [ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="13_ks6sj"]
+[ext_resource type="AudioStream" uid="uid://dbxp7mcn8yhjx" path="res://sounds/fundo musical.mp3" id="14_ks6sj"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="14_vubiy"]
+[ext_resource type="AudioStream" uid="uid://dxhhghq825xwx" path="res://sounds/elemento coleta.wav" id="15_ks6sj"]
+[ext_resource type="AudioStream" uid="uid://boy7fb1okql0m" path="res://sounds/morte_inimigo_marte.wav.mp3" id="16_g26r8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odafr"]
 texture = ExtResource("10_8ce2b")
@@ -377,3 +380,18 @@ position = Vector2(57, 373)
 position = Vector2(1847, 625)
 min_elements_collected = 20
 next_level_key = "terra"
+
+[node name="sons" type="Node" parent="."]
+
+[node name="fundo_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("14_ks6sj")
+volume_db = -24.807
+autoplay = true
+
+[node name="enemy_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("16_g26r8")
+volume_db = 0.954
+
+[node name="coin_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("15_ks6sj")
+volume_db = -15.266

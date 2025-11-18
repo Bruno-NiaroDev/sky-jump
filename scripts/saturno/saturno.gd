@@ -6,6 +6,7 @@ extends Node2D
 @onready var camera := $camera as Camera2D
 @onready var control := $HUD/control as  Control
 @onready var player_start_position: Marker2D = $player_start_position
+@onready var fundo_sfx: AudioStreamPlayer = $sons/fundo_sfx
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

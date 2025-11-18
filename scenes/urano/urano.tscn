@@ -1,17 +1,20 @@
-[gd_scene load_steps=17 format=4 uid="uid://ctepaiw1q3sya"]
+[gd_scene load_steps=20 format=4 uid="uid://ctepaiw1q3sya"]
 
 [ext_resource type="Script" uid="uid://b47cc6bbdeo8d" path="res://scripts/urano/urano.gd" id="1_h4mvc"]
 [ext_resource type="Texture2D" uid="uid://prvs3uirl238" path="res://assets/urano/tilemap-urano.png" id="1_ja3g6"]
 [ext_resource type="PackedScene" uid="uid://be3lha83ovsok" path="res://scenes/urano/elemento_urano.tscn" id="2_e03ky"]
 [ext_resource type="Texture2D" uid="uid://crbt4a3cse86j" path="res://assets/urano/background-urano.jpg" id="2_fsssu"]
-[ext_resource type="PackedScene" uid="uid://s7edfnp572bi" path="res://scenes/urano/inimigo_urano.tscn" id="3_h4mvc"]
+[ext_resource type="PackedScene" path="res://scenes/urano/inimigo_urano.tscn" id="3_h4mvc"]
 [ext_resource type="PackedScene" uid="uid://6cade50ioilp" path="res://scenes/common/characters/player.tscn" id="4_xr7kc"]
 [ext_resource type="Texture2D" uid="uid://bqcgfew843jke" path="res://assets/urano/fundo2-urano.png" id="7_3j6vt"]
 [ext_resource type="Texture2D" uid="uid://dxj6tu1bsuxyd" path="res://assets/urano/killzone-urano.png" id="8_3j6vt"]
 [ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="9_ax5sx"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="10_8psdl"]
-[ext_resource type="PackedScene" uid="uid://3jj5gheba43p" path="res://scenes/urano/plataforma.tscn" id="11_dw5cw"]
+[ext_resource type="PackedScene" path="res://scenes/urano/plataforma.tscn" id="11_dw5cw"]
 [ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="12_phf3x"]
+[ext_resource type="AudioStream" uid="uid://dbxp7mcn8yhjx" path="res://sounds/fundo musical.mp3" id="13_7lffe"]
+[ext_resource type="AudioStream" uid="uid://dxhhghq825xwx" path="res://sounds/elemento coleta.wav" id="14_igb6k"]
+[ext_resource type="AudioStream" uid="uid://boy7fb1okql0m" path="res://sounds/morte_inimigo_marte.wav.mp3" id="15_igb6k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xr7kc"]
 texture = ExtResource("1_ja3g6")
@@ -243,3 +246,18 @@ position = Vector2(422, 521)
 position = Vector2(80, 293)
 min_elements_collected = 22
 next_level_key = "saturno"
+
+[node name="sons" type="Node" parent="."]
+
+[node name="fundo_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("13_7lffe")
+volume_db = -24.807
+autoplay = true
+
+[node name="coin_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("14_igb6k")
+volume_db = -15.266
+
+[node name="enemy_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("15_igb6k")
+volume_db = 0.954

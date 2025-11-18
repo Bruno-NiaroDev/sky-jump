@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://c2qa15kcp50d0"]
+[gd_scene load_steps=26 format=4 uid="uid://c2qa15kcp50d0"]
 
 [ext_resource type="Script" uid="uid://cai40661j77yj" path="res://scripts/netuno/cenario.gd" id="1_axq4w"]
 [ext_resource type="PackedScene" uid="uid://bfdsqm5tkwrsp" path="res://scenes/netuno/netuno_fundo.tscn" id="2_y4w5r"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="8_mviw2"]
 [ext_resource type="PackedScene" uid="uid://wc342fsjdrg2" path="res://scenes/netuno/enemie/enemy.tscn" id="9_y4w5r"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="12_jgen5"]
+[ext_resource type="AudioStream" uid="uid://dbxp7mcn8yhjx" path="res://sounds/fundo musical.mp3" id="13_85xkq"]
+[ext_resource type="AudioStream" uid="uid://cmxthhsa8ko72" path="res://sounds/morte_inimigo_netuno.wav.mp3" id="14_osb16"]
+[ext_resource type="AudioStream" uid="uid://dxhhghq825xwx" path="res://sounds/elemento coleta.wav" id="15_mviw2"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_q5pf4"]
 tile_data = PackedInt32Array(0, 0, 65536, 65536, 0, 65537, 131072, 0, 65538, 1, 65536, 65536, 65537, 65536, 65537, 131073, 65536, 65538, 2, 131072, 65536, 65538, 131072, 65537, 131074, 131072, 65538)
@@ -329,7 +332,7 @@ move_horizontal = true
 [node name="fim" parent="." instance=ExtResource("8_mviw2")]
 position = Vector2(4028, 473)
 scale = Vector2(1.5, 1.5)
-min_elements_collected = 8
+min_elements_collected = 2
 next_level_key = "urano"
 
 [node name="player" parent="." instance=ExtResource("6_85xkq")]
@@ -399,3 +402,19 @@ position = Vector2(3620.0002, 194)
 scale = Vector2(3.5, 3.5)
 
 [node name="HUD" parent="." instance=ExtResource("12_jgen5")]
+
+[node name="sons" type="Node2D" parent="."]
+
+[node name="sfx_enemy_dead" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("14_osb16")
+volume_db = -0.954
+pitch_scale = 1.22
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("13_85xkq")
+volume_db = -24.808
+autoplay = true
+
+[node name="coin_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("15_mviw2")
+volume_db = -15.267

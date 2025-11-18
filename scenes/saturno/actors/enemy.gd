@@ -9,6 +9,8 @@ var direction := -1
 @onready var texture := $texture as Sprite2D
 @onready var anim := $anim as AnimationPlayer
 @export var enemy_score := 100
+@onready var enemy_sfx: AudioStreamPlayer = $"../../sons/enemy_sfx"
+
 
 
 
@@ -34,6 +36,9 @@ func _physics_process(delta: float) -> void:
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	print(anim_name)
 	if anim_name == 'hurt':
-		#Globals.score += enemy_score
+		enemy_sfx.play()
 		queue_free()
+		await enemy_sfx.finished
+		#Globals.score += enemy_score
+		
 	
