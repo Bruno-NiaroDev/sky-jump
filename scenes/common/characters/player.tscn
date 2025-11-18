@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://6cade50ioilp"]
+[gd_scene load_steps=26 format=3 uid="uid://6cade50ioilp"]
 
 [ext_resource type="Script" uid="uid://s1myc3hrfl3r" path="res://scripts/common/player.gd" id="1_chttk"]
 [ext_resource type="Texture2D" uid="uid://bk0rnno867760" path="res://assets/commum/player/nimboo.png" id="2_cimwf"]
 [ext_resource type="Texture2D" uid="uid://lkl63vwep226" path="res://assets/commum/player/nimbo_ocioso.png" id="3_bb55t"]
 [ext_resource type="Texture2D" uid="uid://dv0gqgw6n5qq2" path="res://assets/commum/player/nimbopulando.png" id="4_21v38"]
 [ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/common/prefabs/hitbox.tscn" id="5_kjkj0"]
+[ext_resource type="AudioStream" uid="uid://db7h2o1sxdl0x" path="res://sounds/jump.wav" id="6_6v5od"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d0tvl"]
 atlas = ExtResource("2_cimwf")
@@ -185,6 +186,9 @@ collision_mask = 64
 [node name="head_collision" type="CollisionShape2D" parent="head_collider"]
 position = Vector2(-1, -43)
 shape = SubResource("RectangleShape2D_33vod")
+
+[node name="jump_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_6v5od")
 
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
 [connection signal="body_entered" from="head_collider" to="." method="_on_head_collider_body_entered"]

@@ -8,6 +8,8 @@ var direction := -1
 @onready var anim := $anim as AnimationPlayer
 @onready var texture: Sprite2D = $texture
 @onready var wall_detector: RayCast2D = $wall_detector
+@onready var enemy_sfx: AudioStreamPlayer = $"../../sons/enemy_sfx"
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -29,6 +31,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == 'hurt':
-		print("morre") 
+		enemy_sfx.play()
 		queue_free()
+		await enemy_sfx.finished
+		
+		
 	

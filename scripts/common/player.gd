@@ -7,12 +7,13 @@ var is_jumping := false
 var is_hurted := false
 var knockback_vector := Vector2.ZERO
 var direction
-var can_double_jump := false  # ✅ Adicionado: controle de pulo duplo
+var can_double_jump := false  # controle do pulo duplo
 
 @onready var animation:= $anim as AnimatedSprite2D
 @onready var remote_transform := $remote as RemoteTransform2D
 @onready var ray_right := $ray_right as RayCast2D
 @onready var ray_left := $ray_left as RayCast2D
+@onready var jump_sfx := $jump_sfx as AudioStreamPlayer 
 
 signal player_has_died()
 
@@ -26,14 +27,17 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor():
 			velocity.y = JUMP_FORCE
 			is_jumping = true
-			can_double_jump = true  # ✅ Permite o pulo duplo após o primeiro pulo
+			jump_sfx.play()               # SOM DO PRIMEIRO PULO
+			can_double_jump = true        # permite pulo duplo
+
 		elif can_double_jump:
-			velocity.y = JUMP_FORCE  # mesmo valor do pulo normal
-			can_double_jump = false  # ✅ Usa o pulo duplo
+			velocity.y = JUMP_FORCE
+			jump_sfx.play()               # SOM DO PULO DUPLO
+			can_double_jump = false       # gastou o pulo duplo
 
 	elif is_on_floor():
 		is_jumping = false
-		can_double_jump = false  # ✅ Reseta quando toca o chão
+		can_double_jump = false          # reseta no chão
 
 	# --- Movimento Horizontal ---
 	direction = Input.get_axis("move_left", "move_right")

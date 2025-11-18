@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://hc1pe1rjw788"]
+[gd_scene load_steps=26 format=4 uid="uid://hc1pe1rjw788"]
 
 [ext_resource type="Script" uid="uid://d150q313gfcws" path="res://scripts/jupiter/world.gd" id="1_gbept"]
 [ext_resource type="Texture2D" uid="uid://pth588630r27" path="res://assets/jupiter/cenario/2.jpeg" id="2_iemce"]
@@ -9,12 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://deyyi75tuecvb" path="res://assets/jupiter/cenario/tiles_jupiter.png" id="7_4s5gp"]
 [ext_resource type="Texture2D" uid="uid://dng02mahh31ky" path="res://assets/jupiter/cenario/Pedra (Chao).png" id="8_uard6"]
 [ext_resource type="PackedScene" uid="uid://4rfk0j5c44g6" path="res://scenes/common/prefabs/falling_plataform.tscn" id="9_v26ic"]
-[ext_resource type="PackedScene" uid="uid://dx3qr3cw24r10" path="res://scenes/jupiter/enemy.tscn" id="10_36xio"]
+[ext_resource type="PackedScene" uid="uid://0xrqcda3miqd" path="res://scenes/jupiter/enemy.tscn" id="10_36xio"]
 [ext_resource type="PackedScene" uid="uid://6cade50ioilp" path="res://scenes/common/characters/player.tscn" id="13_iemce"]
 [ext_resource type="Texture2D" uid="uid://c1ik4r33muhec" path="res://assets/commum/tilesets/Lava_frames (16 x 32).png" id="13_r11y2"]
 [ext_resource type="PackedScene" uid="uid://dt8h1dow4dc4y" path="res://scenes/fallzone.tscn" id="14_l4emt"]
 [ext_resource type="PackedScene" uid="uid://dt5mpj3qqv7nu" path="res://scenes/common/prefabs/hud.tscn" id="15_l4emt"]
 [ext_resource type="PackedScene" uid="uid://em2tk6h0hkuy" path="res://scenes/common/fim.tscn" id="16_ce5ix"]
+[ext_resource type="AudioStream" uid="uid://dbxp7mcn8yhjx" path="res://sounds/fundo musical.mp3" id="16_fll82"]
+[ext_resource type="AudioStream" uid="uid://dxhhghq825xwx" path="res://sounds/elemento coleta.wav" id="17_fll82"]
+[ext_resource type="AudioStream" uid="uid://cmxthhsa8ko72" path="res://sounds/morte_inimigo_netuno.wav.mp3" id="18_4s5gp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r11y2"]
 texture = ExtResource("13_r11y2")
@@ -513,3 +516,19 @@ next_level_key = "marte"
 
 [node name="player_start_position" type="Marker2D" parent="."]
 position = Vector2(-1064, 550)
+
+[node name="sons" type="Node" parent="."]
+
+[node name="som_fundo_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("16_fll82")
+volume_db = -24.807
+autoplay = true
+parameters/looping = true
+
+[node name="coin_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("17_fll82")
+volume_db = -15.266
+
+[node name="enemy_sfx" type="AudioStreamPlayer" parent="sons"]
+stream = ExtResource("18_4s5gp")
+volume_db = 0.954
