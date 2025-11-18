@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dfwss1qqr6jfl"]
+[gd_scene load_steps=10 format=3 uid="uid://dfwss1qqr6jfl"]
 
 [ext_resource type="Script" uid="uid://bur3thxg2pdq2" path="res://scripts/common/menu.gd" id="1_w6t7d"]
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="2_t076g"]
@@ -71,7 +71,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(416, -350), Vector2(416, 50)]
+"values": [Vector2(416, -350), Vector2(450, 60)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -91,12 +91,6 @@ _data = {
 &"RESET": SubResource("Animation_vt17n"),
 &"reveal": SubResource("Animation_asxd2")
 }
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_w6t7d"]
-color = Color(0, 0, 0, 0)
-
-[sub_resource type="Theme" id="Theme_gq33n"]
-HSeparator/styles/separator = SubResource("StyleBoxLine_w6t7d")
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -128,73 +122,59 @@ libraries = {
 autoplay = "reveal"
 
 [node name="logo" type="TextureRect" parent="."]
-layout_mode = 0
-offset_left = 416.0
-offset_top = 50.0
-offset_right = 736.0
-offset_bottom = 370.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -274.0
+offset_right = 160.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("2_t076g")
 texture = ExtResource("4_w6t7d")
 
 [node name="buttons" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 421.0
 offset_top = 450.0
 offset_right = 815.0
-offset_bottom = 541.0
+offset_bottom = 560.0
 size_flags_vertical = 4
 alignment = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="buttons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="buttons"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 
-[node name="start_btn" type="Button" parent="buttons/VBoxContainer2"]
+[node name="start_btn" type="Button" parent="buttons/VBoxContainer"]
+custom_minimum_size = Vector2(327, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
 text = "INICIAR JOGO"
 
-[node name="VSeparator" type="VSeparator" parent="buttons/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 25)
+[node name="HBoxContainer" type="HBoxContainer" parent="buttons/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("4_gq33n")
 
-[node name="quit_btn" type="Button" parent="buttons/VBoxContainer2"]
+[node name="quit_btn" type="Button" parent="buttons/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
 text = "SAIR DO JOGO"
 
-[node name="HSeparator" type="HSeparator" parent="buttons"]
-custom_minimum_size = Vector2(100, 1)
-layout_mode = 2
-theme = SubResource("Theme_gq33n")
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="buttons"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="load_btn" type="Button" parent="buttons/VBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("7_a2pm3")
-text = "   TREINAMENTO   "
-
-[node name="VSeparator" type="VSeparator" parent="buttons/VBoxContainer3"]
-custom_minimum_size = Vector2(0, 25)
+[node name="VSeparator" type="VSeparator" parent="buttons/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 77)
 layout_mode = 2
 theme = ExtResource("4_gq33n")
 
-[node name="ranking_btn" type="Button" parent="buttons/VBoxContainer3"]
+[node name="ranking_btn" type="Button" parent="buttons/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -202,6 +182,7 @@ theme = ExtResource("7_a2pm3")
 text = "   CLASSIFICAÇÃO   "
 
 [node name="form" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -254,8 +235,7 @@ size_flags_vertical = 4
 theme = ExtResource("7_a2pm3")
 text = "JOGAR AGORA!"
 
-[connection signal="pressed" from="buttons/VBoxContainer2/start_btn" to="." method="_on_start_btn_pressed"]
-[connection signal="pressed" from="buttons/VBoxContainer2/quit_btn" to="." method="_on_quit_btn_pressed"]
-[connection signal="pressed" from="buttons/VBoxContainer3/load_btn" to="." method="_on_load_btn_pressed"]
-[connection signal="pressed" from="buttons/VBoxContainer3/ranking_btn" to="." method="_on_ranking_btn_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/HBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
+[connection signal="pressed" from="buttons/VBoxContainer/HBoxContainer/ranking_btn" to="." method="_on_ranking_btn_pressed"]
 [connection signal="pressed" from="form/confirm_btn" to="." method="_on_confirm_btn_pressed"]

@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+DslParser="*res://scripts/dsl/DSLParser.gd"
 Globals="*res://scripts/Globals.gd"
 
 [input]

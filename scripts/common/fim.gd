@@ -15,7 +15,7 @@ var next_scene_path: String = "res://screens/mapa.tscn"
 
 func _ready() -> void:
 	qty_elements_label.text = str("%02d" % Globals.elements) + "/"
-	qty_min_elements.text = str("%02d" % min_elements_collected)
+	qty_min_elements.text = str("%02d" % Globals.planetas[Globals.selected_planet]["minimum_to_be_collected"])
 	
 func _process(delta: float) -> void:
 	qty_elements_label.text = str("%02d" % Globals.elements) + "/"
@@ -25,7 +25,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	
 	# 🔒 Verifica se o jogador tem elementos suficientes
-	if Globals.elements < min_elements_collected:
+	if Globals.elements < Globals.planetas[Globals.selected_planet]["minimum_to_be_collected"]:
 		reject_player(body)
 		return
 

@@ -2,7 +2,6 @@ extends Node
 class_name RankingManager
 
 @export var file_path := "res://config/ranking.txt"
-var parser = DSLParser.new()
 
 func load_ranking() -> Array:
 	var file = FileAccess.open(file_path, FileAccess.READ)
@@ -12,7 +11,7 @@ func load_ranking() -> Array:
 	var content = file.get_as_text()
 	file.close()
 	
-	var ranking = parser.parse_dsl(content)
+	var ranking = DslParser.parse_dsl(content)
 	
 	# Garante score como inteiro
 	for entry in ranking:
@@ -62,5 +61,5 @@ func _save(data: Array) -> void:
 	if file == null:
 		printerr("Não foi possível abrir o arquivo: %s" % file_path)
 		return
-	file.store_string(parser.serialize_dsl(data))
+	file.store_string(DslParser.serialize_dsl(data))
 	file.close()

@@ -1,6 +1,6 @@
-PLAYER "Bruno Araujo" {
+PLAYER "Brunin" {
   current_level: 1,
-  duration: 871,
-  extra_elements: 18,
+  duration: 0,
+  extra_elements: 0,
   lives: 3,
 }

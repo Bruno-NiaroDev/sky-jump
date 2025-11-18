@@ -2,3 +2,8 @@ RANKED "1" {
   name: "Bruno Araujo",
   score: 1005,
 }
+
+RANKED "2" {
+  name: "LUIZAO DA QUEBRADA",
+  score: 1034,
+}

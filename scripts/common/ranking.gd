@@ -34,3 +34,6 @@ func format_seconds_to_minutes(seconds_value: Variant) -> String:
 	var minutes := total_seconds / 60
 	var seconds := total_seconds % 60
 	return "%02d:%02d" % [minutes, seconds]
+
+func _on_start_btn_pressed() -> void:
+	get_tree().change_scene_to_file('res://screens/menu.tscn')
