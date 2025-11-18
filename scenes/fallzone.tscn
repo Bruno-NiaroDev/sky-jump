@@ -1,9 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt8h1dow4dc4y"]
+[gd_scene load_steps=3 format=3 uid="uid://dt8h1dow4dc4y"]
 
 [ext_resource type="Script" uid="uid://bn8vh2okur0hd" path="res://scripts/fallzone.gd" id="1_756eq"]
+[ext_resource type="AudioStream" uid="uid://beirr8w5sso5v" path="res://sounds/dead_lava.wav.mp3" id="2_jnl8j"]
 
 [node name="fallzone" type="Area2D"]
 collision_layer = 2
 script = ExtResource("1_756eq")
+
+[node name="lava_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jnl8j")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

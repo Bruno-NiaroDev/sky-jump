@@ -1,21 +1,36 @@
 extends Area2D
 
-@onready var anim := $AnimatedSprite2D
-@onready var collision := $CollisionShape2D
+@onready var anim := $anim as AnimatedSprite2D
+@onready var collision := $collision as CollisionShape2D
+@onready var coin_sfx: AudioStreamPlayer = $"../../sons/coin_sfx"
 
-var elemento_valor := 1  # quanto esse item vale
+
+
+var elemento_valor := 1  # quanto o item vale
 
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+	connect("body_entered", Callable(self, "_on_body_entered"))
 
 func _on_body_entered(body: Node2D) -> void:
-	# Evita a colisão dupla de moeda
-	queue_free()
-	await collision.call_deferred("queue_free")
+	# Evita pegar duas vezes
+	collision.disabled = true
+
+	# Contabiliza o item
 	Globals.elements += elemento_valor
+
+	# Toca animação e som
+	anim.play("collect")
+	coin_sfx.play()
+
+	# Espera o som terminar antes de remover o item
+	queue_free()
+	await coin_sfx.finished
+
+	
+
+	
+	
+
+	
+
+	

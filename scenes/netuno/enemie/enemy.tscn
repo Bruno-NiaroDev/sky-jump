@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://wc342fsjdrg2"]
+[gd_scene load_steps=12 format=3 uid="uid://wc342fsjdrg2"]
 
 [ext_resource type="Script" uid="uid://ckod4xwtguia8" path="res://scripts/netuno/enemy.gd" id="1_5kx6w"]
 [ext_resource type="Texture2D" uid="uid://c3sj1vi8nm3l" path="res://assets/netuno/inimigo.png" id="2_5kx6w"]
 [ext_resource type="Texture2D" uid="uid://ck2gkbhv31hdt" path="res://assets/netuno/inimigo_morte.png" id="4_5kx6w"]
+[ext_resource type="AudioStream" uid="uid://cmxthhsa8ko72" path="res://sounds/morte_inimigo_netuno.wav.mp3" id="5_3r1ds"]
 [ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/common/prefabs/hitbox.tscn" id="5_u1dkd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gr4p8"]
@@ -176,5 +177,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_2evys")
 }
 autoplay = "walk"
+
+[node name="dead_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_3r1ds")
+volume_db = -13.211
 
 [connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

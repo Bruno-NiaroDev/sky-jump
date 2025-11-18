@@ -9,6 +9,8 @@ var direction := -1    # -1 = esquerda, 1 = direita
 @onready var wall_right := $wall_right as RayCast2D
 @onready var texture := $texture as Sprite2D
 @onready var anim := $anim as AnimationPlayer
+@onready var enemy_sfx: AudioStreamPlayer = $"../../sons/enemy_sfx"
+
 
 func _ready() -> void:
 	# garanta que os RayCasts estão ativos
@@ -44,4 +46,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_anim_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hurt":
+		enemy_sfx.play()
 		queue_free()
+		await enemy_sfx.finished
