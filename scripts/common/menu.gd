@@ -5,16 +5,20 @@ extends Control
 @onready var name_input := $form/input
 @onready var error_label := $form/error_label
 
+@onready var menu_music = preload("res://sounds/inicio e telas.mp3")  # <-- sua música
+
 func _ready() -> void:
 	buttons.visible = true
 	form.visible = false
 	error_label.visible = false
 
+	# Toca música do menu
+	MusicManager.play_menu_music(menu_music)
+
 
 func _on_start_btn_pressed() -> void:
 	buttons.visible = false
 	form.visible = true
-	
 
 
 func _on_quit_btn_pressed() -> void:
@@ -22,11 +26,11 @@ func _on_quit_btn_pressed() -> void:
 
 
 func _on_load_btn_pressed() -> void:
-	get_tree().change_scene_to_file('res://screens/mapa.tscn')
+	get_tree().change_scene_to_file("res://screens/mapa.tscn")
 
 
 func _on_ranking_btn_pressed() -> void:
-	get_tree().change_scene_to_file('res://screens/ranking.tscn')
+	get_tree().change_scene_to_file("res://screens/ranking.tscn")
 
 
 func _on_confirm_btn_pressed() -> void:
@@ -36,4 +40,4 @@ func _on_confirm_btn_pressed() -> void:
 	else:
 		error_label.visible = false
 		Globals.player_manager.create_player(nome)
-		get_tree().change_scene_to_file('res://screens/info.tscn')
+		get_tree().change_scene_to_file("res://screens/info.tscn")
