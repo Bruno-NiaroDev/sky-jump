@@ -2,10 +2,6 @@ extends Node
 class_name PlayerManager
 
 @export var file_path := "res://config/player.txt"
-var parser: DSLParser
-
-func _ready():
-	parser = DSLParser.new()
 
 func create_player(name: String) -> Dictionary:
 	var player = {
@@ -13,7 +9,7 @@ func create_player(name: String) -> Dictionary:
 		"name": name,
 		"props": {
 			"current_level": 1,
-			"duration": "00:00:00",
+			"duration": 0,
 			"extra_elements": 0,
 			"lives": 3
 		}
@@ -28,12 +24,21 @@ func load_player() -> Dictionary:
 		return {}
 	var content = file.get_as_text()
 	file.close()
-	return parser.parse_dsl(content)[0]
+	return DslParser.parse_dsl(content)[0]
 
 func update_player(updates: Dictionary) -> void:
 	var player = load_player()
+	var props = player["props"]
+
 	for key in updates.keys():
-		player["props"][key] = updates[key]
+
+		if key in ["duration", "extra_elements"]:
+			var new_value = int(updates[key])
+			var current_value = int(props.get(key, 0))
+			props[key] = current_value + new_value
+		else:
+			props[key] = updates[key]
+
 	_save([player])
 
 func reset_player() -> void:
@@ -48,5 +53,5 @@ func reset_player() -> void:
 
 func _save(data: Array) -> void:
 	var file = FileAccess.open(file_path, FileAccess.WRITE)
-	file.store_string(parser.serialize_dsl(data))
+	file.store_string(DslParser.serialize_dsl(data))
 	file.close()

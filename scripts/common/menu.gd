@@ -26,7 +26,7 @@ func _on_load_btn_pressed() -> void:
 
 
 func _on_ranking_btn_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file('res://screens/ranking.tscn')
 
 
 func _on_confirm_btn_pressed() -> void:
@@ -35,4 +35,5 @@ func _on_confirm_btn_pressed() -> void:
 		error_label.visible = true
 	else:
 		error_label.visible = false
+		Globals.player_manager.create_player(nome)
 		get_tree().change_scene_to_file('res://screens/info.tscn')

@@ -28,6 +28,8 @@ func _on_clock_timer_timeout() -> void:
 		seconds = 0
 		minutes += 1
 	
+	Globals.total_seconds_level += 1
+	
 	timer_counter.text = format_time()
 	emit_signal("time_updated", minutes, seconds)
 

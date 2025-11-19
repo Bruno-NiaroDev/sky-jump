@@ -1,6 +1,8 @@
 extends Node
 class_name DSLParser
 
+const VALID_TYPES := ["LEVEL", "PLAYER", "RANKED"]
+
 func parse_dsl(text: String) -> Array:
 	var regex = RegEx.new()
 	regex.compile(r'(\w+)\s+"([^"]+)"\s*{([^}]*)}')
@@ -8,6 +10,12 @@ func parse_dsl(text: String) -> Array:
 	
 	for match in regex.search_all(text):
 		var entity = match.get_string(1)
+
+		# ⚠️ Validação do tipo
+		if not VALID_TYPES.has(entity):
+			show_corruption_screen()
+			return []
+
 		var name = match.get_string(2)
 		var body = match.get_string(3)
 		
@@ -21,19 +29,14 @@ func parse_dsl(text: String) -> Array:
 				var key = parts[0].strip_edges()
 				var value = parts[1].strip_edges().rstrip(",")
 
-				# Checa se é inteiro
-				var int_value = value.to_int()
-				if str(int_value) == value:
-					props[key] = int_value
+				if value.is_valid_int():
+					props[key] = int(value)
+				elif value.is_valid_float():
+					props[key] = float(value)
+				elif value.begins_with('"') and value.ends_with('"'):
+					props[key] = value.substr(1, value.length() - 2)
 				else:
-					# Checa se é float
-					var float_value = value.to_float()
-					if str(float_value) == value:
-						props[key] = float_value
-					elif value.begins_with('"') and value.ends_with('"'):
-						props[key] = value.substr(1, value.length() - 2)
-					else:
-						props[key] = value
+					props[key] = value
 
 		result.append({
 			"type": entity,
@@ -41,6 +44,7 @@ func parse_dsl(text: String) -> Array:
 			"props": props
 		})
 	return result
+
 
 func serialize_dsl(data: Array) -> String:
 	var output := ""
@@ -53,3 +57,12 @@ func serialize_dsl(data: Array) -> String:
 			output += "  %s: %s,\n" % [key, str(value)]
 		output += "}\n\n"
 	return output.strip_edges()
+
+func show_corruption_screen() -> void:
+	print("DSL inválida! Arquivo corrompido.")
+	# Garante que o nó já está na tree antes de trocar a cena
+	call_deferred("_go_to_error")
+	
+
+func _go_to_error() -> void:
+	get_tree().change_scene_to_file("res://screens/error_corrupted_game.tscn")

@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://dbwo856ylonhf" path="res://scenes/common/prefabs/hitbox.tscn" id="5_u1dkd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gr4p8"]
-size = Vector2(9.50324, 15.5031)
+size = Vector2(9.50324, 17.99958)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dpeei"]
-size = Vector2(13.5, 3)
+size = Vector2(19, 3)
 
 [sub_resource type="Animation" id="Animation_cww2d"]
 length = 0.001
@@ -161,15 +161,15 @@ collision_mask = 6
 hit_from_inside = true
 
 [node name="colission" type="CollisionShape2D" parent="."]
-position = Vector2(0.2569511, -6.7465844)
+position = Vector2(0.501744, -6.74828)
 rotation = 1.5638691
-scale = Vector2(0.99999934, 0.99999934)
+scale = Vector2(0.9999992, 0.9999992)
 shape = SubResource("RectangleShape2D_gr4p8")
 
 [node name="hitbox" parent="." instance=ExtResource("5_u1dkd")]
 
 [node name="collision" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-0.25, -12.5)
+position = Vector2(0.5, -12.5)
 shape = SubResource("RectangleShape2D_dpeei")
 
 [node name="anim" type="AnimationPlayer" parent="."]

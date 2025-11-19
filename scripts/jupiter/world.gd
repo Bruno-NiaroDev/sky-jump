@@ -1,6 +1,5 @@
 extends Node2D
 
-
 @onready var player := $player as CharacterBody2D
 @onready var player_scene = preload("res://scenes/common/characters/player.tscn")
 @onready var camera := $camera as Camera2D
