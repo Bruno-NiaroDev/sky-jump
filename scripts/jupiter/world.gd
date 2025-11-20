@@ -5,9 +5,12 @@ extends Node2D
 @onready var camera := $camera as Camera2D
 @onready var control := $HUD/control as  Control
 @onready var player_start_position: Marker2D = $player_start_position
-
+@onready var fase_music = preload("res://sounds/fundo musical.mp3")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	# Para a música do menu e toca a música desta fase
+	MusicManager.play_level_music(fase_music)
 	Globals.reset_level()
 	Globals.player_start_position = player_start_position
 	Globals.player = player
