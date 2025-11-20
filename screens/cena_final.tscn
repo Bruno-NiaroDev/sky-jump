@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://4e1apss7aib5"]
+[gd_scene load_steps=4 format=3 uid="uid://dcxn8hchd4q3e"]
 
 [ext_resource type="Script" uid="uid://dktnadpf160xq" path="res://scripts/common/cena_final.gd" id="1_ctjss"]
-[ext_resource type="VideoStream" uid="uid://d0q7etq8qmc17" path="res://assets/menus/cena_final_sky_jump.ogv" id="1_f3lh7"]
+[ext_resource type="VideoStream" path="res://assets/menus/cena_final_sky_jump.ogv" id="1_f3lh7"]
+[ext_resource type="AudioStream" uid="uid://bqy0q15wf2c8g" path="res://sounds/inicio e telas.mp3" id="3_d4du0"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -21,6 +22,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_f3lh7")
+autoplay = true
+
+[node name="ultimo_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_d4du0")
 autoplay = true
 
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
