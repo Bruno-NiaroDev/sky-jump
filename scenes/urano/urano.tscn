@@ -244,6 +244,8 @@ position = Vector2(422, 521)
 
 [node name="fim" parent="." instance=ExtResource("12_phf3x")]
 position = Vector2(80, 293)
+min_elements_collected = 22
+next_level_key = "saturno"
 
 [node name="sons" type="Node" parent="."]
 

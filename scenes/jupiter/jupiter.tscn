@@ -511,6 +511,8 @@ position_smoothing_enabled = true
 
 [node name="fim" parent="." instance=ExtResource("16_ce5ix")]
 position = Vector2(4845, 440)
+min_elements_collected = 30
+next_level_key = "marte"
 
 [node name="player_start_position" type="Marker2D" parent="."]
 position = Vector2(-1064, 550)
