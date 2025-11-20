@@ -2,20 +2,20 @@
 
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="1_asxd2"]
 [ext_resource type="Texture2D" uid="uid://clj5t7xlqb7fx" path="res://assets/netuno/netuno_intro_bg.png" id="1_bg8rq"]
-[ext_resource type="Script" path="res://scripts/netuno/netuno_intro.gd" id="1_vt17n"]
+[ext_resource type="Script" uid="uid://ctiwdqlyydn8s" path="res://scripts/netuno/netuno_intro.gd" id="1_vt17n"]
 [ext_resource type="Theme" uid="uid://cynn25xd1f2co" path="res://shaders/title_intro_theme.tres" id="3_crvhh"]
 [ext_resource type="Texture2D" uid="uid://7brpqvo5701p" path="res://assets/netuno/netuno_planet.png" id="3_vt17n"]
 [ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="6_ei4xi"]
 
 [sub_resource type="Theme" id="Theme_asxd2"]
-Label/colors/font_color = Color(0.047058824, 0.7529412, 0.8745098, 1)
-Label/colors/font_outline_color = Color(0.43198207, 0.89177716, 0.9975533, 1)
+Label/colors/font_color = Color(0.9529412, 0.69803923, 0.24313726, 1)
+Label/colors/font_outline_color = Color(0.8067474, 0.5743312, 0.1239954, 1)
 Label/constants/line_spacing = 3
 Label/constants/outline_size = 2
 Label/font_sizes/font_size = 18
 
 [sub_resource type="Theme" id="Theme_hvyj8"]
-Label/colors/font_outline_color = Color(0.45636737, 0.895583, 0.99781793, 1)
+Label/colors/font_outline_color = Color(0.99215686, 0.99215686, 0.99215686, 1)
 Label/constants/outline_size = 3
 Label/font_sizes/font_size = 19
 
@@ -325,7 +325,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -30.0
 offset_top = 245.0
-offset_right = 30.0
+offset_right = 54.0
 offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2

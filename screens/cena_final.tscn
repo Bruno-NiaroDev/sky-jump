@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://4e1apss7aib5"]
+
+[ext_resource type="Script" uid="uid://dktnadpf160xq" path="res://scripts/common/cena_final.gd" id="1_ctjss"]
+[ext_resource type="VideoStream" uid="uid://d0q7etq8qmc17" path="res://assets/menus/cena_final_sky_jump.ogv" id="1_f3lh7"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_ctjss")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_f3lh7")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

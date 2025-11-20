@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://camhqsryni7t2"]
 
 [ext_resource type="Theme" uid="uid://cxf4vi0rbjosd" path="res://shaders/subtitle2_intro_theme.tres" id="1_dapbc"]
-[ext_resource type="Script" path="res://scripts/jupiter/jupiter_intro.gd" id="1_umgsn"]
+[ext_resource type="Script" uid="uid://drngmj385vb6g" path="res://scripts/jupiter/jupiter_intro.gd" id="1_umgsn"]
 [ext_resource type="Texture2D" uid="uid://kfd3bnjb0ia" path="res://assets/jupiter/jupiter_intro_bg.png" id="2_d0qxh"]
 [ext_resource type="Texture2D" uid="uid://ucdvds0m54cw" path="res://assets/jupiter/jupiter_planet.png" id="3_dapbc"]
 [ext_resource type="Theme" uid="uid://cynn25xd1f2co" path="res://shaders/title_intro_theme.tres" id="4_sutb0"]
@@ -313,7 +313,7 @@ anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -30.0
 offset_top = -79.0
-offset_right = 30.000488
+offset_right = 54.0
 offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0

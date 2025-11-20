@@ -27,4 +27,7 @@ func _update_ui() -> void:
 
 func _on_load_btn_pressed() -> void:
 	var path = Globals.selected_planet
-	get_tree().change_scene_to_file("res://screens/planets/%s_intro.tscn" % path)
+	if Globals.selected_planet == "terra":
+		get_tree().change_scene_to_file("res://screens/cena_final.tscn")
+	else:
+		get_tree().change_scene_to_file("res://screens/planets/%s_intro.tscn" % path)
