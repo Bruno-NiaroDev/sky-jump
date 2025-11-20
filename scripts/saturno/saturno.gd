@@ -8,8 +8,15 @@ extends Node2D
 @onready var player_start_position: Marker2D = $player_start_position
 @onready var fundo_sfx: AudioStreamPlayer = $sons/fundo_sfx
 
-# Called when the node enters the scene tree for the first time.
+# Música da fase — troque pelo arquivo correto
+@onready var fase_music = preload("res://sounds/fundo musical.mp3")
+
 func _ready() -> void:
+	# Para a música do menu e toca a música desta fase
+	MusicManager.play_level_music(fase_music)
+
+# Called when the node enters the scene tree for the first time.
+
 	Globals.reset_level()
 	Globals.player_start_position = player_start_position
 	Globals.player = player
