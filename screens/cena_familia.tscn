@@ -1,0 +1,169 @@
+[gd_scene load_steps=8 format=3 uid="uid://0dxnltmhkgs3"]
+
+[ext_resource type="Texture2D" uid="uid://se3jknwspnpl" path="res://assets/menus/familia.png" id="1_323ui"]
+[ext_resource type="Script" uid="uid://bgn8bqej2y2lu" path="res://scripts/common/cena_familia.gd" id="1_b76il"]
+[ext_resource type="Theme" uid="uid://cynn25xd1f2co" path="res://shaders/title_intro_theme.tres" id="10_vsxfh"]
+[ext_resource type="Theme" uid="uid://ckpnhtgdjvgmd" path="res://shaders/primary_btn_theme.tres" id="11_sqaje"]
+
+[sub_resource type="Animation" id="Animation_323ui"]
+resource_name = "reveal"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("titulo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(440, -200), Vector2(440, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("next_btn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(494, 783), Vector2(494, 583)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("subtitulo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, -100), Vector2(320, 120)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b76il"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("titulo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(440, 48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("next_btn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(494, 583)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("subtitulo:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 120)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("bg:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fybou"]
+_data = {
+&"RESET": SubResource("Animation_b76il"),
+&"reveal": SubResource("Animation_323ui")
+}
+
+[node name="map_screen" type="Node2D"]
+script = ExtResource("1_b76il")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.74999994, 0.63281244)
+texture = ExtResource("1_323ui")
+
+[node name="subtitulo" type="Label" parent="."]
+offset_left = 320.0
+offset_top = 120.0
+offset_right = 774.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.7441813, 0.7441813, 0.7441813, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 20
+text = "Parabéns por trazer o Nimbo de volta pra casa!
+Veja agora a sua pontuação no ranking geral"
+horizontal_alignment = 1
+
+[node name="titulo" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 440.0
+offset_top = 48.0
+offset_right = 675.0
+offset_bottom = 101.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_vsxfh")
+text = "FIM DE JOGO"
+
+[node name="next_btn" type="Button" parent="."]
+offset_left = 494.0
+offset_top = 583.0
+offset_right = 606.0
+offset_bottom = 612.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("11_sqaje")
+text = "VER RANKING"
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fybou")
+}
+autoplay = "reveal"
+
+[connection signal="pressed" from="next_btn" to="." method="_on_next_btn_pressed"]

@@ -1,7 +1,6 @@
-
-PLAYER "teste" {
+PLAYER "l" {
   current_level: 1,
-  duration: 41,
+  duration: 0,
   extra_elements: 0,
   lives: 3,
 }
