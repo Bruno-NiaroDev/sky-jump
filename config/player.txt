@@ -1,6 +1,6 @@
-PLAYER "Brunin" {
+PLAYER "teste" {
   current_level: 1,
-  duration: 118,
-  extra_elements: 2,
+  duration: 636,
+  extra_elements: 14,
   lives: 3,
 }

@@ -1,6 +1,8 @@
 extends Area2D
 
 @onready var animation:= $anim as AnimatedSprite2D
+@onready var coin_sfx: AudioStreamPlayer = $"../../sons/coin_sfx"
+
 var cristals := 1
 
 func _ready() -> void:
